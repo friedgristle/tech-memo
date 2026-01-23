@@ -1,0 +1,562 @@
+\section*{部分群と生成元}
+\begin{dfn*}
+（部分群）$G$を群, $H\subset G$を部分集合とする. 
+$H$が$G$の演算によって群になるとき, $H$を$G$の\textbf{部分群}という.
+\end{dfn*}
+\begin{tcolorbox}
+	\begin{prp*}
+		群$G$の部分集合$H$が$G$の部分群になるための必要十分条件：
+		\begin{enumerate}[label=(\arabic*)\,]
+			\item $1_G \in H $
+			\item $x,y \in H$なら$xy \in H$
+			\item $x\in H$なら$x^{-1}\in H$ 
+		\end{enumerate}
+	\end{prp*}
+\end{tcolorbox}
+\begin{proof}
+	$H$が部分群であると仮定する. $H$の演算は$G$の演算と一致するので,
+	$1_H1_H=1_H$が$G$の演算により成り立つ. $1_H^{-1}$を左からかけて,
+	$1_H=1_G$となる. よって, $1_G \in H$となり, (1)が成り立つ.
+
+	$G$の演算により$H$が群になるので, そもそも演算が定義できる.
+	したがって, $x,y \in H$に対し$xy\in H$となるのは当たり前であり,
+	(2)が成り立つ.
+
+	$x \in H$に対し, $H$での逆元を$y$とする. 
+	すると$G$の演算により$xy=yx=1_H=1_G$である.
+	これは$y$が$x$の逆元であることを意味する.
+	よって, $x^{-1}=y \in H$となり, (3)が成り立つ.
+
+	逆に(1)-(3)が成り立つとする. (1)より$H$は空集合ではない.
+	(2)より$G$の群演算は写像$H\times H\to H$を定める.
+	$x1_G=1_Gx=x$がすべての$x\in G$に対して成り立つので,
+	特にすべての$x \in H$についても成り立つ.
+	よって, $1_G$は$H$でも単位元である.
+	$G$で結合法則が成り立っているので, $H$でも成り立つのは当たり前である.
+	$x \in H$なら, $G$の元としての$x^{-1}$は(3)より$H$の元であり,
+	$xx^{-1}=x^{-1}x=1_G=1_H$なので, これは$H$においても$x$の逆元である.
+	したがって, $H$は$G$の演算により群になる.
+\end{proof}
+
+\begin{tcolorbox}
+\begin{prp*}
+  $H_1,H_2$が群$G$の部分群なら, $H_1 \cap H_2$も$G$の部分群である.
+\end{prp*}
+\end{tcolorbox}
+\begin{proof}
+  $1_G \in H_1, 1_G \in H_2$であり, $1_G \in H_1 \cap H_2 $.
+  
+  $ x,y \in H_1 \cap H_2 $に対して,
+  $ x,y \in H_1 $なので$ xy \in H_1 $.
+
+  同様に$xy \in H_2 $が言える.
+
+  $ xy \in H_1 $かつ$xy \in H_2 $であるから$xy \in H_1 \cap H_2 $.
+
+  さらに, $x \in H_1 \cap H_2$なら$x^{-1}\in H_1$かつ$x^{-1} \in H_2$なので
+  $x^{-1} \in H_1 \cap H_2$.
+
+  以上より, $H_1 \cap H_2$は$G$の部分群となる.
+\end{proof}
+
+\paragraph*{部分群1}
+$G$が群なら, $\{1\},G$は明らかに$G$の部分群であり,
+これらを$G$の\textbf{自明な部分群}という.
+$G$以外の部分群は\textbf{真部分群}という.\\
+
+\paragraph*{部分群2}
+$\mathbb{Z}$を通常の加法により群とみなす.
+$n\in \mathbb{Z}$とするとき
+$n\mathbb{Z} = \{nx | x\in \mathbb{Z}\}$とおく.
+
+このとき,$\mathbb{Z}$の単位元$0$について$n0=0 \in n\mathbb{Z}$である.
+また, $n\mathbb{Z}$の任意の元は$nx,ny \;(x,y \in \mathbb{Z})$であり,
+その積は$nx\cdot ny=n^2xy=n(nxy) \in n\mathbb{Z}$となる.
+さらに,$nx$の逆元$(nx)^{-1}=-nx=n(-x) \in n\mathbb{Z}$.
+したがって, $n\mathbb{Z}$は$\mathbb{Z}$の部分群である.\\
+
+\paragraph*{部分群3}
+$G=\mathbb{R}^\times$とする.
+$H=\{1,-1\}$は、乗法に関する$G$の単位元$1$を含み,
+乗法と逆元に関して閉じているので、$G$の部分群である. \\
+
+\paragraph*{特殊線形群}
+正方行列$A\in \mathrm{GL}_n(\mathbb{R})$の行列式を$\det{A}$と書く.
+$G=\mathrm{GL}_n(\mathbb{R}),\: H=\{g \in G | \det{g} =1\} $とおく.
+
+$I_n$を$n$次単位行列とすると, $\det I_n = 1$なので, $ I_n \in H$である.
+
+$g,h \in H $とする.
+$\det{gh}=\det{g}\det{h}=1\cdot 1=1$なので, $gh \in H$.
+
+$1=\det{I_n}=\det{g\cdot g^{-1}}=\det{g}\det{g^{-1}}=1\cdot \det{g^{-1}}=\det{g^{-1}}$であるから, 
+$\det{g^{-1}} =1 $すなわち$ g^{-1} \in H$となり,
+以上より$H$は$G$の部分群である.
+
+この$H$は\textbf{特殊線形群}であり, $\mathrm{SL}_n(\mathbb{R})$と書く.
+（← 一般線形群のうち行列式が$1$であるもの）\\
+
+\paragraph*{直交群}
+行列$A$に対して, その転置行列を${}^tA$と書く.
+行列$A,B$の積が定義できるなら, ${}^t(AB)={}^tB{}^tA$である.
+また, $A \in \mathrm{GL}_n(\mathbb{R})$なら, 
+$({}^t A)^{-1} = {}^t(A^{-1})$である.
+
+$G=\mathrm{GL}_n(\mathbb{R}),\; H=\{g \in G \mid {}^t gg=I_n\}$とおくと,
+$I_n \in H$である.
+
+$ g,h \in H $に対して,
+$ {}^t (gh)(gh) = {}^t h {}^t g gh = {}^t h I_n h = {}^t h h= I_n $
+となるので,$ gh \in H $である.
+
+また, ${}^t g =g^{-1}$なので, $g\cdot {}^t g=I_n$となる.
+
+よって,
+$ {}^t(g^{-1})g^{-1} = ({}^t g)^{-1}g^{-1}=(g \cdot {}^t g)^{-1} = I_n^{-1} = I_n $
+となり, $g^{-1} \in H $である. したがって$H$は$G$の部分群である.
+
+この$H$を$\mathrm{O}(n)$と書き, \textbf{直交群}という.
+（← 転置行列との積が単位行列になる=転置行列が逆行列であるもの）
+
+$ \mathrm{SO}(n) = \mathrm{O}(n) \cap \mathrm{SL}_n(\mathbb{R})$とおき,
+これを\textbf{特殊直交群}という.
+（← 特殊線形群のうち転置行列との積が単位行列になるもの）
+
+$ g \in \mathrm{O}(n)$なら$ {}^t g \in \mathrm{O}(n)$である.\\
+
+\paragraph*{シンプレクティック群}
+$2n\times 2n$行列$J_n$を
+\[ J_n = \begin{pmatrix} 0 & I_n \\	-I_n & 0 \end{pmatrix}  \]
+とする.
+$ G=\mathrm{GL}n(\mathbb{R}),\; H=\{g \in G \mid {}^t g J_n g=J_n\} $とおくと,
+$H$は$G$の部分群である.（演習2.3.2で証明）
+
+この$H$を$\mathrm{Sp}(2n,\mathbb{R})$と書き, シンプレクティック群と呼ぶ.\\
+
+\paragraph*{ユニタリ群}
+$G=\mathrm{GL}_n(\mathbb{C}), H=\{g \in G \mid {}^t\overline{g} g = I_n \} $とおく.
+ここで$ \overline{g} $は$g$のすべての成分の複素共役をとった行列である.
+$H$は$G$の部分群となる（演習2.3.3で証明）. 
+この$H$のことを$ \mathrm{U}(n)$と書き.\textbf{ユニタリ群}という.
+また$\mathrm{SU}(n)=\mathrm{U}(n)\cap \mathrm{SL}_n(\mathbb{C})$を
+\textbf{特殊ユニタリ群}という.\\
+
+\paragraph*{四元数群}
+$G=\mathrm{GL}_2(\mathbb{C})$とする.
+\[ i=\begin{pmatrix} \sqrt{-1} & 0 \\ 0 & -\sqrt{-1} \end{pmatrix},\;
+j= \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} , \; 
+k=\begin{pmatrix} 0 & \sqrt{-1} \\ \sqrt{-1} & 0 \end{pmatrix}\]
+とおき,
+$1=I_2,\; H=\{\pm 1, \pm i, \pm j, \pm k\}$とするとき, 
+$H$の元の積は以下の表のようになり,$H$は積について閉じている.\\
+
+\begin{tabular}{c|cccccccc}
+ & $1$ & $-1$ & $i$ & $-i$ & $j$ & $-j$& $k$ & $-k$ \\ \hline
+$1$ & $1$ & $-1$ & $j$ & $-i$ & $j$ & $-j$ & $k$ & $-k$ \\
+$-1$ & $-1$ & $1$ & $-i$ & $i$ & $-j$ & $j$ & $-k$ & $k$ \\
+$i$ & $i$ & $-i$ & $-1$ & $1$ & $k$ & $-k$ & $-j$ & $j$ \\
+$-i$ & $-i$ & $i$ & $1$ & $-1$ & $-k$ & $k$ & $j$ & $-j$ \\
+$j$ & $j$ & $-j$ & $-k$ & $k$ & $-1$ & $1$ & $i$ & $-i$ \\
+$-j$ & $-j$ & $j$ & $k$ & $-k$ & $1$ & $-1$ & $-i$ & $i$ \\
+$k$ & $k$ & $-k$ & $j$ & $-j$ & $-i$ & $i$ & $-1$ & $1$ \\
+$-k$ & $-k$ & $k$ & $-j$ & $j$ & $i$ & $-i$ & $1$ & $-1$ \\ \hline
+\end{tabular}
+
+\paragraph*{}
+また$ (\pm 1)^{-1}=\pm 1,\;  \pm i^{-1} = \mp i,\; \pm j^{-1} = \mp j,\; \pm k^{-1} = \mp k $であることから, 逆元についても閉じている.
+したがって$H$は$G$の部分群である. この$H$のような群を四元数群という.
+
+四元数群は, 
+$ Q_8 = <i,j,k \mid i^2=j^2=k^2=ijk>$
+という表示で定義される. これは位数8の非可換群である。\\
+
+\paragraph*{モジュラー群}
+$H=\mathrm{GL}_n(\mathbb{Z})$を$G=\mathrm{GL}_n(\mathbb{R})$の部分集合で,
+成分が整数であり, 行列式が$\pm1$であるもの全体の集合とする.
+
+$I_n \in H $であり、$H$は積について閉じている.
+（$\because$ すべての要素が整数である行列同士の積の要素はすべて整数である）
+
+$g \in H$に対し, $A_{ij}$を$g$から$i$行と$j$列を除いて得られる
+$(n-1)\times(n-1)$行列とする.
+
+Cramerの公式により, $g$の$G=\mathrm{GL}_n(\mathbb{R})$の元としての逆行列の
+$(i,j)-$成分は
+\[(-1)^{i+j} \frac{\det A{ji}}{\det g}\]
+である。（←？？？）
+
+$\det g = \pm1$なので、$g^{-1}$の成分は整数である
+（$\because g$の要素は整数で、$g^{-1}$はその逆行列であるが行列式が
+$\pm 1$なので逆行列の要素も整数になる）.
+
+$ \det g^{-1} = (\det g)^{-1}=\pm 1$なので,$g^{-1} \in H$となる.
+したがって, $H$は$G$の部分群である.
+$\mathrm{SL}_n(\mathbb{Z})=\mathrm{GL}_n(\mathbb{Z}) \cap \mathrm{SL}_n(\mathbb{R})$とおくと, これも$G$の部分群である.\newline
+
+$\mathrm{SL}_n(\mathbb{Z})$は$ \mathrm{SL}_n(\mathbb{R})$の部分群でもある.
+$\mathrm{GL}_n(\mathbb{Z}),\; \mathrm{SL}_n(\mathbb{Z})$
+をモジュラー群という.\newline
+
+部分集合によって生成された部分群について
+$G$を群, $S\subset G$を部分集合とする.
+
+$x_1,\dots,x_n \in S$により$x_1^{\pm 1}\cdots x_n^{\pm 1}$という形をした
+$G$の元を$S$の元による語（word）という. 
+ただし$n=0$ならば語は単位元$1_G$を表すものとする.
+
+\begin{tcolorbox}
+\begin{prp*}
+$\langle S \rangle$を$S$の元による語全体の集合とするとき, 次の(1),(2)が成り立つ.
+\begin{enumerate}
+	\item $\langle S \rangle$は$G$の部分群である.
+	\item $H$が$G$の部分群で$S$を含めば,$\langle S \rangle \in H$である（つまり$\langle S \rangle$が$S$を含む最小の部分群である）.
+\end{enumerate}
+\end{prp*}
+\end{tcolorbox}
+
+\begin{proof}
+  (1) 語の定義により, $n=0$の場合として$\langle S \rangle$は単位元$1_G$を含む.
+
+  $x,y \in \langle S \rangle$について考える.
+  $\langle S \rangle$の定義より,
+  $ x=x_1^{\pm 1} \cdots x_m^{\pm 1}, \; y=y_1^{\pm 1} \cdots y_n^{\pm 1} $
+  と書ける $x_1,\dots, x_m,y_1, \dots, y_n \in S $が存在する. 
+  したがって
+  $xy =(x_1^{\pm 1} \cdots x_m^{\pm 1})\cdot(y_1^{\pm 1} \cdots y_n^{\pm 1})$
+  であり, これも$\langle S \rangle$の元である.
+
+   また$x$の逆元は$x^{-1}=x_m^{\mp 1}\cdots x_1^{\mp 1}$であり,
+   $\langle S \rangle$の元である.
+
+   以上より、$\langle S \rangle$は$G$の部分群である.
+
+  (2) $H$が$S$を含むとすると, 任意の$x_1, \cdots, x_n \in S$は$H$の元であり,
+  それらの逆元$x_1^{-1}, \cdots, x_n^{-1}$も$H$の元である.
+  これらの積$x_1^{\pm 1} \cdots x_n^{\pm 1} \in H$である.
+  したがって$\langle S \rangle \in H$となる.
+\end{proof}
+
+$G$を群、$S\subset G$を部分集合として,
+$S$の元による語全体の集合$\langle S \rangle$を,
+$S$によって生成された部分群（$\langle S \rangle$は$G$の部分群）という.
+
+また, $S$を生成系, $S$の元を生成元という.\newline
+
+$S=\{g\}$であれば, $g$が$\langle S \rangle$の生成元
+$S=\{g_1,\cdots,g_n\}$なら,
+$\langle \{g_1,\cdots,g_n\} \rangle$の代わりに
+$\langle g_1,\cdots,g_n\rangle $とも書く.
+
+このとき$g_1,\cdots,g_n$は$\langle g_1,\cdots,g_n\rangle$を生成する,
+ともいう.\\
+
+\begin{tcolorbox}
+	\begin{prp*}
+		$G$を群, $S_1 \subset S_2 \subset G$を部分集合とする. 
+		このとき$\langle S_1 \rangle \subset \langle S_2 \rangle $である.
+	\end{prp*}
+\end{tcolorbox}
+
+$S_1 \subset S_2 $であるから, $S_1$の元による語は, 
+すべて$S_2$の元による語として表すことができる.
+
+\paragraph*{生成された部分群1}
+$G$を群, $x \in G, \; S=\{x\}$とする.
+$n \in \mathbb{Z}$なら$x^n \in \langle S \rangle$である.
+（←語には同じ元を複数回使っても良いということになる）
+
+$x^{\pm 1}\cdots x^{\pm 1}$は, +の数が$a$,-の数が$b$なら$x^{a-b}$である.
+$a-b$はすべての整数になり得るので,
+$\langle S \rangle = \{x^n \mid n \in \mathbb{Z}\}$である.
+例えば, $G=\mathbb{Z},\; n \in \mathbb{Z}, \; S=\{n\} $とすると,
+このとき$\langle S \rangle=n\mathbb{Z}$である.
+（↑Gを加法群として考えている）
+
+\begin{dfn*}
+	一つの元で生成される群を巡回群という.
+	群の部分群で巡回群であるものを巡回部分群という.
+\end{dfn*}
+群$G$が巡回群であるとは, ある元$x \in G$が存在して,
+$G$のすべての元$g$がこの固定された元$x$のべき$g=x^n\:(n \in \mathbb{Z})$
+という形をしているということである.\\
+
+\paragraph*{巡回群1}
+$\mathbb{Z}=\langle 1 \rangle$となるので, 
+$\mathbb{Z}$は位数が$\infty$の巡回群である.
+$n\mathbb{Z}$は$n$を生成元とする$\mathbb{Z}$の巡回部分群である.\\
+
+\paragraph*{巡回群2}
+環$\mathbb{Z}/n\mathbb{Z}$は加法についてのアーベル群である.
+$0\leq i \leq n-1$に対し, $\overline{1}$を$n$回足せば
+$\overline{i}$になるので,
+$\mathbb{Z}/n\mathbb{Z}$は$\overline{1}$を生成元とする,
+位数$n$の巡回群である.\\
+
+\begin{tcolorbox}
+	\begin{prp*}
+		巡回群はアーベル群である.
+	\end{prp*}	
+\end{tcolorbox}
+\begin{proof}
+	$G$が巡回群なら, ある$x \in G$があり,
+	$G=\{x^n \mid n \in \mathbb{Z}\}$である.
+
+	$i,j\in \mathbb{Z}$なら$x^i x^j =x^{i+j}=x^j x^i$（つまり可換）なので,
+	巡回群はアーベル群である.
+\end{proof}\leavevmode
+
+
+\paragraph*{生成された部分群2}
+$G=\mathfrak{S}_3, \; \sigma=(1\: 2\: 3),\; \tau=(1\: 2)$とする.
+\begin{enumerate}
+	\item $\sigma^2=(1\: 3\: 2), \sigma^3=1$なので,
+	$n\in\mathbb{Z}$を$3$で割った余りが$0\leq i\leq 2$なら,
+	$\sigma^n=\sigma^i$となる.よって,
+	$\langle \sigma \rangle=\{ 1, (1\, 2\, 3), (1\, 3\, 2)\}$は巡回部分群で,
+	$\sigma$はその生成元である. また$(\sigma^2)^2=\sigma$なので,
+	$\sigma^2$も$\langle \sigma \rangle$の生成元である.
+
+	（\textbf{注：巡回群は「1個の生成元により生成できる群」だが,生成元は1個とは限らない}）
+	\item $\tau=(1\, 2)$なら$\tau^2=1$なので,
+	$\langle \tau \rangle=\{1,(1\,2)\}$であり,これも巡回部分群である.
+	\item $ S=\{\sigma,\, \tau \}$ とする.
+	群の部分集合により部分群が生成されるので,
+	$\langle \sigma \rangle \subset G $ かつ 
+	$\langle \tau \rangle \subset G $であるから,
+	$ \langle S \rangle \supset \{1, (1\, 2\, 3), (1\, 3\, 2), (1\, 2)\}$である.
+	$ \mathfrak{S}_3 = \{1, (1\, 2\, 3), (1\, 3\, 2), (1\, 2), (2\, 3), (1\, 3) \}$であり,
+	$(2 \,3)=\sigma \tau \sigma^{-1},\; (1\, 3)=\sigma^2 \tau \sigma^{-2} $なので,
+	$ G=\langle \sigma,\: \tau \rangle $となり, 
+    $\{\sigma,\: \tau\}$は$G$を生成する.
+\end{enumerate}
+
+
+\begin{tabular}{c|cccccc}
+	 & $1$ & $(123)=\sigma$ & $(132)=\sigma^{-1}$ & $(12)=\tau$ & $(23)$ & $(13)$\\ \hline
+	$1$ & $1$ & $(123)$ & $(132)$ & $(12)$ & $(23)$ & $(13)$ \\
+	$(123)=\sigma$ & $(123)$ & $(132)$ & $1$ & $(13)$ & $(12)$ & $(23)$ \\
+	$(132)=\sigma^{-1}$ & $(132)$ & $1$ & $(123)$ & $(23)$ & $(13)$ & $(12)$ \\ 
+	$(12)=\tau$ & $(12)$ & $(23)$ & $(13)$ & $1$ & $(123)$ & $(132)$ \\
+	$(23)$ & $(23)$ & $(13)$ & $(12)$ & $(132)$ & $1$ & $(123)$ \\
+	$(13)$  & $(13)$ & $(12)$ & $(23)$ & $(123)$ & $(132)$ & $1$ \\ \hline
+\end{tabular}
+
+$ (23)=\sigma^{-1}\tau=\sigma^2\tau=\tau\sigma,\; 
+(13)=\sigma\tau=\tau\sigma^{-1}=\tau\sigma^2$\\
+
+$\{G_i\}$を, $I\neq \emptyset$を添え字集合とする群の族とする.
+
+$ G=\prod_{i \in I}G_i$を集合としての直積とし, $G$上の成分ごとに定義する.
+
+正確には, $(g_i)_{i\in I},\: (h_i)_{i\in I} \in \prod_{i \in I}G_i$に対し,
+\[
+ (g_i)_{i \in I}(h_i)_{i \in I} \overset{\mathrm{def}}{=} 
+ (g_i h_i)_{i \in I}
+ \]
+と定義する.
+（ここで$(g_i)_{i \in I}$のカッコの中は、各直積因子$G_i$の元が並んでいると考える）
+
+$1_{G_i} \in G_i $を単位元とするとき, $1_G = (1_{G_i})_{i \in I}$とおくと,
+$ (g_i)_{i \in I}1_G = (g_i 1_{G_i})_{i \in I} = (g_i)_{i \in I}$.
+
+同様に,$1_G (g_i)_{i\in I} = (g_i)_{i \in I}$である.
+
+また$h=(h_i)_{i \in I},\: k=(k_i)_{i \in I} \in G $なら
+\[
+g(hk) = g(h_i k_i)_{i \in I} = (g_i(h_i k_i))_{i \in I}
+ =((g_i h_i) k_i)_{i \in I}=(gh)(k_i)_{i \in I}=(gh)k
+\]
+となるので, 結合法則が成り立つ.
+
+同様に, $(g_i)_{i \in I}$の逆元は$(g_i^{-1})_{i \in I}$である.
+
+したがって、$G=\prod_{i \in I}G_i$は群となる.
+$I=\emptyset$なら$\prod_{i \in I}G_i=\{1\}$とみなす.
+
+\begin{dfn*}
+	群 $G=\prod_{i \in I}G_i$を$\{G_i\}_{i \in I}$の直積,
+	$G_i$を直積因子という.
+\end{dfn*}
+
+すべての$G_i$がアーベル群なら, $G$もアーベル群である.\newline
+
+$l \in I$に対して、写像$i_l: G_l \mapsto \prod_{j \in I}G_j$を,
+$x \in G_l$に対して$i_l(x)$の成分を
+\[x= \begin{cases} 1_{G_j} & \text{for} \; j \neq l \\ 
+  x & \text{for}\; j=l \end{cases}\]
+と定義すると, $i_l$は単射写像である.
+
+$I$が有限集合$\{1,\cdots,t\}$なら, 
+直積を$G_1 \times \cdots \times G_t$とより明示的に表せる. その場合$i_l$は
+\[
+i_l: G_l \ni g_l \mapsto 
+(\overset{l-1}{\overbrace{1_{G_1},\cdots,1_{G_{l-1}}}},g_l, \overset{t-l}{\overbrace{1_{G_{l+1}},\cdots,1_{G_t}}} )
+ \in G_1 \times \cdots \times G_t 
+\]
+となる。\\
+
+\subsubsection*{演習問題}
+
+\paragraph{2.3.1}  $G$を群, $H\subset G$を空でない部分集合とするとき,
+$H$が部分群であるための必要十分条件は,
+任意の$x,y\in H$に対して$x^{-1}y\in H$であることを証明せよ。
+\begin{proof}
+  $H$が部分群$\implies$ $x^{-1}y\in H$
+
+  $H$が部分群であれば, $x \in H$は逆元$x^{-1} \in H$を持つ.
+  さらに群の閉性により, $x^{-1}y \in H$である.
+
+  $x^{-1}y\in H$$\implies$$H$が部分群 
+
+  任意の$x,y\in H$に対して$x^{-1}y\in H$なので, 
+  これは$x=y$のときも成り立ち, $x^{-1}x=1_G \in H$である.
+
+  また$y=1_G$とすれば, $x^{-1}1_G=x^{-1} \in H$であり, 
+  逆元が存在するので, 任意の$z$を$z =x^{-1} \in H$として取ることができ,
+  $x^{-1}y = zy \in H$である. 以上より、$H$は$G$の部分群である.
+\end{proof}\leavevmode
+
+\paragraph{2.3.2}
+$2n\times 2n$行列$J_n$を
+\[J_n =  \begin{pmatrix} 0 & I_n \\ -I_n & 0 \end{pmatrix}\]
+とおく.
+$ H=\{g \in \mathrm{GL}_{2n}(\mathbb{R}) \mid {}^t g J_n g=J_n\} $とすると,
+$H$は部分群であることを証明せよ。
+（$\mathrm{Sp}(2n)\subset \mathrm{GL}_{2n}(\mathbb{R})$はシンプレクティック群）
+\begin{proof}
+  単位元$I_{2n} \in \mathrm{GL}_{2n}(\mathbb{R})$は明らかに
+  ${}^tI_{2n}J_n I_2n = J_n$を満たし, $I_{2n} \in H$である.
+
+  また${}^tI_{2n}J_n I_2n = J_n$より,
+  $ {}^t (g g^{-1})J_n(gg^{-1})= {}^t (g^{-1})({}^t g J_n g) g^{-1}={}^t (g^{-1})J_n (g^{-1}) =J_n$となり, $g^{-1} \in H$.
+
+  $g,h \in H$に対して, 
+  ${}^t (gh)J_n (gh) = {}^t h {}^t g J_n gh = {}^t h J_n h = J_n$なので,
+  $gh \in H$.
+
+  以上より$H$は部分群である.
+\end{proof}\leavevmode
+
+\paragraph{2.3.3} 
+$G=\mathrm{GL}_n(\mathbb{C}), \mathrm{U}(n)=\{g \in G \mid {}^t\overline{g} g = I_n \} $とおく.
+ここで$ \overline{g} $は$g$のすべての成分の複素共役をとった行列である.
+
+$\mathrm{U}(n) \subset \mathrm{GL}_n(\mathbb{C})$が部分群であることを証明せよ.
+
+（$ \mathrm{U}(n)$はユニタリ群）
+\begin{proof}
+  単位行列$I_n \in G$について, ${}^t\bar{I_n}I_n=I_n$であるから,
+  $I_n \in \mathrm{U}(n)$である.
+
+  また任意の$g \in G$に対して$h={}^t\bar{g}$とすると,
+  定義により$hg=1_G$であり$g$の逆元となる.
+
+  この$h$に対して${}^t \bar{h}={}^t \overline{{}^t\bar{g}}=g$であるから
+  ${}^t \bar{h}h=gh= I_n$.
+  
+  以上より$ \mathrm{U}(n)$は部分群である.
+\end{proof}\leavevmode
+
+\paragraph{2.3.4} 
+$G=\mathrm{GL}_n(\mathbb{R})$, $B$を$G$の元で下三角行列であるもの全体の集合とする.
+
+(1) $B$は$G$の部分群であることを証明せよ。(2) $B$はアーベル群か？
+\begin{proof}
+  $I_n$は下三角行列なので$I_n \in B$.
+  
+  下三角行列の逆行列, また下三角行列どうしの積,
+  いずれも下三角行列になるので, $B$は$G$の部分群である.
+\end{proof}
+
+下三角行列に関して一般に交換法則は成り立たないので、アーベル群ではない。\newline
+
+\paragraph{2.3.5}
+$\mathbb{R}^\times = \mathbb{R}\backslash\{0\}$を乗法により群とみなす.
+このとき, 正の実数の集合$\mathbb{R}_{>0}$は$\mathbb{R}^\times$
+の部分群であることを証明せよ.
+\begin{proof}
+  $1 \in \mathbb{R}^\times$である.任意の$x \in \mathbb{R}^\times$に対して,
+  $1/x \in \mathbb{R}^\times$は逆元となる. 
+  さらに任意の$x,y \in \mathbb{R}^\times$の積に関して
+  $xy \in \mathbb{R}^\times$である.
+  以上より, $\mathbb{R}_{>0}$は$\mathbb{R}^\times$の部分群である.
+\end{proof}\leavevmode
+
+\paragraph{2.3.6}
+$\mathbb{R}$を加法により群とみなす.
+このとき, 正の実数の集合$\mathbb{R}_{>0}$は
+$\mathbb{R}$の部分群ではないことを証明せよ.
+\begin{proof}
+  $\mathbb{R}$を加法により群とみなす場合,単位元は0であるが,
+  これは$\mathbb{R}_{>0}$の元ではない.
+  したがって$\mathbb{R}_{>0}$は加法について$\mathbb{R}$の部分群ではない.
+\end{proof}\leavevmode
+
+\paragraph{2.3.7}
+$\mathbb{C}^\times$を通常の乗法により群とみなす.
+正の整数$n$を固定し. $H=\{z \in \mathbb{C}^\times \mid z^n=1\}$とおく.
+$H$が$\mathbb{C}^\times$の位数$n$の巡回部分群であることを証明せよ.
+\begin{proof}
+  $i$を虚数単位として, $H=\{1,e^{2\pi i/n},\cdots, e^{2(n-1)\pi/n}\}$と表せる.
+  これらの元のいずれについても$z^n=1$が成り立つ. なお生成元は$e^{2\pi i/n}$である.
+  明らかに$1 \in H$であり, $0\leq k,l <n$である整数$k,l$により
+  $e^{2k\pi i/n}e^{2l\pi i/n}=e^{2(k+l)\pi i/n}$と表せる.
+  なお$k+l>n$の場合は$e^{2(k+l)\pi i/n}=e^{2(k+l-n)\pi i/n}$であり,
+  いずれの場合も$e^{2k\pi i/n}e^{2l\pi i/n} \in H$である.
+  また任意の$z=e^{2k\pi i/n}$に対して,
+  逆元$z^{-1}=e^{2(n-k)\pi i/n} \in H$が存在する.
+  したがって, $H$は$\mathbb{C}^\times$の巡回部分群である.
+\end{proof}\leavevmode
+
+\paragraph{2.3.8}
+\begin{enumerate}
+	\item $\mathfrak{S}_3$が巡回群ではないことを証明せよ.
+	\item $\mathbb{Q}$が加法に関して巡回群ではないことを証明せよ.
+	\item $\mathbb{R}$が加法に関して巡回群ではないことを証明せよ.
+	\item $\mathbb{Q}^\times$が乗法に関して巡回群ではないことを証明せよ.
+	\item $\mathbb{Z}\times\mathbb{Z}$が巡回群ではないことを証明せよ.
+\end{enumerate}
+\begin{proof}
+  \begin{enumerate}
+	\item $\mathfrak{S}_3=\{ e, (1 2 3), (1 3 2), (1 2), (2 3), (1 3)\}$である.
+	
+	$(1 2 3)^3=e, (1 3 2)^3=e, (12)^2=e, (23)^2=e, (13)^2=e$であり
+	すべての元を生成できる元が無いため, $\mathfrak{S}_3$は巡回群ではない.
+    
+	\item 任意の元$g \in \mathbb{Q}$を互いに素な整数$p,q$により$p/q$と表すと,
+	$n$を整数として$g^n=np/q$となる.
+	ここで, $q$と互いに素である整数$d$を考える.
+	$1/d$を$g^n$で表すには$g^n=pq/dq$とする必要がある.
+	すなわち$n=q/d$となる整数$n$が存在しなければならないが,
+	$q$と$d$は互いに素であるので, そのような$n$は存在しない.
+	したがって, $\mathbb{R}$は加法に関して巡回群ではない.
+    
+	\item 任意の元$g \in \mathbb{R}$に対して,
+	$g^n = ng \; (n \in \mathbb{Z})$である.
+	このとき$g$より大きい実数$a$に対して$ng=g/a \in \mathbb{R}$
+	を満たす整数$n$は存在しない.
+	したがって, $\mathbb{R}$は加法に関して巡回群ではない.
+    
+	\item 任意の元$g \in \mathbb{Q}^\times$に対して,
+	$g =1$のとき$g^n=1$,$g=-1$のとき$g^n=(-1)^n$,
+	$|g|<1$のとき$-1<g^n<1$, $|g|>1$のとき$g^n<-1,1<g^n$となるので,
+	$\mathbb{Q}^\times$は乗法に関して巡回群ではない.
+    
+	\item $\mathbb{Z}\times\mathbb{Z}$に対して,
+    全体を生成する元$(a,b)$が存在したとする.
+	そのためにはたとえば$(1,0)$を生成でき,
+	$k(a,b)=(ka,kb)=(1,0)$を満たす整数$k$が存在しなければならない.
+	$ka=1$かつ$kb=0$であることから, $k\neq 0$, $b=0$となるが,
+	その場合$(0,1)$などを生成できない.
+	これは$(a,b)$が生成元であることと矛盾する.
+	したがって生成元$(a,b)$は存在せず,
+	$\mathbb{Z}\times\mathbb{Z}$は巡回群ではない.
+  \end{enumerate}
+
+\end{proof}\leavevmode
+
+\paragraph{2.3.9} (1) $\mathfrak{S}_n$は
+$\sigma_1=\{(1\, 2),\cdots,\sigma_{n-1}=(n-1\,n)\}$によって生成されることを証明せよ.
+
+(2) $\mathfrak{S}_n$は$\sigma=(1 2 \cdots n)$と$\tau=(1\,2)$によって生成されることを証明せよ.
+
