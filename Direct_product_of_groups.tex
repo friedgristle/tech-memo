@@ -63,17 +63,31 @@ $G_1, G_2$を群とする. これらは直積$G_1\times G_2$の部分群とみ�
 	への写像$\phi$を, $k\in \mathbb{Z}$に対して
 	\[ \phi(k+mn\mathbb{Z})=(k+m\mathbb{Z},k+n\mathbb{Z})\]
 	と定義する.
-	$x,y\in k+mn\mathbb{Z}$なら, $x\equiv y$であり,
-	$mn \mid (x-y)$となる. このとき$m \mid (x-y),\: n\mid (x-y)$なので
-	$y+m\mathbb{Z}=x+m\mathbb{Z},\; y+n\mathbb{Z}=x+n\mathbb{Z}$となる.
+	$x,y\in k+mn\mathbb{Z}$なら, $x\equiv y \; \mathrm{mod}\,n$であり,
+	$mn \mid (x-y)$となる. このとき$m \mid (x-y)$なので
+	$y+m\mathbb{Z}=x+m\mathbb{Z}$, また同様に$n\mid (x-y)$でもあるので
+	$y+n\mathbb{Z}=x+n\mathbb{Z}$となる.
 	したがって, 写像$\phi$はwell-definedである.
 
 	$a,b\in \mathbb{Z}$に対して
 	\begin{align*}
-		\phi((a+mn\mathbb{Z})(b+mn\mathbb{Z}))&=\phi(ab+mn\mathbb{Z})\\
-		&=(ab+m\mathbb{Z},ab+n\mathbb{Z})\\
-		&=(a+m\mathbb{Z},a+n\mathbb{Z})(b+m\mathbb{Z},b+n\mathbb{Z})\\
-		&=\phi(a+mn\mathbb{Z})\phi(b+mn\mathbb{Z})
+		\phi((a+mn\mathbb{Z})+(b+mn\mathbb{Z}))
+		&=\phi((a+b)+mn\mathbb{Z})\\
+		&=((a+b)+m\mathbb{Z},(a+b)+n\mathbb{Z})\\
+		&=(a+m\mathbb{Z},a+n\mathbb{Z})+(b+m\mathbb{Z},b+n\mathbb{Z})\\
+		&=\phi(a+mn\mathbb{Z})+\phi(b+mn\mathbb{Z})
 	\end{align*}
 	なので、$\phi$は準同型である.
+
+	$\mathbb{Z}/m\mathbb{Z}\times \mathbb{Z}/n\mathbb{Z}$の単位元は
+	$(0+m\mathbb{Z}, 0+n\mathbb{Z})$で,
+	$(k+m\mathbb{Z},k+n\mathbb{Z})=(0+m\mathbb{Z},0+n\mathbb{Z})$
+	となるためには$m\mid k$かつ$n\mid k$であるが,
+	$m,n$は互いに素なので, $k=0$である. 
+	したがって$\mathrm{Ker}\phi = \{0+mn\mathbb{Z}\}$
+	となるため, $\phi$は単射である.
+
+	$|\mathbb{Z}/mn\mathbb{Z}|
+	 =|\mathbb{Z}/m\mathbb{Z}\times \mathbb{Z}/n\mathbb{Z}|=mn$
+	である. 以上より$\phi$は同型である.
 \end{proof}
