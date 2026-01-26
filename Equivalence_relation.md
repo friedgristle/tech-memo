@@ -151,8 +151,10 @@ $|G/H|=|H\backslash G|$である.
 
 > **定理**　（Fermatの小定理）$p$ が素数で $z\in \mathbb{Z}$ が$p$ で割り切れなければ, $x^{p-1}\equiv 1\;\mathrm{mod}\,p$.
 
-**証明**　$(\mathbb{Z}/p\mathbb{Z})^\times$ は元の個数が $p-1$ の群なので, $x=1,\cdots, p-1$ に対し $\overline{x}^{p-1}=\overline{1}$ である. これは$x^{p-1}$ が $p$ で割り切れることを意味する. $x\in \mathbb{Z}$を $p$ で割った余りが $i$ なら, $x^{p-1}$ を $p$ で割った余りと $i^{p-1}$ を $p$ で割った余りは等しいので,  $x^{p-1}\equiv 1\;\mathrm{mod}\,p$ である.
+**証明**　$G=(\mathbb{Z}/p\mathbb{Z})^\times$ とする. $p$ は素数なので, $|G|=p-1$ である. $x \in G$ の位数は $|G|$ の約数なので, $x=1,\cdots, p-1$ に対し $\overline{x}^{p-1}=\overline{1}$ である. これは$x^{p-1}-1$ が $p$ で割り切れることを意味する. $x\in \mathbb{Z}$を $p$ で割った余りが $i$ なら, $x^{p-1}$ を $p$ で割った余りと $i^{p-1}$ を $p$ で割った余りは等しいので,  $x^{p-1}\equiv 1\;\mathrm{mod}\,p$ である.
 
-> $p$ が素数なら, すべての $x\in \mathbb{Z}$ に対し, $x^p \equiv 0\;\mathrm{mod}\,p$.
+> $p$ が素数なら, すべての $x\in \mathbb{Z}$ に対し, $x^p \equiv x\;\mathrm{mod}\,p$.
 
-**証明** $x$ が $p$ で割り切れれば, $x^p,x\equiv 0\;\mathrm{mod}\,p$ である. $x$ が $p$ で割り切れなければ, $x^{p-1}-1$ は $p$ で割り切れる. よって, $x(x^{p-1}-1)=x^p-x$ も $p$ で割り切れる.　□
+**証明**　$x$ が $p$ で割り切れれば, $x^p,x\equiv 0\;\mathrm{mod}\,p$ である. $x$ が $p$ で割り切れなければ, フェルマーの小定理より $x^{p-1}-1$ は $p$ で割り切れる. よって, $x(x^{p-1}-1)=x^p-x$ も $p$ で割り切れる.　□
+
+
