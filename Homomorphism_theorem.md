@@ -16,7 +16,23 @@ $g\in G$ なら, $\phi(g)=\psi(gN)$ なので,
 $\mathrm{Im}(\phi)\subset \mathrm{Im}(\psi)$ である. $G/N$ の任意の元は $gN$ という形をしているので $\mathrm{Im}(\psi)\subset \mathrm{Im}(\phi)$ であることもわかる. したがって, $\mathrm{Im}(\psi)=\mathrm{Im}(\phi)$ である. 
 $\psi$ は単射なので, $G/N$ と $\mathrm{Im}(\psi)=\mathrm{Im}(\phi)$ は$\psi$ によって同型である.  
 $\psi$ が $\psi\circ\pi=\phi$ という条件を満たせば,
-$g\in G$ に対し $\psi(gN)=\phi(g)$ と値が定まってしまうので, $\psi$ は一意的である.　□
+$g\in G$ に対し $\psi(gN)=\phi(g)$ と値が定まってしまうので, $\psi$ は一意的である.　
+
+
+**$\psi$ はwell-definedである.**
+
+$g,h\in G$ に対して $gN=hN$ であれば $g$ と $h$ は $N$ について同値関係にある. このとき $\psi(gN)=\psi(hN)$ であることを示せばよい.  
+$g$ と $h$ が $N$ について同値関係であれば, $h^{-1}g\in N$ である（部分群による同値関係）. $N=\mathrm{Ker}(\phi)$ なので, $\phi(h^{-1})=1_H$ . $\phi$ は準同型なので
+$$\phi(h^{-1}g)=\phi(h)^{-1}\phi(g)=1_H$$
+$$\phi(g)=\phi(h)$$
+$$\psi(gN)=\psi(hN)\quad (\because \phi(g)=\psi(gN),\phi(h)=\psi(hN))$$
+したがって, $\psi$ はwell-definedである.
+-  $\psi$ は準同型である
+-  $\psi: G/N\to H$ は単射である
+-  $\mathrm{Im}(\phi)=\mathrm{Im}(\psi)$ である
+
+
+□
 
 
 > **定理（部分群の対応）**　 $N$ を群 $G$ の正規部分群,  $\pi: G\to G/N$ を自然な準同型とする. $G/N$ の部分群の集合を $\mathbb{X}$, $G$ の $N$ を含む部分群の集合を $\mathbb{Y}$ とするとき, 写像
