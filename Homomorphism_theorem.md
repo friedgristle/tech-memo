@@ -53,4 +53,7 @@ $g\in G$ に対し $\psi(gN)=\phi(g)$ と値が定まってしまうので, $\ps
 > $$\phi: \mathbb{X}\ni H\mapsto \pi^{-1}(H)\in \mathbb{Y},\quad \psi:\mathbb{Y}\ni K\mapsto \pi(K)\in \mathbb{X}$$
 > は互いの逆写像である. したがって, 集合 $\mathbb{X},\mathbb{Y}$ は1対1に対応する。
 
-**証明**　 $H\in\mathbb{X}$ なら, $\pi^{-1}(H)\subset G$ は部分群である. $1_{G/N}\in H$なので, $N=\pi^{-1}(1_{G/N})\subset \pi^{-1}(H)$ である. したがって, $\pi^{-1}(H)\in \mathbb{Y}$ となり, $\phi$ はwell-defindな写像である.
+**証明**　 $H\in\mathbb{X}$ なら, $\pi^{-1}(H)\subset G$ は部分群である. $1_{G/N}\in H$なので, $N=\pi^{-1}(1_{G/N})\subset \pi^{-1}(H)$ である. したがって, $\pi^{-1}(H)\in \mathbb{Y}$ となり, $\phi$ はwell-defindな写像である.  
+$K\in \mathbb{Y}$ なら, $\pi$ は準同型なので, $\pi(K)\subset G/N$ は部分群である. したがって, $\phi(K)\in \mathbb{X}$ である.  
+$K\in\mathbb{Y}$ なら, $H=\pi(K)$ とおくと, $K\in\pi^{-1}(H)$ は明らかである. $g\in \pi^{-1}(H)$ なら, $\pi(g)\in \pi(K)$. よって, $h\in K$ があり, $\pi(g)=\pi(h)$. これは $gN=hN$, つまり $n\in N$ があり, $g=hn$ であることを意味する. $N\subset K$ なので, $g\in K$ である. したがって, $K=\pi^{-1}(H)$ となり, $\phi\circ\psi(K)=K$ である.  
+$H\in \mathbb{X}$ なら, $\pi(\pi^{-1}(H))\subset H$ であることは明らかである. $h\in H$ なら, $\pi$ は全射なので $g\in G$ があり, $\pi(g)=h\in H$ である. これは $g\in \pi^{-1}(H)$ であることを意味する. よって, $h=\pi(g)\in \pi(\pi^{-1}(H))$である. したがって, $H\subset \pi(\pi^{-1}(H))$ となり, $\psi\circ\phi(H)=\pi(\pi^{-1}(H))=H$ である. （ここで $H$ は $G/N$ の部分集合だが, 等式 $\psi\circ\phi(H)=H$ では, $H$ を $\mathbb{X}$ の一つの元とみなしていることに注意）　□
