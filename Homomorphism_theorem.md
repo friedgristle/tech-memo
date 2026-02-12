@@ -30,12 +30,19 @@ $$
 なので,  $\psi$ は準同型である.
 
 **$\psi: G/N\to H$ は単射である**  
-$\psi(gN)=1_H$ なら, $\phi(g)=1_H$ なので, $g\in N$となり, $gN=N$ は $G/N$ の単位元である. よって, $\psi$ は単射である.  
-
+$G/N$ の単位元は $N$.  
+$$\begin{align*}
+\mathrm{Ker}(\psi)&=\{gN\in G/N\mid \psi(gN)=1_H\}\\
+&=\{gN\in G/N\mid \phi(g)=1_H\}\quad (\because\psi(gN)=\phi(g))\\
+&=\mathrm{Ker}(\phi)
+\end{align*}$$
+すなわち $\mathrm{Ker}(\psi)=N=\{1_{G/N}\}$ となるので, $\psi$ は単射である.  
 
 **$\mathrm{Im}(\phi)=\mathrm{Im}(\psi)$ である**  
-$g\in G$ なら, $\phi(g)=\psi(gN)$ なので, 
-$\mathrm{Im}(\phi)\subset \mathrm{Im}(\psi)$ である. $G/N$ の任意の元は $gN$ という形をしているので $\mathrm{Im}(\psi)\subset \mathrm{Im}(\phi)$ であることもわかる. したがって, $\mathrm{Im}(\psi)=\mathrm{Im}(\phi)$ である.
+任意の $y\in \mathrm{Im}(\phi)$ に対して, $y=\phi(g)$ となる $g\in G$ がある.
+定義より $y=\phi(g)=\psi(gN)$ なので, $y\in \psi(gN)$.
+よって $\mathrm{Im}(\phi)\subset \mathrm{Im}(\psi)$ である.  
+また, 任意の $y\in\mathrm{Im}(\psi)$ に対して, $y=\psi(gN)$ となる $gN$ がある. $y=\psi(gN)=\phi(g)$ なので, $y\in \phi(g)$ であり,  $\mathrm{Im}(\psi)\subset \mathrm{Im}(\phi)$. したがって, $\mathrm{Im}(\psi)=\mathrm{Im}(\phi)$ である.
 
 以上より, $G/N$ と $\mathrm{Im}(\psi)=\mathrm{Im}(\phi)$ は$\psi$ によって同型である.  
 $\psi$ が $\psi\circ\pi=\phi$ という条件を満たせば,
