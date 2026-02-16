@@ -68,5 +68,6 @@ $$(h_1 n_1)(h_2n_2)\in h_1Nh_2N=h_1h_2NN\subset HN$$
 $h\in H, n\in N$ なら,
 $$ (hn)^{-1}=n^{-1}h^{-1}\in Nh^{-1}=h^{-1}N\subset HN$$
 となるので, $HN$ は逆元についても閉じている. したがって, $HN$ は $G$ の部分群である.  
-$N$ は正規部分群なので $hnh^{-1} \in N$ $h\in H$ なら $hN=Nh$ なので, $HN=NH$ である.  
-(2) $H$ から $HN/N$ への自然な写像は全射準同型で, その核は $H\cap N$ である. よって $H\cap N\lhd H$ であり, 第一同型定理より $H/H\cap N\cong HN\N$ となる.　□
+$N$ は正規部分群なので $n'=hnh^{-1}$ とおくと $n' \in N$ であり, $hn=n'h\in Nh$ となる. これがすべての $n$ について成り立つので $hN\subset Nhである. $  
+同様に $n'h=hn\in hN$ がすべての $n$ に対して成り立つので $Nh\subset hN$ である. $hN\subset Nh$ かつ $Nh\subset hN$ であることから $hN=Nh$ となり, $HN=NH$ である.  
+(2) $H$ から $HN/N$ への自然な写像は全射準同型で, その核は $H\cap N$ である. よって $H\cap N\lhd H$ であり, 第一同型定理より $H/H\cap N\cong HN/N$ となる.　□
