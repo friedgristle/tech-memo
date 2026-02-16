@@ -57,3 +57,16 @@ $g\in G$ に対し $\psi(gN)=\phi(g)$ と値が定まってしまうので, $\ps
 $K\in \mathbb{Y}$ なら, $\pi$ は準同型なので, $\pi(K)\subset G/N$ は部分群である. したがって, $\phi(K)\in \mathbb{X}$ である.  
 $K\in\mathbb{Y}$ なら, $H=\pi(K)$ とおくと, $K\in\pi^{-1}(H)$ は明らかである. $g\in \pi^{-1}(H)$ なら, $\pi(g)\in \pi(K)$. よって, $h\in K$ があり, $\pi(g)=\pi(h)$. これは $gN=hN$, つまり $n\in N$ があり, $g=hn$ であることを意味する. $N\subset K$ なので, $g\in K$ である. したがって, $K=\pi^{-1}(H)$ となり, $\phi\circ\psi(K)=K$ である.  
 $H\in \mathbb{X}$ なら, $\pi(\pi^{-1}(H))\subset H$ であることは明らかである. $h\in H$ なら, $\pi$ は全射なので $g\in G$ があり, $\pi(g)=h\in H$ である. これは $g\in \pi^{-1}(H)$ であることを意味する. よって, $h=\pi(g)\in \pi(\pi^{-1}(H))$である. したがって, $H\subset \pi(\pi^{-1}(H))$ となり, $\psi\circ\phi(H)=\pi(\pi^{-1}(H))=H$ である. （ここで $H$ は $G/N$ の部分集合だが, 等式 $\psi\circ\phi(H)=H$ では, $H$ を $\mathbb{X}$ の一つの元とみなしていることに注意）　□
+
+> **定理（第二同型定理）** $H,N$ を群 $G$ の部分群で $N\lhd G$ とする. このとき, 次の(1),(2)が成り立つ.  
+(1) $HN$ は $G$ の部分群となる. また $HN=NH$ となる.  
+(2) $H\cap N\lhd H, \; HN/N \cong H/N\cap N$ である.
+
+**証明** 　(1) $1_G\in H,N$ なので, $1_G=1_G1_G\in HN$ である. $h_1, h_2\in H, \;n_1, n_2\in N$ なら,
+$$(h_1 n_1)(h_2n_2)\in h_1Nh_2N=h_1h_2NN\subset HN$$
+となるので, $HN$ は積について閉じている.  
+$h\in H, n\in N$ なら,
+$$ (hn)^{-1}=n^{-1}h^{-1}\in Nh^{-1}=h^{-1}N\subset HN$$
+となるので, $HN$ は逆元についても閉じている. したがって, $HN$ は $G$ の部分群である.  
+$N$ は正規部分群なので $hnh^{-1} \in N$ $h\in H$ なら $hN=Nh$ なので, $HN=NH$ である.  
+(2) $H$ から $HN/N$ への自然な写像は全射準同型で, その核は $H\cap N$ である. よって $H\cap N\lhd H$ であり, 第一同型定理より $H/H\cap N\cong HN\N$ となる.　□

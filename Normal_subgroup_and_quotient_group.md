@@ -8,4 +8,8 @@ $ghg^{-1}=gg^{-1}h=1_Gh=h\in H$
 となるので, $H$ は正規部分群である.
 
 > **命題** $\quad G_1,G_2$ が群で $\phi: G_1\to G_2$ が準同型なら, $\mathrm{Ker}(\phi)$ は $G_1$ の正規部分群である.
-> 
+
+**証明** $g\in G, h\in \mathrm{Ker}(\phi)$ とすると, $\phi$ が準同型なので
+$$\phi(ghg^{-1})=\phi(g)\phi(h)\phi(g^{-1})
+=\phi(g)1_{G_2}\phi(g)^{-1}=1_{G_2}$$
+したがって $ghg^{-1}\in \mathrm{Ker}(\phi)$ であるため、 $\mathrm{Ker}(\phi)$ は $G_1$ の正規部分群である.　□
