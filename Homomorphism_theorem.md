@@ -58,6 +58,8 @@ $K\in \mathbb{Y}$ なら, $\pi$ は準同型なので, $\pi(K)\subset G/N$ は�
 $K\in\mathbb{Y}$ なら, $H=\pi(K)$ とおくと, $K\in\pi^{-1}(H)$ は明らかである. $g\in \pi^{-1}(H)$ なら, $\pi(g)\in \pi(K)$. よって, $h\in K$ があり, $\pi(g)=\pi(h)$. これは $gN=hN$, つまり $n\in N$ があり, $g=hn$ であることを意味する. $N\subset K$ なので, $g\in K$ である. したがって, $K=\pi^{-1}(H)$ となり, $\phi\circ\psi(K)=K$ である.  
 $H\in \mathbb{X}$ なら, $\pi(\pi^{-1}(H))\subset H$ であることは明らかである. $h\in H$ なら, $\pi$ は全射なので $g\in G$ があり, $\pi(g)=h\in H$ である. これは $g\in \pi^{-1}(H)$ であることを意味する. よって, $h=\pi(g)\in \pi(\pi^{-1}(H))$である. したがって, $H\subset \pi(\pi^{-1}(H))$ となり, $\psi\circ\phi(H)=\pi(\pi^{-1}(H))=H$ である. （ここで $H$ は $G/N$ の部分集合だが, 等式 $\psi\circ\phi(H)=H$ では, $H$ を $\mathbb{X}$ の一つの元とみなしていることに注意）　□
 
+<br>
+
 > **定理（第二同型定理）** $H,N$ を群 $G$ の部分群で $N\lhd G$ とする. このとき, 次の(1),(2)が成り立つ.  
 (1) $HN$ は $G$ の部分群となる. また $HN=NH$ となる.  
 (2) $H\cap N\lhd H, \; HN/N \cong H/N\cap N$ である.
