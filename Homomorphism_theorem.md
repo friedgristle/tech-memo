@@ -3,19 +3,14 @@
 > $\phi:G\to H$ を群の準同型とする. $\pi:G\to G/\mathrm{Ker}(\phi)$ を自然な準同型とするとき,
 > 準同型 $\psi: G/\mathrm{Ker}(\phi)\to H$ がただ一つ存在し, $\psi$ は $G/\mathrm{Ker}(\phi)$ から $\mathrm{Im}(\phi)$ への同型となる.
 
-**証明** $\quad N=\mathrm{Ker}(\phi)$ とおく.  $g\in G$ に対し, $\psi(gN)=\phi(g)$ と定義する. 
-  
-
-
-
+**証明** $\quad N=\mathrm{Ker}(\phi)$ とおく.  $g\in G$ に対し, $\psi(gN)=\phi(g)$ と定義する.   
 **$\psi$ はwell-definedである.**  
 $g,h\in G$ に対して $gN=hN$ であれば $g$ と $h$ は $N$ について同値関係にある. このとき $\psi(gN)=\psi(hN)$ であることを示せばよい.  
 $g$ と $h$ が $N$ について同値関係であれば, $h^{-1}g\in N$ である（部分群による同値関係）. $N=\mathrm{Ker}(\phi)$ なので, $\phi(h^{-1})=1_H$ . $\phi$ は準同型なので
 $$\phi(h^{-1}g)=\phi(h)^{-1}\phi(g)=1_H$$
 $$\phi(g)=\phi(h)$$
 $$\psi(gN)=\psi(hN)\quad (\because \phi(g)=\psi(gN),\phi(h)=\psi(hN))$$
-したがって, $\psi$ はwell-definedである.
-
+したがって, $\psi$ はwell-definedである.  
 **$\psi$ は準同型である**  
 $g,h\in G$ なら, 
 $$
@@ -27,8 +22,7 @@ $$
 &=\psi(gN)\psi(hN)
 \end{align*}
 $$
-なので,  $\psi$ は準同型である.
-
+なので,  $\psi$ は準同型である.  
 **$\psi: G/N\to H$ は単射である**  
 $G/N$ の単位元は $N$.  
 $$\begin{align*}
@@ -37,7 +31,6 @@ $$\begin{align*}
 &=\mathrm{Ker}(\phi)
 \end{align*}$$
 すなわち $\mathrm{Ker}(\psi)=N=\{1_{G/N}\}$ となるので, $\psi$ は単射である.  
-
 **$\mathrm{Im}(\phi)=\mathrm{Im}(\psi)$ である**  
 任意の $y\in \mathrm{Im}(\phi)$ に対して, $y=\phi(g)$ となる $g\in G$ がある.
 定義より $y=\phi(g)=\psi(gN)$ なので, $y\in \psi(gN)$.
@@ -72,4 +65,24 @@ $$ (hn)^{-1}=n^{-1}h^{-1}\in Nh^{-1}=h^{-1}N\subset HN$$
 となるので, $HN$ は逆元についても閉じている. したがって, $HN$ は $G$ の部分群である.  
 $N$ は正規部分群なので $n'=hnh^{-1}$ とおくと $n' \in N$ であり, $hn=n'h\in Nh$ となる. これがすべての $n$ について成り立つので $hN\subset Nhである. $  
 同様に $n'h=hn\in hN$ がすべての $n$ に対して成り立つので $Nh\subset hN$ である. $hN\subset Nh$ かつ $Nh\subset hN$ であることから $hN=Nh$ となり, $HN=NH$ である.  
-(2) $H$ から $HN/N$ への自然な写像は全射準同型で, その核は $H\cap N$ である. よって $H\cap N\lhd H$ であり, 第一同型定理より $H/H\cap N\cong HN/N$ となる.　□
+(2) $h\in H$ として写像 $\phi(H)\to HN/N$ を $\phi(h)=hN$ と定義する. 任意の $h\in H$ に対して $hN\in HN/N$ なので, $\phi$ はwell-definedである.  
+$h_1,h_2\in H$ とすると, 
+$$\phi(h_1N)\phi(h_2N)=(h_1N)(h_2N)=(h_1h_2)N=\phi(h_1h_2)$$
+なので $\phi$ は準同型である.  
+$HN/N$ の任意の元は $hN$ で表され, $h\in H$ であるから $\phi$ は全射である. 以上より, $H$ から $HN/N$ への自然な写像 $\phi:H\to HN/N$ は全射準同型である.  
+$HN/N$ の単位元は $N$ であるから, $\phi$ の核は 
+$$\mathrm{Ker}(\phi)=\{h\in H\mid \phi(h)=hN=N\}$$
+であり, $h \in N$ となる. したがって $\mathrm{Ker}(\phi)=H\cap N$ である.  
+$\phi:H\to HN/N$ は準同型であるから, $\mathrm{Ker}(\phi)$ は $H$ の正規部分群となる. よって $\mathrm{Ker}(\phi)=H\cap N\lhd H$ であり, 第一同型定理より $H/H\cap N\cong HN/N$ となる.　□
+
+$G$ を群, $H,N\subset G$ を部分群, $N\lhd G,\quad H\cap K=\{1_G\}$ とすると, $HK\subset G$ は部分群で, 写像 $H\times N\ni (h,n)\mapsto gn \in HN$ は全単射である.  
+$HN$ は必ずしも $H,N$ の直積ではないが, $H,N$ の**半直積**という. $G=HN$ なら, $G=N\rtimes H$ という記号を使う. $G=N\rtimes H$ なら, $G/N\cong H$ である. $G$ が $H$ を正規部分群とするとき半直積であるためには, 準同型 $r:G/N\to G$ で $G/N\to G\to G/N$ が恒等写像となることと同値である.
+
+>**定理（第三同型定理）** $G$ を群, $N\subset N'$ を $G$ の正規部分群とするとき, 次の(1),(2)が成り立つ.  
+(1) 準同型 $\phi:G/N\to G/N'$ で $\phi(xN)=xN'$ となるものがある.  
+(2) $N'/N\lhd G/N$ であり，$(G/N)/(N'/N)\cong G/N'$.
+
+**証明** 　(1) $x\in G, y\in N$ なら, $N\subset N'$ なので, $xyN'=xN'$ である. よって, $\phi(xN)=xN'$ とおくと, $\phi$ は $G/N$ から $G/N'$ へのwell-definedな写像になる. $\phi$ が準同型であることは明らかである.  
+(2) $\mathrm{Ker}(\phi)=N'/N$ なので, $N'/N\lhd G/N$ であり, 準同型定理より(2)を得る.　□
+
+準同型 $G/N\to G/N'$ を自然な準同型という.
