@@ -78,11 +78,14 @@ $\phi:H\to HN/N$ は準同型であるから, $\mathrm{Ker}(\phi)$ は $H$ の�
 $G$ を群, $H,N\subset G$ を部分群, $N\lhd G,\quad H\cap K=\{1_G\}$ とすると, $HK\subset G$ は部分群で, 写像 $H\times N\ni (h,n)\mapsto gn \in HN$ は全単射である.  
 $HN$ は必ずしも $H,N$ の直積ではないが, $H,N$ の**半直積**という. $G=HN$ なら, $G=N\rtimes H$ という記号を使う. $G=N\rtimes H$ なら, $G/N\cong H$ である. $G$ が $H$ を正規部分群とするとき半直積であるためには, 準同型 $r:G/N\to G$ で $G/N\to G\to G/N$ が恒等写像となることと同値である.
 
->**定理（第三同型定理）** $G$ を群, $N\subset N'$ を $G$ の正規部分群とするとき, 次の(1),(2)が成り立つ.  
+>**定理（第三同型定理）** $G$ を群, $N,N'$を $G$ の正規部分群であり $N\subset N'$ とするとき, 次の(1),(2)が成り立つ.  
 (1) 準同型 $\phi:G/N\to G/N'$ で $\phi(xN)=xN'$ となるものがある.  
 (2) $N'/N\lhd G/N$ であり，$(G/N)/(N'/N)\cong G/N'$.
 
-**証明** 　(1) $x\in G, y\in N$ なら, $N\subset N'$ なので, $xyN'=xN'$ である. よって, $\phi(xN)=xN'$ とおくと, $\phi$ は $G/N$ から $G/N'$ へのwell-definedな写像になる. $\phi$ が準同型であることは明らかである.  
+**証明** 　(1) $x\in G, y\in N$ なら, $N\subset N'$ なので, $y\in N'$ であり, $xyN'=xN'$ である. よって, $\phi(xN)=xN'$ とおくと, $\phi$ は $G/N$ から $G/N'$ へのwell-definedな写像になる.  
+$g_1,g_2\in G$ に対して
+$$\phi(g_1N)\phi(g_2N)=(g_1N')(g_2N')=(g_1g_2)N'=\phi(g_1g_2N)$$
+なので, $\phi$ は準同型である.  
 (2) $\mathrm{Ker}(\phi)=N'/N$ なので, $N'/N\lhd G/N$ であり, 準同型定理より(2)を得る.　□
 
 準同型 $G/N\to G/N'$ を自然な準同型という.
