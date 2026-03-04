@@ -34,7 +34,7 @@ $x-z=(z-y)+(y-z)=(a+b)n$ も $n$ で割り切れる.
 したがって, $x\equiv y\;\mathrm{mod}\,n$ は同値関係である.
 
 **部分群による同値関係**
- $G$ を群, $H\subset G$ を部分群とする. $x, y \in G$ に対し, $x^{−1}y \in H$ であるとき $x \sim y$ と定義する. 
+ 　$G$ を群, $H\subset G$ を部分群とする. $x, y \in G$ に対し, $x^{−1}y \in H$ であるとき $x \sim y$ と定義する. 
 $x \in G$ なら $x^{−1}x = 1_G \in H$ なので, $x \sim x$ である.（反射律）  
 $x, y \in G$ で $x \sim y$ なら $x^{−1}y \in H$ だが, $H$ は部分群なので, $(x^{−1}y)^{−1} = y^{−1}x \in H$ となり, 
 $y \sim x$ である.（対称律）  
@@ -115,19 +115,19 @@ $\mathbb{Z}/n\mathbb{Z}$ の記号と一致する.
  > 1. $|G/H|=|H\backslash G|$ である.（両方とも $\infty$ ということもある）
  > 1. 任意の $g\in G$ に対し, $|gH|=|Hg|=|H|$.
 
-**証明**
-1. $G/H$ から $H\backslash G$ への写像 $\alpha$ を $\alpha(gH)=Hg^{-1}$ と定義する. まず $\alpha$ がwell-definedであることを示す.  
+**証明**  
+(1) $G/H$ から $H\backslash G$ への写像 $\alpha$ を $\alpha(gH)=Hg^{-1}$ と定義する. まず $\alpha$ がwell-definedであることを示す.  
 $g_1,g_2\in G, h\in H$とすると, 群の閉性により $hH= H$ であり, $g_1hH=g_1H$ となる. ここで $g_1h=g_2$ とおくと, $g_2H=g_1H$ である. また $h^{-1}\in H$ であるから, $H=Hh^{-1}$ となり,  
-$$ Hg_1^{-1}=(Hh^{-1})g_1^{-1}=H(h^{-1}g_1^{-1})$$  
-である.  
-$$ h^{-1}g_1^{-1}=(g_1h)^{-1}=g_2^{-1} $$  
+$$Hg_1^{-1}=(Hh^{-1})g_1^{-1}=H(h^{-1}g_1^{-1})$$
+である.
+$$ h^{-1}g_1^{-1}=(g_1h)^{-1}=g_2^{-1} $$
 なので, $Hg_1^{-1}=Hg_2^{-1}$ となる. すなわち,
 $$g_1H=g_2H \Rightarrow \alpha(g_1H)=\alpha(g_2H)$$
 であるから, $\alpha$ はwell-definedである. 
 同様にして $\beta(Hg)=g^{-1}H$ という写像 $H\backslash G\to G/H$ についても, 
 $Hg=Hhg,\: g^{-1}H=(hg)^{-1}H$が成り立つので, well-definedである. $\alpha,\:\beta$ は互いの逆写像になるので, いずれも全単射であり, したがって 
-$|G/H|=|H\backslash G|$である.
-1. $H$ から $gH$ への写像 $\phi$ を $H\ni h\mapsto gh\in H$ と定義する. $h_1, h_2 \in H,\:gh_1=gh_2$ なら $g^{-1}$ を左からかけ, $h_1=h_2$ である. よって, $\phi$ は単射である. $\phi$ は明らかに全射なので全単射であり, したがって $|gH|=|H|$である. $|Hg|=|H|$ も同様である.
+$|G/H|=|H\backslash G|$である.  
+(2) $H$ から $gH$ への写像 $\phi$ を $H\ni h\mapsto gh\in H$ と定義する. $h_1, h_2 \in H,\:gh_1=gh_2$ なら $g^{-1}$ を左からかけ, $h_1=h_2$ である. よって, $\phi$ は単射である. $\phi$ は明らかに全射なので全単射であり, したがって $|gH|=|H|$である. $|Hg|=|H|$ も同様である.
 　□
 
 **定義** $\quad G/H, H\backslash G$ の元の個数を $(G:H)$ と書き, $H$ の $G$ における指数（剰余類の個数）という.
