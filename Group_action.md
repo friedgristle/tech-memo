@@ -14,31 +14,22 @@ $G$ が $X$ に左から作用し, $x,y\in X,g\in G, gx=y$ なら, $g$ により
 
 **群の作用2**　$G=\mathfrak{S}_n, X=\{1,...,n\}$ とする. $G$ の元は $X$ から $X$ への全単射からなる. $\sigma(i)\in G, i\in X$ に対して, $\sigma(i)$ を写像としての値とすると, $\sigma, \tau \in \mathfrak{S}_n$ に対し $(\sigma\tau)(i)=\sigma(\tau(i))$ が $G$ の積の定義だったので, $(\sigma,\tau)\mapsto \sigma(i)$ は左作用である.
 
-**群の作用3**（線形作用）　$G$を群, $\rho:G\to \mathrm{GL}_n(\mathbb{R})$ を準同型とする. $\mathbb{R}^n$ を, 実数を成分に持つ $n$次元列ベクトルのなす実ベクトル空間とする. $g\in G$ なら $\rho(g)$ は $n\times n$ 行列なので, $\bm{x}\in \mathbb{R}^n$に対して積 $\rho(g)\bm{x}$ が定義できる. $\rho$ は準同型なので, $\rho(1_G)=I_n$ である. したがって, $\rho(1_G)\bm{x}=\bm{x}$ となる. また $g,h\in G$ なら, 行列に関しては結合法則が成り立つので, $\rho(g)(\rho(h)\bm{x})=(\rho(g)\rho(h))\bm{x}=\rho(gh)\bm{x}$となる. したがって, $(g,\bm{x})\mapsto \rho(g)\bm{x}$ は左作用である. 各 $\rho(g)$ は線形写像なので, このような作用のことを
+**群の作用3**（線形作用）　$G$を群, $\rho:G\to \mathrm{GL}_n(\mathbb{R})$ を準同型とする. $\mathbb{R}^n$ を, 実数を成分に持つ $n$次元列ベクトルのなす実ベクトル空間とする. $g\in G$ なら $\rho(g)$ は $n\times n$ 行列なので, $\bm{x}\in \mathbb{R}^n$に対して積 $\rho(g)\bm{x}$ が定義できる. $\rho$ は準同型なので, $\rho(1_G)=I_n$ である. したがって, $\rho(1_G)\bm{x}=\bm{x}$ となる. また $g,h\in G$ なら, 行列に関しては結合法則が成り立つので, $\rho(g)(\rho(h)\bm{x})=(\rho(g)\rho(h))\bm{x}=\rho(gh)\bm{x}$となる. したがって, $(g,\bm{x})\mapsto \rho(g)\bm{x}$ は左作用である. 各 $\rho(g)$ は線形写像なので, このような作用のことを**線形な作用**という.  
+$G$ が $\mathrm{GL}_n(\mathbb{R})$ の部分群なら, 包含写像 $G\to \mathrm{GL}_n(\mathbb{R})$ は準同型である. 
+よって, $G$ は $\mathbb{R}^n$ に作用する. 特に, $\mathrm{O}(n), \mathrm{OS}(n)$ は $\mathbb{R}^n$ に作用する.  
+同様に準同型 $G\to \mathrm{GL}_n(\mathbb{C})$ があれば, $G$ は $\mathbb{C}^n$ に左から作用する. これも線形作用という.
 
+特に, 直交群 $\mathrm{O}(2)$ について考察する. $\theta \in \mathbb{R}$ に対し,
+$$ R_\theta= \begin{pmatrix}\cos{\theta}& -\sin{\theta}\\ \sin{\theta} & \cos{\theta}\end{pmatrix}$$
+とおく. $R_\theta\in \mathrm{O}(2)$ であることは計算でわかる.　$R_\theta$ により, 列ベクトル $[1,0],[1,0]$ はそれぞれ $[\cos{\theta},\sin{\theta}], [-\sin{\theta}, \cos{\theta}]$ に移る. したがって, $R_\theta$ は角度 $\theta$ の回転である.
 
----------------------
+**補題**　$\mathrm{SO}(2)=\{R_\theta \mid \theta\in \mathbb{R}\}$.  
+＜証明＞　$g=\begin{pmatrix}a&b\\c&d\end{pmatrix}\in \mathrm{SO}(2)$ なら, $a^2+c^2=1,b^2+d^2=1,ab+cd=0$ となる. したがって,  $a=\cos{\theta},c=\sin{\theta}$ となる $\theta\in\mathbb{R}$ がある. $ab+cd=0$ なので, $b=-t\sin{\theta},d=t\cos{\theta}$ となる $t\in\mathbb{R}$ がある. 
+$\det g=1$ なので, $t=1$ となり, $g=R_\theta$ である.　□  
+この補題は $\mathbb{R}^2$ （平面）の回転はずべて $\mathrm{SO}(2)$ の作用で得られることを主張している.
 
-$\mathrm{Stab}_G(x)=\{g\in G \mid gx=x\} =H$ とする.
-
-$1_G x=x$ なので $1_G\in H$  
-$a,b\in H$ として, $(ab)x=a(bx)=ax=x$なので $ab\in H$  
-$ax=x$ の両辺左から $a^{-1}$ をかけると $x=a^{-1}x$ なので $a^{-1}\in H$  
-以上より $\mathrm{Stab}_G(x)$ は $G$ の部分群である.
-
-
-### 問題1
-群 $G=\mathbb{Z}$ を、集合 $X=\mathbb{R}$ に
-$$ n\cdot x=x+n $$
-によって作用させる.
-
-安定化群 $\mathrm{Stab}(x)$ を求める.  
-定義より $\mathrm{Stab}(x)=\{n\in \mathbb{Z}\mid n\cdot x=x+n=x\}=\{0\}$
-
-群 $G$ が集合 $X$ に作用している.  
-関係 $x\sim y \Longleftrightarrow \exist g\in G ,\; g\cdot x=y $ について、この同値類は軌道と一致する. 
-この同値関係は、$x$ を $y$ に移す $g\in G$が存在する, ということを意味する   
-軌道の定義は $\mathrm{Orb}_G(x)=\{gx\mid g\in G\}$  
-
-
-
+**命題**　(1) $g\in\mathrm{O}(n)$ なら， $\det g=\pm 1$. $\quad$(2) $(\mathrm{O}(n):\mathrm{SO}(n))=2$.  
+＜証明＞　(1) $g\in \mathrm{O}(n)$ なら, ${}^tgg=I_n$ の両辺の行列式を考え, $(\det g)^2=1$. よって, $\det{g}=\pm 1$.  
+(2) 行列式の値が-1になる $\mathrm{O}(n)$ の元として
+$$r=\begin{pmatrix}\begin{matrix}1&0\\0&-1\end{matrix}&0\\0&I_{n-2}\end{pmatrix}$$
+とおく.
