@@ -30,11 +30,16 @@ $$ R_\theta= \begin{pmatrix}\cos{\theta}& -\sin{\theta}\\ \sin{\theta} & \cos{\t
 $${}^tR_\theta R_\theta 
 =\begin{pmatrix}\cos\theta & \sin\theta\\-\sin\theta & \cos\theta\end{pmatrix}
 \begin{pmatrix}\cos{\theta}& -\sin{\theta}\\ \sin{\theta} & \cos{\theta}\end{pmatrix}=I_2$$
-であり, ${}^tR_\theta=R_\theta^{-1}$ なので $R_\theta\in \mathrm{O}(2)$ である.　$R_\theta$ により, 列ベクトル $[1,0],[1,0]$ はそれぞれ $[\cos{\theta},\sin{\theta}], [-\sin{\theta}, \cos{\theta}]$ に移る. したがって, $R_\theta$ は角度 $\theta$ の回転である.
+であり, ${}^tR_\theta=R_\theta^{-1}$ なので $R_\theta\in \mathrm{O}(2)$ である.　$R_\theta$ により, 列ベクトル $[1,0],[0,1]$ はそれぞれ $[\cos{\theta},\sin{\theta}], [-\sin{\theta}, \cos{\theta}]$ に移る. したがって, $R_\theta$ は角度 $\theta$ の回転である.
 
 **補題**　$\mathrm{SO}(2)=\{R_\theta \mid \theta\in \mathbb{R}\}$.  
-＜証明＞　$g=\begin{pmatrix}a&b\\c&d\end{pmatrix}\in \mathrm{SO}(2)$ なら, $a^2+c^2=1,b^2+d^2=1,ab+cd=0$ となる. したがって,  $a=\cos{\theta},c=\sin{\theta}$ となる $\theta\in\mathbb{R}$ がある. $ab+cd=0$ なので, $b=-t\sin{\theta},d=t\cos{\theta}$ となる $t\in\mathbb{R}$ がある. 
-$\det g=1$ なので, $t=1$ となり, $g=R_\theta$ である.　□  
+＜証明＞　$g=\begin{pmatrix}a&b\\c&d\end{pmatrix}\in \mathrm{SO}(2)$ なら, ${}^tgg=I_2$ なので,
+$$\begin{pmatrix}a&c\\b&d\end{pmatrix}
+\begin{pmatrix}a&b\\c&d\end{pmatrix}
+=\begin{pmatrix}a^2+c^2&ab+cd\\ ab+cd&b^2+d^2 \end{pmatrix}=\begin{pmatrix}1&0\\0&1\end{pmatrix}$$
+であり, $a^2+c^2=1,b^2+d^2=1,ab+cd=0$ となる. したがって,  $a=\cos{\theta},c=\sin{\theta}$ となる $\theta\in\mathbb{R}$ がある.  
+$ab+cd=0$ なので, $b=-t\sin{\theta},d=t\cos{\theta}$ となる $t\in\mathbb{R}$ がある.  
+$\det g=1$ なので, $ad-bc=\cos\theta\cdot t\cos\theta-(-t\cos\theta)\sin\theta=t=1$ となり, $a=\cos\theta,\,b=-\sin\theta,\,c=\sin\theta,\,d=\cos\theta$. よって  $g=R_\theta$ である.　□  
 この補題は $\mathbb{R}^2$ （平面）の回転はずべて $\mathrm{SO}(2)$ の作用で得られることを主張している.
 
 **命題**　(1) $g\in\mathrm{O}(n)$ なら， $\det g=\pm 1$. $\quad$(2) $(\mathrm{O}(n):\mathrm{SO}(n))=2$.  
@@ -49,3 +54,24 @@ $r\in \mathrm{O}(n), \det r=-1$ であることはすぐにわかるので, 準�
 $$D_n =\{g\in \mathrm{O}(2) \mid gP_n=P_n\}$$
 とおき, **二面体群**という. なお, $gP_n=P_n$ とは $g$ が集合 $P_n$ を $P_n$ に移すという意味であり, すべての $x\in P_n$ に対して $g\bm{x}=\bm{x}$ となるという意味ではない.  
 $t=R_{2\pi/n}$ とおく. また$I_2$ のことを $1$ と書く.
+
+> **命題** 　(1) 関係式 $t^n=1, r^2=1, rtr=t^{-1}$ が成り立つ.  
+(2) $|D_n|=2n, \; D_n=\{1,t,\cdots,t^{n-1},r,rt,\cdots,rt^{n-1}\}$ である.  
+(3) $rt^i \;(i=0,\cdots,n-1)$ の位数は2である.
+
+**証明**　(1) 最初の二つの関係式は明らかである. $\theta\in \mathbb{R}$ なら
+$$\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}
+\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+=\begin{pmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{pmatrix}=R_\theta^{-1}$$
+なので, $\theta=2\pi/n$ とすれば $rtr=t^{-1}$ となる.  
+(2) まず$D_n=\{1,t,\cdots,t^{n-1},r,rt,\cdots,rt^{n-1}\}$ であることを示す. $P_n$ の頂点を $[1,0]$ から反時計回りに $A_1=[1,0],\cdots, An$ とする. $t$ は角度 $2\pi/n$ の回転なので, $A_1\to A_2\to A_3\to\cdots\to A_n\to A_1$ と移す. したがって, $tP_n=P_n$ である. $r$ は平面の点を $x$ 軸に関して対称な点に移すので, $rP_n=Pn$ である.  
+$g\in D_n$ で $\det g=-1$ なら, $r\in D_n, \det(rg)=1$ なので $rg\in\mathrm{SO}(2)\cap D_n$ である. $h=rg$ とおくと, $r^2=1$ なので, $g=rh$ である.　$R_\theta\in \mathrm{SO}(2)\cap D_n$ なら $R_\theta A_1$ は $P_n$ の頂点でなければならないので,　$0\leq k \leq n-1$ があり, $R_\theta A_1=A_{k+1}=R_{2k\pi/n}A_1$ となる. すると, $\cos\theta=\cos{\frac{2k\pi}{n}}, \sin\theta=\sin{\frac{2k\pi}{n}}$なので, $R_\theta=R_{2k\pi/n}=t^k$ である. よって, $D_n=\{1,t,\cdots,t^{n-1},r,rt,\cdots,rt^{n-1}\}$ である.  
+$0\leq i<j\leq n-1$ なら, $t^iA_1=A_{i+1},\,t^jA_1=A_{j+1}$ で $A_{i+1}\neq A_{j+1}$ なので, $t^i\neq t^j$ である. $t^i=t-j$ と $rt^i=rt^j$ は同値なので, $r,\cdots,rt^{n-1}$ はすべて異なる. $\det t^k=1,\det(rt^k)=-1$ なので, $\{1,\cdots,t^{n-1},r,\cdots,rt^{n-1}\}$ はすべて異なる. したがって, $|D_n|=2n$ である.  
+任意の $i$ に対し $rt^irt^i=t^{-i}t^i=1$ となるので, (3) が従う.　□
+
+**群の作用4**　$G$ を群とする. $X=G$ とし, $g\in G, x\in X=G$ に対して, $gx\in G=X$ を $G$ の元としての積とする.
+
+定義4.1.1(1)は単位元の定義から、(2)は群$G$での結合法則から成り立つ. したがって, これは $G$ の $G$ 自身への左作用である. 右からの積を考えると, $G$ から $G$ への右作用を得る.
+
+群 $G$ が有限集合 $X=\{x_1,\cdots,x_n\}$ に左から作用するとする. このとき, $g\cdot x_i=x_{\rho(g)(i)}\;(i=1,\cdots,n)$ とおく. $\rho(g)$ は $\{1,\cdots,n\}$ の置換を引き起こし, 写像 $\rho:G\to \mathfrak{S}_n$ を定める.
