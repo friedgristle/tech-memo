@@ -21,7 +21,7 @@ $g\in G$ なら $\rho(g)$ は $n\times n$ 行列なので, $\bm{x}\in \mathbb{R}
 したがって, $(g,\bm{x})\mapsto \rho(g)\bm{x}$ は左作用である.  
 各 $\rho(g)$ は線形写像なので, このような作用のことを**線形な作用**という.  
 $G$ が $\mathrm{GL}_n(\mathbb{R})$ の部分群なら, 包含写像 $G\to \mathrm{GL}_n(\mathbb{R})$ は準同型である. 
-よって, $G$ は $\mathbb{R}^n$ に作用する. 特に, $\mathrm{O}(n), \mathrm{OS}(n)$ は $\mathbb{R}^n$ に作用する.  
+よって, $G$ は $\mathbb{R}^n$ に作用する. 特に, $\mathrm{O}(n), \mathrm{SO}(n)$ は $\mathbb{R}^n$ に作用する.  
 同様に準同型 $G\to \mathrm{GL}_n(\mathbb{C})$ があれば, $G$ は $\mathbb{C}^n$ に左から作用する. これも線形作用という.
 
 特に, 直交群 $\mathrm{O}(2)$ について考察する. $\theta \in \mathbb{R}$ に対し,
