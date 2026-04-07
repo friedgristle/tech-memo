@@ -75,7 +75,8 @@ $$\begin{pmatrix}1&0\\0&-1\end{pmatrix}
 =\begin{pmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{pmatrix}=R_\theta^{-1}$$
 なので, $\theta=2\pi/n$ とすれば $rtr=t^{-1}$ となる.  
 (2) まず$D_n=\{1,t,\cdots,t^{n-1},r,rt,\cdots,rt^{n-1}\}$ であることを示す. $P_n$ の頂点を $[1,0]$ から反時計回りに $A_1=[1,0],\cdots, An$ とする. $t$ は角度 $2\pi/n$ の回転なので, $A_1\to A_2\to A_3\to\cdots\to A_n\to A_1$ と移す. したがって, $tP_n=P_n$ である. $r$ は平面の点を $x$ 軸に関して対称な点に移すので, $rP_n=P_n$ である.  
-$g\in D_n$ で $\det g=-1$ なら, $r\in D_n, \det(rg)=1$ なので $rg\in\mathrm{SO}(2)\cap D_n$ である. $h=rg$ とおくと, $r^2=1$ なので, $g=rh$ である.　$R_\theta\in \mathrm{SO}(2)\cap D_n$ なら $R_\theta A_1$ は $P_n$ の頂点でなければならないので,　$0\leq k \leq n-1$ があり, $R_\theta A_1=A_{k+1}=R_{2k\pi/n}A_1$ となる. すると, $\cos\theta=\cos{\frac{2k\pi}{n}}, \sin\theta=\sin{\frac{2k\pi}{n}}$なので, $R_\theta=R_{2k\pi/n}=t^k$ である. よって, $D_n=\{1,t,\cdots,t^{n-1},r,rt,\cdots,rt^{n-1}\}$ である.  
+$g\in D_n$ で $\det g=-1$ なら, $r\in D_n$ は $\det r=-1$ なので, $\det(rg)=(\det r)(\det g)=1$ となり $rg\in\mathrm{SO}(2)\cap D_n$ である. $h=rg$ とおいて両辺左から $r$ をかけると $rh=r^2g$ であり, $r^2=1$ なので, $g=rh$ である.  
+$R_\theta\in \mathrm{SO}(2)\cap D_n$ なら $R_\theta A_1$ は $P_n$ の頂点でなければならないので,　$0\leq k \leq n-1$ があり, $R_\theta A_1=A_{k+1}=R_{2k\pi/n}A_1$ となる. すると, $\cos\theta=\cos{\frac{2k\pi}{n}}, \sin\theta=\sin{\frac{2k\pi}{n}}$なので, $R_\theta=R_{2k\pi/n}=t^k$ である. よって, $D_n=\{1,t,\cdots,t^{n-1},r,rt,\cdots,rt^{n-1}\}$ である.  
 $0\leq i<j\leq n-1$ なら, $t^iA_1=A_{i+1},\,t^jA_1=A_{j+1}$ で $A_{i+1}\neq A_{j+1}$ なので, $t^i\neq t^j$ である. $t^i=t-j$ と $rt^i=rt^j$ は同値なので, $r,\cdots,rt^{n-1}$ はすべて異なる. $\det t^k=1,\det(rt^k)=-1$ なので, $\{1,\cdots,t^{n-1},r,\cdots,rt^{n-1}\}$ はすべて異なる. したがって, $|D_n|=2n$ である.  
 任意の $i$ に対し $rt^irt^i=t^{-i}t^i=1$ となるので, (3) が従う.　□
 
