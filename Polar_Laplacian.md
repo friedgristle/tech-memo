@@ -58,7 +58,7 @@ $$\frac{\partial\theta}{\partial z}=-\frac{\sin\theta}{r}$$
 以上をまとめると  
 ||$x$|$y$|$z$|
 |:---:|:---:|:---:|:---:|
-|$r$ | $\sin\theta\cos\phi$ | $\sin\theta\sin\phi$ | $\cos\phi$ |
+|$r$ | $\sin\theta\cos\phi$ | $\sin\theta\sin\phi$ | $\cos\theta$ |
 |$\theta$ | $\cos\theta\cos\phi/r$ | $\cos\theta\sin\phi/r$ | $-\sin\theta/r$
 |$\phi$ | $-\sin\phi/r\sin\theta$ | $\cos\phi/r\sin\theta$ | 0
 
@@ -106,13 +106,13 @@ $$\begin{align*}\frac{\partial\theta}{\partial x}\frac{\partial}{\partial\theta}
 &=-\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}\frac{\partial f}{\partial\theta}+\frac{cos^2\theta\cos^2\phi}{r^2}\frac{\partial^2 f}{\partial \theta^2}\end{align*}$$
 
 $$\begin{align*}\frac{\partial\theta}{\partial x}\frac{\partial}{\partial\theta}\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial\phi}&=\frac{\cos\theta\cos\phi}{r}\frac{\partial}{\partial\theta}\Bigl(-\frac{\sin\phi}{r\sin\theta}\frac{\partial f}{\partial\phi}\Bigr)\\
-&=\frac{\cos^2\theta\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\theta}-\frac{\sin\phi\cos\theta\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial r}\end{align*}$$
+&=\frac{\cos^2\theta\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}-\frac{\sin\phi\cos\theta\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\theta\partial\phi}\end{align*}$$
 
 $$\begin{align*}\frac{\partial \phi}{\partial x}\frac{\partial}{\partial\phi}\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}&=-\frac{\sin\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(\sin\theta\cos\phi\frac{\partial f}{\partial r} \Bigr)\\
 &=\frac{\sin^2\phi}{r}\frac{\partial f}{\partial r}-\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial\phi\partial r}\end{align*}$$
 
 $$\begin{align*}\frac{\partial \phi}{\partial x}\frac{\partial}{\partial\phi}\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial\theta}&=-\frac{\sin\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(\frac{\cos\theta\cos\phi}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
-&=\frac{\cos\theta\sin^2\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}-\frac{\sin\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial\theta}\end{align*}$$
+&=\frac{\cos\theta\sin^2\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}-\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial\theta}\end{align*}$$
 
 $$\begin{align*}\frac{\partial \phi}{\partial x}\frac{\partial}{\partial\phi}\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial\phi}&=-\frac{\sin\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(-\frac{\sin\phi}{r\sin\theta}\frac{\partial f}{\partial\phi}\Bigr)\\
 &=\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}+\frac{\sin^2\phi}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\end{align*}$$
@@ -150,14 +150,14 @@ $$\begin{align*}\frac{\partial\theta}{\partial y}\frac{\partial}{\partial\theta}
 $$\begin{align*}\frac{\partial\theta}{\partial y}\frac{\partial}{\partial\theta}\frac{\partial\theta}{y}\frac{\partial f}{\partial\theta}&=\frac{\cos\theta\sin\phi}{r}\frac{\partial}{\partial\theta}\Bigl(\frac{\cos\theta\sin\phi}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
 &=-\frac{\sin\theta\cos\theta\sin^2\phi}{r^2}\frac{\partial f}{\partial\theta}+\frac{\sin^2\phi\cos^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta^2}\end{align*}$$
 $$\begin{align*}\frac{\partial\theta}{\partial y}\frac{\partial}{\partial\theta}\frac{\partial\phi}{y}\frac{\partial f}{\partial\phi}&=\frac{\cos\theta\sin\phi}{r}\frac{\partial}{\partial\theta}\Bigl(\frac{\cos\phi}{r\sin\theta}\frac{\partial f}{\partial\phi}\Bigr)\\
-&=-\frac{\sin\phi\cos^2\theta\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi^2}\end{align*}$$
+&=-\frac{\sin\phi\cos^2\theta\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\theta\partial\phi}\end{align*}$$
 
 $$\begin{align*}\frac{\partial\phi}{\partial y}\frac{\partial}{\partial\phi}\frac{\partial r}{y}\frac{\partial f}{\partial r}&=\frac{\cos\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(\sin\theta\sin\phi\frac{\partial f}{\partial r}\Bigr)\\
 &=\frac{\cos^2\phi}{r}\frac{\partial f}{\partial r}+\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial\phi\partial r}\end{align*}$$
 $$\begin{align*}\frac{\partial\phi}{\partial y}\frac{\partial}{\partial\phi}\frac{\partial\theta}{y}\frac{\partial f}{\partial\theta}&=\frac{\cos\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(\frac{\cos\theta\sin\phi}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
-&=\frac{\cos\theta\cos^2\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}\end{align*}$$
+&=\frac{\cos\theta\cos^2\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial\theta}\end{align*}$$
 $$\begin{align*}\frac{\partial\phi}{\partial y}\frac{\partial}{\partial\phi}\frac{\partial\phi}{y}\frac{\partial f}{\partial\phi}&=\frac{\cos\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(\frac{\cos\phi}{r\sin\theta}\frac{\partial f}{\partial\phi}\Bigr)\\
-&=-\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}+\frac{\cos^2\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}\end{align*}$$
+&=-\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}+\frac{\cos^2\phi}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\end{align*}$$
 
 $z$ について
 $$\frac{\partial f}{\partial z}
@@ -178,19 +178,135 @@ $$\frac{\partial^2f}{\partial z^2}=\frac{\partial}{\partial z}\Bigl(\frac{\parti
 +\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial \theta}
 +\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial \phi}\Bigr)$$
 
-これに $\partial r/\partial z=\cos\phi,\,\partial\theta/\partial z=-\sin\theta/r,\,\partial\phi/\partial z=0$ を代入すると
+これに $\partial r/\partial z=\cos\theta,\,\partial\theta/\partial z=-\sin\theta/r,\,\partial\phi/\partial z=0$ を代入すると
 
-$$\begin{align*}\frac{\partial r}{\partial z}\frac{\partial}{\partial r}\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}&=\cos\phi\frac{\partial}{\partial r}\Bigl(\cos\phi\frac{\partial f}{\partial r}\Bigr)\\
-&=\cos^2\phi\frac{\partial^2 f}{\partial r^2}\end{align*}$$
-$$\begin{align*}\frac{\partial r}{\partial z}\frac{\partial}{\partial r}\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial\theta}&=\cos\phi\frac{\partial}{\partial r}\Bigl(-\frac{\sin\theta}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
-&=\frac{\sin\theta\cos\phi}{r^2}\frac{\partial f}{\partial\theta}-\frac{\sin\theta\cos\phi}{r}\frac{\partial^2 f}{\partial r\partial\theta}\end{align*}$$
+$$\begin{align*}\frac{\partial r}{\partial z}\frac{\partial}{\partial r}\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}&=\cos\theta\frac{\partial}{\partial r}\Bigl(\cos\theta\frac{\partial f}{\partial r}\Bigr)\\
+&=\cos^2\theta\frac{\partial^2 f}{\partial r^2}\end{align*}$$
+$$\begin{align*}\frac{\partial r}{\partial z}\frac{\partial}{\partial r}\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial\theta}&=\cos\theta\frac{\partial}{\partial r}\Bigl(-\frac{\sin\theta}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
+&=\frac{\sin\theta\cos\theta}{r^2}\frac{\partial f}{\partial\theta}-\frac{\sin\theta\cos\theta}{r}\frac{\partial^2 f}{\partial r\partial\theta}\end{align*}$$
 $$\frac{\partial r}{\partial z}\frac{\partial}{\partial r}\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial\phi}=0$$
 
-$$\begin{align*}\frac{\partial\theta}{\partial z}\frac{\partial}{\partial \theta}\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}&=-\frac{\sin\theta}{r}\frac{\partial}{\partial \theta}\Bigl(-\frac{\sin\theta}{r}\frac{\partial f}{\partial r}\Bigr)\\
-&=\frac{\sin\theta\cos\theta}{r^2}\frac{\partial f}{\partial r}+\frac{\sin^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta\partial r}\end{align*}$$
+$$\begin{align*}\frac{\partial\theta}{\partial z}\frac{\partial}{\partial \theta}\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}&=-\frac{\sin\theta}{r}\frac{\partial}{\partial \theta}\Bigl(\cos\theta\frac{\partial f}{\partial r}\Bigr)\\
+&=\frac{\sin^2\theta}{r}\frac{\partial f}{\partial r}-\frac{\sin\theta\cos\theta}{r}\frac{\partial^2 f}{\partial\theta\partial r}\end{align*}$$
 $$\begin{align*}\frac{\partial \theta}{\partial z}\frac{\partial}{\partial \theta}\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial\theta}&=-\frac{\sin\theta}{r}\frac{\partial}{\partial \theta}\Bigl(-\frac{\sin\theta}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
 &=\frac{\sin\theta\cos\theta}{r^2}\frac{\partial f}{\partial\theta}+\frac{\sin^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta^2}\end{align*}$$
 $$\frac{\partial \theta}{\partial z}\frac{\partial}{\partial \theta}\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial\phi}=0$$
 
 $$\frac{\partial\phi}{\partial z}\frac{\partial}{\partial\phi}\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}=\frac{\partial\phi}{\partial z}\frac{\partial}{\partial\phi}\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial\theta}=\frac{\partial\phi}{\partial z}\frac{\partial}{\partial r}\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial\phi}=0$$
 
+
+
+x
+$$\begin{align*}
+\frac{\partial^2f}{x^2}+\frac{\partial^2f}{y^2}+\frac{\partial^2f}{z^2}
+&\\
+=\sin^2\theta\cos^2\phi\frac{\partial^2 f}{\partial r^2}\\
+-\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}\frac{\partial f}{\partial \theta}&+\frac{\sin\theta\cos\theta\cos^2\phi}{r}\frac{\partial^2 f}{\partial r\partial\theta}\\
++\frac{\sin\phi\cos\phi}{r^2}\frac{\partial f}{\partial\phi}
+&-\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial r\partial\phi}\\
++\frac{\cos^2\theta\cos^2\phi}{r}\frac{\partial f}{\partial r}
+&+\frac{\sin\theta\cos\theta\cos^2\phi}{r}\frac{\partial^2 f}{\partial\theta\partial r}\\
+-\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}\frac{\partial f}{\partial\theta}
+&+\frac{cos^2\theta\cos^2\phi}{r^2}\frac{\partial^2 f}{\partial \theta^2}\\
++\frac{\cos^2\theta\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}
+&-\frac{\sin\phi\cos\theta\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\theta\partial\phi}\\
++\frac{\sin^2\phi}{r}\frac{\partial f}{\partial r}
+&-\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial\phi\partial r}\\
++\frac{\cos\theta\sin^2\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}
+&-\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial\theta}\\
++\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}
+&+\frac{\sin^2\phi}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\\
++\sin^2\theta\sin^2\phi\frac{\partial^2 f}{\partial r^2}\\
+-\frac{\sin\theta\sin^2\phi\cos\theta}{r^2}\frac{\partial f}{\partial\theta}
+&+\frac{\sin\theta\cos\theta\sin^2\phi}{r}\frac{\partial^2 f}{\partial r\partial\theta}\\
+-\frac{\sin\phi\cos\phi}{r^2}\frac{\partial f}{\partial\phi}
+&+\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial r\partial\phi}\\
++\frac{\sin^2\phi\cos^2\theta}{r}\frac{\partial f}{\partial r}
+&+\frac{\sin\theta\cos\theta\sin^2\phi}{r}\frac{\partial^2 f}{\partial\theta\partial r}\\
+-\frac{\sin\theta\cos\theta\sin^2\phi}{r^2}\frac{\partial f}{\partial\theta}
+&+\frac{\sin^2\phi\cos^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta^2}\\
+-\frac{\sin\phi\cos^2\theta\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}
+&+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\theta\partial\phi}\\
++\frac{\cos^2\phi}{r}\frac{\partial f}{\partial r}
+&+\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial\phi\partial r}\\
++\frac{\cos\theta\cos^2\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}
+&+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial\theta}\\
+-\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}
+&+\frac{\cos^2\phi}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\\
+
++\cos^2\theta\frac{\partial^2 f}{\partial r^2}\\
++\frac{\sin^2\theta}{r}\frac{\partial f}{\partial\theta}
+&-\frac{\sin\theta\cos\theta}{r}\frac{\partial^2 f}{\partial r\partial\theta}\\
++\frac{\sin\theta\cos\theta}{r^2}\frac{\partial f}{\partial r}
+&+\frac{\sin^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta\partial r}\\
++\frac{\sin\theta\cos\theta}{r^2}\frac{\partial f}{\partial\theta}&+\frac{\sin^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta^2}\end{align*}$$
+
+$$
+=(\sin^2\theta\cos^2\phi+\sin^2\theta\sin^2\phi+\cos^2\theta)\frac{\partial^2 f}{\partial r^2}\\
++\Bigl(
++\frac{\cos^2\theta\cos^2\phi}{r^2}+\frac{\sin^2\phi\cos^2\theta}{r^2}
++\frac{\sin^2\theta}{r^2}
+\Bigr)\frac{\partial^2 f}{\partial \theta^2}\\
++\Bigl(
+\frac{\sin^2\phi}{r^2\sin^2\theta}+\frac{\cos^2\phi}{r^2\sin^2\theta}
+\Bigr)\frac{\partial^2 f}{\partial\phi^2}\\
+
++\Bigl(
+\frac{\cos^2\theta\cos^2\phi}{r}
++\frac{\sin^2\phi}{r}
++\frac{\sin^2\phi\cos^2\theta}{r}
++\frac{\cos^2\phi}{r}
++\frac{\sin^2\theta}{r}
+\Bigr)
+\frac{\partial f}{\partial r}\\
+
++\Bigl(
+-\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}
++\frac{\sin\theta\cos\theta}{r^2}
+-\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}
++\frac{\cos\theta\sin^2\phi}{r^2\sin\theta}\\
+-\frac{\sin\theta\cos\theta\sin^2\phi}{r^2}
++\frac{\cos\theta\cos^2\phi}{r^2\sin\theta}
++\frac{\sin\theta\cos\theta}{r^2}
+-\frac{\sin\theta\sin^2\phi\cos\theta}{r^2}
+\Bigr)
+\frac{\partial f}{\partial \theta}\\
+
++\Bigl(
+\frac{\sin\phi\cos\phi}{r^2}
++\frac{\cos^2\theta\sin\phi\cos\phi}{r^2\sin^2\theta}
++\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\\
+-\frac{\sin\phi\cos\phi}{r^2}
+-\frac{\sin\phi\cos^2\theta\cos\phi}{r^2\sin^2\theta}
+-\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}
+\Bigr)
+\frac{\partial f}{\partial\phi}\\
+
++\Bigl(
+\frac{\sin\theta\cos\theta\cos^2\phi}{r}
++\frac{\sin\theta\cos\theta\cos^2\phi}{r}
++\frac{\sin\theta\cos\theta\sin^2\phi}{r}\\
++\frac{\sin\theta\cos\theta\sin^2\phi}{r}
+-\frac{\sin\theta\cos\phi}{r}-\frac{\sin\theta\cos\theta}{r}
+\Bigr)
+\frac{\partial^2 f}{\partial r\partial\theta}\\
+
++\Bigl(
+-\frac{\sin\phi\cos\theta\cos\phi}{r^2\sin\theta}
+-\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\\
++\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}
++\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}
+\Bigr)
+\frac{\partial^2 f}{\partial\theta\partial\phi}\\
++\Bigl(
+-\frac{\sin\phi\cos\phi}{r}+\frac{\sin\phi\cos\phi}{r}+\frac{\sin\phi\cos\phi}{r}-\frac{\sin\phi\cos\phi}{r}
+\Bigr)
+\frac{\partial^2 f}{\partial\phi\partial r}
+$$
+$$
+=\frac{\partial^2f}{\partial r^2}
++\frac{1}{r^2}\frac{\partial^2 f}{\partial\theta^2}
++\frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}
++\Bigl(\frac{2}{r}\Bigr)\frac{\partial f}{\partial r}
++\Bigl(\frac{\cos\theta}{r^2\sin\theta}\Bigr)\frac{\partial f}{\partial\theta}
+$$
