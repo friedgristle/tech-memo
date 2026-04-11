@@ -1,24 +1,24 @@
 3次元の極座標表現
 
-$$ \begin{align*}
+$$ \begin{align}
 x&=r\sin\theta\cos\phi \\
 y&=r\sin\theta\sin\phi \\
 z&=r\cos\theta
-\end{align*}
+\end{align}
 $$
-
+(1)(2)(3)より
 $$ x^2+y^2+z^2=r^2 $$
-両辺を $x$ で偏微分すると
+この式の両辺を $x$ で偏微分すると
 $$2x=2r\frac{\partial r}{\partial x}$$
 $$\frac{\partial r}{\partial x}=\frac{x}{r}=\sin\theta\cos\phi  $$
-同様に
+となる.　同様に
 $$ y=r\frac{\partial r}{\partial y},\; z=r\frac{\partial r}{\partial z}$$
-なので,
+から,
 
 $$ \frac{\partial r}{\partial y}=\sin\theta\sin\phi$$
 $$ \frac{\partial r}{\partial z}=\cos\theta$$
 
-次に
+が得られる.　次に（1）(2)より
 $$x\sin\phi=y\cos\phi$$
 この両辺を $x$ で偏微分すると
 $$ \sin\phi+x\cos\phi\frac{\partial\phi}{\partial x}=-y\sin\phi\frac{\partial\phi}{\partial x} $$
@@ -33,8 +33,7 @@ $$\frac{\partial\phi}{\partial y}=\frac{\cos\phi}{r\sin\theta}$$
 $z$ で偏微分すると
 $$x\cos\phi\frac{\partial\phi}{\partial z}=-y\sin\phi\frac{\partial\phi}{\partial z}$$
 $$\frac{\partial\phi}{\partial z}=0$$
-
-次に
+となる．さらに（1）(2)より
 $$x^2+y^2=r^2\sin^2\theta $$
 なので、両辺を $x$ で偏微分すると
 $$ 2x=\frac{\partial r^2}{\partial x}\sin^2\theta+r^2\frac{\partial \sin^2\theta}{\partial x}$$
@@ -62,6 +61,7 @@ $$\frac{\partial\theta}{\partial z}=-\frac{\sin\theta}{r}$$
 |$\theta$ | $\cos\theta\cos\phi/r$ | $\cos\theta\sin\phi/r$ | $-\sin\theta/r$
 |$\phi$ | $-\sin\phi/r\sin\theta$ | $\cos\phi/r\sin\theta$ | 0
 
+となる.
 
 ラプラシアンは
 $$ \nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2} $$
@@ -303,10 +303,14 @@ $$
 \Bigr)
 \frac{\partial^2 f}{\partial\phi\partial r}
 $$
-$$
-=\frac{\partial^2f}{\partial r^2}
-+\frac{1}{r^2}\frac{\partial^2 f}{\partial\theta^2}
-+\frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}
+$$\begin{align*}
+=&\frac{\partial^2f}{\partial r^2}
 +\Bigl(\frac{2}{r}\Bigr)\frac{\partial f}{\partial r}
++\frac{1}{r^2}\frac{\partial^2 f}{\partial\theta^2}
 +\Bigl(\frac{\cos\theta}{r^2\sin\theta}\Bigr)\frac{\partial f}{\partial\theta}
-$$
++\frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\\
+=&\frac{1}{r^2}
+\Bigl(r^2\frac{\partial^2f}{\partial r^2}+2r\frac{\partial f}{\partial r}\Bigr)
++\frac{1}{r^2\sin\theta}\Bigl(\sin\theta\frac{\partial^2 f}{\partial\theta^2}+\cos\theta\frac{\partial f}{\partial\theta}\Bigr)+\frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\\
+=&\frac{1}{r^2}\frac{\partial f}{\partial r}\Bigl(r^2\frac{\partial f}{\partial r}\Bigr)+\frac{1}{r^2\sin\theta}\frac{\partial f}{\partial\theta}\Bigl(\sin\theta\frac{\partial f}{\partial\theta}\Bigr)+\frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}
+\end{align*}$$
