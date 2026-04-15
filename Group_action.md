@@ -86,9 +86,10 @@ $1_G\in G$ に対して $1_Gx=x$ であり, また $g,h\in G$ なら $g(hx)=ghx=
 群 $G$ が有限集合 $X=\{x_1,\cdots,x_n\}$ に左から作用するとする. このとき, $g\cdot x_i=x_{\rho(g)(i)}\;(i=1,\cdots,n)$ とおく. $\rho(g)$ は $\{1,\cdots,n\}$ の置換を引き起こし, 写像 $\rho:G\to \mathfrak{S}_n$ を定める.  
 > **命題** $\rho:G\to\mathfrak{S}_n$ は群の準同型である.  
 
-**証明**　$g,h\in G$ なら, $i=1,\cdots,n$ に対し,
-$$ x_{\rho(gh)(i)}=(gh)\cdot x_i=g\cdot (h\cdot x_i)=g\cdot x_{\rho(h)(i)}=x_{\rho(g)\circ\rho(h)(i)}$$
-である. したがって, $\rho(gh)=\rho(g)\circ\rho(h)$ である.  
+**証明**　$g,h\in G$ なら, $i=1,\cdots,n$ に対し, $x_{\rho(gh)(i)}=(gh)\cdot x_i$ である. $G$ は $X$ に左から作用するので 
+$$ (gh)\cdot x_i=g\cdot (h\cdot x_i)=g\cdot x_{\rho(h)(i)}=x_{\rho(g)\circ\rho(h)(i)}$$
+であり, $x_{\rho(gh)(i)}=x_{\rho(g)\circ\rho(h)(i)}$.  
+したがって, $\rho(gh)=\rho(g)\circ\rho(h)$ である.  
 上の $\rho$ を $X$ への作用により定まる**置換表現**という.
 
 > **Cayley(ケーリー)の定理**　$G$ が位数 $n$ の有限群なら, $G$ から $\mathfrak{G}_n$ への単射準同型がある.  
