@@ -94,7 +94,7 @@ $$ (gh)\cdot x_i=g\cdot (h\cdot x_i)=g\cdot x_{\rho(h)(i)}=x_{\rho(g)\circ\rho(h
 
 > **Cayley(ケーリー)の定理**　$G$ が位数 $n$ の有限群なら, $G$ から $\mathfrak{G}_n$ への単射準同型がある.  
 
-**証明**　$G$ の $G$ への左からの積による作用を考えると, 置換表現 $\rho:G\to\mathfrak{S}_n$ が定まる.  
+**証明**　$G$ の $G$ への左からの積による作用は、それにより定まる置換表現があり, $\rho:G\to\mathfrak{S}_n$ である.  
 $\rho(g)=1$ なら, すべての $h\in G$ に対して $gh=h$ である. 例えば $h=1_G$ とすれば, $g=1_G$ である. したがって, $\ker(\rho)=\{1_G\}$ であり, $\rho$ は単射である.　□
 
 **群の作用5**　$H$ を群 $G$ の部分群, $X=G/H$ とする. $g\in G, xH\in G/H$ に対して, $g\cdot(xH)=(gx)H$ と定義すると, これはwell-definedになり,　$G$ の $G/H$ への**自然な作用**という. 同様に $G$ の $H\backslash G$ への右作用も定まる. これも自然な作用という.  
