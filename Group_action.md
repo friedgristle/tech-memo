@@ -94,7 +94,11 @@ $$ (gh)\cdot x_i=g\cdot (h\cdot x_i)=g\cdot x_{\rho(h)(i)}=x_{\rho(g)\circ\rho(h
 
 > **Cayley(ケーリー)の定理**　$G$ が位数 $n$ の有限群なら, $G$ から $\mathfrak{G}_n$ への単射準同型がある.  
 
+<<<<<<< HEAD
 **証明**　$G$ の $G$ への左からの積による作用は、それにより定まる置換表現があり, $\rho:G\to\mathfrak{S}_n$ である.  
+=======
+**証明**　$G$ の $G$ への左からの積による作用を考えると, 置換表現 $\rho:G\to\mathfrak{S}_n$ が定まる.  
+>>>>>>> b7db007 (Update Group_action.md)
 $\rho(g)=1$ なら, すべての $h\in G$ に対して $gh=h$ である. 例えば $h=1_G$ とすれば, $g=1_G$ である. したがって, $\ker(\rho)=\{1_G\}$ であり, $\rho$ は単射である.　□
 
 **群の作用5**　$H$ を群 $G$ の部分群, $X=G/H$ とする. $g\in G, xH\in G/H$ に対して, $g\cdot(xH)=(gx)H$ と定義すると, これはwell-definedになり,　$G$ の $G/H$ への**自然な作用**という. 同様に $G$ の $H\backslash G$ への右作用も定まる. これも自然な作用という.  
@@ -126,6 +130,7 @@ $m$ が十分大きくて $l!<n$ なら, $\rho$ は単射ではない. 一方, $
 $$G=\mathrm{SO}(2)=\Bigl\{R_\theta=\begin{pmatrix}\cos\theta&-\sin\theta\ \\ \sin\theta&\cos\theta \end{pmatrix}\Big|\, \theta\in \mathbb{R}\Bigr\},\quad X=\mathbb{R}^2$$
 とおくと, $G$ は行列としての積により $X$ に作用する. $\mathbb{R}^2$ の元は $[x,y]$ と表す. 正の実数 $a$ に対し, $ R_\theta [a,0]=[a\cos\theta,a\sin\theta]$ である. よって, 点 $[a,0]$ の軌道は半径 $a$ の円である. $R_theta[a,0]=[a,0]$ なら, $\cos\theta=1,\:\sin\theta=0$ なので, $\theta$ は $2\phi$ の整数倍である. よって, $R_\theta=I_2$ となり, $[a,0]$ の安定化群は自明である. また, $a>0$ を固定すれば, $G$ は $C_a=\{[x,y]\in\mathbb{R}^2\mid x^2+y^2=a^2\}$ に作用し, $C_a$ は等質空間である.
 
+<<<<<<< HEAD
 > **命題**　$G$ が集合 $X$ に作用し, $x,y\in X,g\in G$ で $gx=y$ なら, $G\cdot y=G\cdot x, G_y=gG_x g^{-1}$ である.  
 
 **証明**　$h\in G$ なら $hy=hgx\in G\cdot x$ なので, $G\cdot y\subset G\cdot x$ である. $x=g^{-1}y$ なので, $G\cdot\subset G\cdot y$ となり, $G\cdot y=G\cdot x$ である. $h\in G$ なら,
@@ -134,6 +139,16 @@ $$ h\in G_y \Longleftrightarrow hy=y \Longleftrightarrow hgx=gx \Longleftrightar
 したがって, $G_y=gG_xg^{-1}$. \hfill\qed
 
 > **系**　$G$ が集合 $X$ に作用し, $x,y\in X$ で $(G\cdot x)\cap (G\cdot y)\neq \emptyset$ なら, $G\cdot y=G\cdot x,\; G_y\cong G_x$ である.
+=======
+>> **命題**　$G$ が集合 $X$ に作用し, $x,y\in X,g\in G$ で $gx=y$ なら, $G\cdot y=G\cdot x, G_y=gG_x g^{-1}$ である.  
+
+**証明**　$h\in G$ なら $hy=hgx\in G\cdot x$ なので, $G\cdot y\subset G\cdot x$ である. $x=g^{-1}y$ なので, $G\cdot\subset G\cdot y$ となり, $G\cdot y=G\cdot x$ である. $h\in G$ なら,
+$$ h\in G_y \Longleftrightarrow hy=y \Longleftrightarrow hgx=gx \Longleftrightarrow g^{-1}hgx=x \\
+\Longleftrightarrow g^{-1}hg\in G_x \Longleftrightarrow h\in gG_xg^{-1}. $$
+したがって, $G_y=gG_xg^{-1}$.　□
+
+>> **系**　$G$ が集合 $X$ に作用し, $x,y\in X$ で $(G\cdot x)\cap (G\cdot y)\neq \emptyset$ なら, $G\cdot y=G\cdot x,\; G_y\cong G_x$ である.
+>>>>>>> b7db007 (Update Group_action.md)
 
 **証明**　$x\in (G\cdot x)\cap(G\cdot y)$ なら, $z=g_1x=g_2y$ となる $g_1, g_2\in G$ がある. $y=g_2^{-1}g_1 x$ となるので，先の命題より $G\cdot x=G\cdot y$ である. $g=g_2^{-1}g_1$ とおくと $G_y=gG_xg^{-1}$ だが, $\phi:G_x\ni h\mapsto ghg^{-1}\in G_y$ とすると, $h_1,h_2\in G_x$ に対し,
 $$\phi(h_1h_2)=gh_1h_2g^{-1}=gh_1g^{-1}gh_2g^{-1}=\phi(h_1)\phi(h_2)$$
