@@ -153,4 +153,15 @@ $$g_1x=g_2x \Longleftrightarrow g_2^{-1}g_1x=x\Longleftrightarrow g_2^{-1}g_1\in
 
 **軌道・安定化群2**　群 $G$ の $G$ 自身への左からの積による作用を考える. $g\in G$ なら $g=g1_G$ なので, $g\in G1_G$ である. したがって, $G=G1_G$ であり, この作用は推移的である. $g1_G=1_G$ なら $g=1_G$なので, $1_G$ の安定化群は自明である.
 
-**軌道・安定化群3**　群 $G=\mathfrak{S_n}$ の $X=\{\}$ 自身への
+**軌道・安定化群3**　群 $G=\mathfrak{S_n}$ の $X=\{1,\cdots,n\}$ への作用を考える. $\sigma=(in)$ なら $\sigma(n)=i$ なので, この作用は推移的である. $n$ の安定化群は $H=\{\sigma \in \mathfrak{S}_n\mid\sigma(n)=n\}$ である. $\sigma\in H$ は $n$ を不変にするので, $Y=\{1,\cdots,n-1\}$ の置換を引き起こす. よって, $G_n$（$n$ の安定化群）を $\mathfrak{S}_{n-1}$ とみなすことができる. したがって, $\mathfrak{S}_n/\mathfrak{S}_{n-1}$ は $\{1,\cdots,n\}$と1対1に対応する.
+
+**定義**　$H$ を群 $G$ の部分群とする.  
+(1) $\mathrm{N}_G(H)=\{g\in G\mid gHg^{-1}=H\}$,  
+(2) $\mathrm{Z}_G(H)=\{g\in G\mid{}^\forall h\in H, gh=hg\}$,  
+(3) $\mathrm{Z}(G)=\mathrm{Z}_G(G)$  
+と定義し, $\mathrm{N}_G(H),\mathrm{Z}_G(H)$ をそれぞれ $H$ の**正規化群**, **中心化群**という（これらが部分群であることの証明は略）. また, $\mathrm{Z}(G)$ を $G$ の中心という. $x\in G$ で $H=\langle x \rangle $ のとき,　$\mathrm{Z}_G(H)$ の代わりに $\mathrm{Z}_G(x)$ とも書き, $x$ の中心化群という.
+
+なお, $H$ が有限群なら, $\bigl|gHg^{-1}\bigr|=\bigl|H\bigr|<\infty$ である. よって, $gHg^{-1}\subset H$ なら, $gHg^{-1}=H$ である. しかし, $H$ が無限集合のときには, $gHg^{-1}\subset H$ であっても $gHg^{-1}=H$ とは限らない. 例えば, $G=\mathrm{GL}_2(\mathbb{R})$ で
+$$H=\Bigl\{ n(u)=\begin{pmatrix}1&u\\0&1\end{pmatrix}\Bigl| u\in \mathbb{Z}\Bigr\},\quad g=\begin{pmatrix}2&0\\0&1\end{pmatrix}$$
+とすると, $gn(u)g^{-1}=n(2u)$ なので, $\bigl[H:gHg^{-1}\bigr]=2$ となる. よって, $g\notin\mathrm{N}_G(H)$ である.  
+$\mathrm{Z}_G(H), \mathrm{Z}(G)$ の代わりに, $\mathrm{C}_G(H), \mathrm{C}(H)$ などの記号を使う流儀もある. $G$ がアーベル群なら, $\mathrm{Z}(G)=G$ である. なお $g,x\in G,gxg^{-1}=x$ なら, 任意の $h\in\langle x \rangle$ に対して $ghg^{-1}=h$ となる. よって, $\mathrm{Z}_G(x)=\{g\in G\mid gxg^{-1}=x\}$ である.
