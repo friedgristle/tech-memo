@@ -46,7 +46,7 @@
 
 ## ブロッホ波について
 結晶中の電子は  
-$$ \psi(\mathbf{r})=e^{i\mathbf{k}\cdot \mathbf{r}}u_k(\bm{r}) \quad $$  
+$$ \psi(\mathbf{r})=e^{i\mathbf{k}\cdot \mathbf{r}}u_k(\mathbf{r}) \quad $$  
 $k$ : 波数（運動量に対応）、 $u_k$: 格子周期を持つ関数  
 というブロッホ波で表され（ブロッホの定理）、電子状態はkでラベル付けされる。周期的な結晶中で電子の波動関数がとるべき基本的な形（固有状態）。  
 結晶ではポテンシャルが
