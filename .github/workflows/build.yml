@@ -1,0 +1,36 @@
+name: Build Markdown PDF
+
+on:
+  push:
+    paths:
+      - "**.md"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pandoc & LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-latex-base texlive-latex-recommended texlive-fonts-recommended
+      - name: Install Japanese fonts
+        run: |
+          sudo apt-get install -y fonts-noto-cjk
+
+      - name: Convert all md files
+        run: |
+          for file in *.md; do
+            pandoc "$file" -o "${file%.md}.pdf" \
+              --pdf-engine=xelatex \
+              -V mainfont="Noto Sans CJK JP"
+          done
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-output
+          path: output.pdf
