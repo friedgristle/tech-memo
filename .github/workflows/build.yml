@@ -24,8 +24,10 @@ jobs:
 
       - name: Convert all md files
         run: |
+          set -euxo pipefail
+          mkdir -p build
           for file in *.md; do
-            pandoc "$file" -o "${file%.md}.pdf" \
+            pandoc "$file" -o "build/${file%.md}.pdf" \
               --pdf-engine=xelatex \
               -V mainfont="Noto Sans CJK JP"
           done
@@ -33,4 +35,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pdf-output
-          path: output.pdf
+          path: build/*.pdf
+          if-no-files-found: error
