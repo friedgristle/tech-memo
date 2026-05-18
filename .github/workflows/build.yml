@@ -20,8 +20,6 @@ jobs:
           sudo apt-get install -y \
             pandoc \
             texlive-xetex \
-            texlive-latex-recommended \
-            texlive-fonts-recommended \
             fonts-noto-cjk
 
       - name: Convert all md files
