@@ -1,10 +1,12 @@
 name: Build Markdown PDF
 
 on:
-  push:
-    paths:
-      - "**.md"
   workflow_dispatch:
+    inputs:
+      pattern:
+        description: '変換するMarkdownファイルのパターン（例: *.md）'
+        required: true
+        default: '*.md'
 
 jobs:
   build:
@@ -26,7 +28,7 @@ jobs:
         run: |
           set -euxo pipefail
           mkdir -p build
-          for file in *.md; do
+          for file in ${{ github.event.inputs.pattern }}; do
             pandoc "$file" -o "build/${file%.md}.pdf" \
               --pdf-engine=xelatex \
               -V mainfont="Noto Sans CJK JP"
