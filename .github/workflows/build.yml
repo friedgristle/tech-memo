@@ -14,13 +14,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pandoc & LaTeX
+      - name: Install pandoc, LaTeX and Japanese fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-latex-base texlive-latex-recommended texlive-fonts-recommended
-      - name: Install Japanese fonts
-        run: |
-          sudo apt-get install -y fonts-noto-cjk
+          sudo apt-get install -y \
+            pandoc \
+            texlive-xetex \
+            texlive-latex-recommended \
+            texlive-fonts-recommended \
+            fonts-noto-cjk
 
       - name: Convert all md files
         run: |
