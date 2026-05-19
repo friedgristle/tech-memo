@@ -124,7 +124,7 @@ $m$ が十分大きくて $l!<n$ なら, $\rho$ は単射ではない. 一方, $
 
 **軌道・安定化群1**
 $$G=\mathrm{SO}(2)=\Bigl\{R_\theta=\begin{pmatrix}\cos\theta&-\sin\theta\ \\ \sin\theta&\cos\theta \end{pmatrix}\Big|\, \theta\in \mathbb{R}\Bigr\},\quad X=\mathbb{R}^2$$
-とおくと, $G$ は行列としての積により $X$ に作用する. $\mathbb{R}^2$ の元は $[x,y]$ と表す. 正の実数 $a$ に対し, $ R_\theta [a,0]=[a\cos\theta,a\sin\theta]$ である. よって, 点 $[a,0]$ の軌道は半径 $a$ の円である. $R_theta[a,0]=[a,0]$ なら, $\cos\theta=1,\:\sin\theta=0$ なので, $\theta$ は $2\phi$ の整数倍である. よって, $R_\theta=I_2$ となり, $[a,0]$ の安定化群は自明である. また, $a>0$ を固定すれば, $G$ は $C_a=\{[x,y]\in\mathbb{R}^2\mid x^2+y^2=a^2\}$ に作用し, $C_a$ は等質空間である.
+とおくと, $G$ は行列としての積により $X$ に作用する. $\mathbb{R}^2$ の元は $[x,y]$ と表す. 正の実数 $a$ に対し, $R_\theta [a,0]=[a\cos\theta,a\sin\theta]$ である. よって, 点 $[a,0]$ の軌道は半径 $a$ の円である. $R_theta[a,0]=[a,0]$ なら, $\cos\theta=1,\:\sin\theta=0$ なので, $\theta$ は $2\phi$ の整数倍である. よって, $R_\theta=I_2$ となり, $[a,0]$ の安定化群は自明である. また, $a>0$ を固定すれば, $G$ は $C_a=\{[x,y]\in\mathbb{R}^2\mid x^2+y^2=a^2\}$ に作用し, $C_a$ は等質空間である.
 
 > **命題**　$G$ が集合 $X$ に作用し, $x,y\in X,g\in G$ で $gx=y$ なら, $G\cdot y=G\cdot x, G_y=gG_x g^{-1}$ である.  
 
@@ -159,7 +159,7 @@ $$g_1x=g_2x \Longleftrightarrow g_2^{-1}g_1x=x\Longleftrightarrow g_2^{-1}g_1\in
 (1) $\mathrm{N}_G(H)=\{g\in G\mid gHg^{-1}=H\}$,  
 (2) $\mathrm{Z}_G(H)=\{g\in G\mid{}^\forall h\in H, gh=hg\}$,  
 (3) $\mathrm{Z}(G)=\mathrm{Z}_G(G)$  
-と定義し, $\mathrm{N}_G(H),\mathrm{Z}_G(H)$ をそれぞれ $H$ の**正規化群**, **中心化群**という（これらが部分群であることの証明は略）. また, $\mathrm{Z}(G)$ を $G$ の中心という. $x\in G$ で $H=\langle x \rangle $ のとき,　$\mathrm{Z}_G(H)$ の代わりに $\mathrm{Z}_G(x)$ とも書き, $x$ の中心化群という.
+と定義し, $\mathrm{N}_G(H),\mathrm{Z}_G(H)$ をそれぞれ $H$ の**正規化群**, **中心化群**という（これらが部分群であることの証明は略）. また, $\mathrm{Z}(G)$ を $G$ の中心という. $x\in G$ で $H=\langle x \rangle$ のとき,　$\mathrm{Z}_G(H)$ の代わりに $\mathrm{Z}_G(x)$ とも書き, $x$ の中心化群という.
 
 なお, $H$ が有限群なら, $\bigl|gHg^{-1}\bigr|=\bigl|H\bigr|<\infty$ である. よって, $gHg^{-1}\subset H$ なら, $gHg^{-1}=H$ である. しかし, $H$ が無限集合のときには, $gHg^{-1}\subset H$ であっても $gHg^{-1}=H$ とは限らない. 例えば, $G=\mathrm{GL}_2(\mathbb{R})$ で
 $$H=\Bigl\{ n(u)=\begin{pmatrix}1&u\\0&1\end{pmatrix}\Bigl| u\in \mathbb{Z}\Bigr\},\quad g=\begin{pmatrix}2&0\\0&1\end{pmatrix}$$
