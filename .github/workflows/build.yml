@@ -1,12 +1,7 @@
-name: Build Markdown PDF
+name: Build Quarto PDF
 
 on:
   workflow_dispatch:
-    inputs:
-      pattern:
-        description: '変換するMarkdownファイルのパターン（例: *.md）'
-        required: true
-        default: '*.md'
 
 jobs:
   build:
@@ -16,26 +11,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
       - name: Install pandoc, LaTeX and Japanese fonts
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            pandoc \
-            texlive-xetex \
+            texlive-luatex \
+            texlive-lang-japanese \
             fonts-noto-cjk
 
-      - name: Convert all md files
-        run: |
-          set -euxo pipefail
-          mkdir -p build
-          for file in ${{ github.event.inputs.pattern }}; do
-            pandoc "$file" -o "build/${file%.md}.pdf" \
-              --pdf-engine=xelatex \
-              -V mainfont="Noto Sans CJK JP"
-          done
+      - name: Render Quarto project
+        run: 
+          quarto render
+
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: pdf-output
-          path: build/*.pdf
+          path: *.pdf
           if-no-files-found: error
