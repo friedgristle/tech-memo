@@ -1,0 +1,11 @@
+project:
+  type: default
+  output-dir: build
+
+format:
+  html:
+    toc: true
+
+  pdf:
+    pdf-engine: lualatex
+    documentclass: ltjsarticle
