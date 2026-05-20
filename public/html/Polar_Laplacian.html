@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>polar_laplacian</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Polar_Laplacian_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Polar_Laplacian_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Polar_Laplacian_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Polar_Laplacian_files/libs/quarto-html/popper.min.js"></script>
+<script src="Polar_Laplacian_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Polar_Laplacian_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Polar_Laplacian_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Polar_Laplacian_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Polar_Laplacian_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Polar_Laplacian_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Polar_Laplacian_files/libs/bootstrap/bootstrap-3c8b75f00068d02dead620150a0298f2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles/mobile.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../../../../Polar_Laplacian.html"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+
+
+
+<p>3次元の極座標表現</p>
+<p><span class="math display">\[ \begin{align}
+x&amp;=r\sin\theta\cos\phi \\
+y&amp;=r\sin\theta\sin\phi \\
+z&amp;=r\cos\theta
+\end{align}
+\]</span> (1)(2)(3)より <span class="math display">\[ x^2+y^2+z^2=r^2 \]</span> この式の両辺を <span class="math inline">\(x\)</span> で偏微分すると <span class="math display">\[2x=2r\frac{\partial r}{\partial x}\]</span> <span class="math display">\[\frac{\partial r}{\partial x}=\frac{x}{r}=\sin\theta\cos\phi  \]</span> となる.　同様に <span class="math display">\[ y=r\frac{\partial r}{\partial y},\; z=r\frac{\partial r}{\partial z}\]</span> から,</p>
+<p><span class="math display">\[ \frac{\partial r}{\partial y}=\sin\theta\sin\phi\]</span> <span class="math display">\[ \frac{\partial r}{\partial z}=\cos\theta\]</span></p>
+<p>が得られる.　次に（1）(2)より <span class="math display">\[x\sin\phi=y\cos\phi\]</span> この両辺を <span class="math inline">\(x\)</span> で偏微分すると <span class="math display">\[ \sin\phi+x\cos\phi\frac{\partial\phi}{\partial x}=-y\sin\phi\frac{\partial\phi}{\partial x} \]</span> <span class="math display">\[ (r\sin\theta\cos\phi)\cos\phi\frac{\partial\phi}{\partial x}+(r\sin\theta\sin\phi)\sin\phi\frac{\partial\phi}{\partial x}=-\sin\phi \]</span> <span class="math display">\[ r\sin\theta\frac{\partial\phi}{\partial x}=-\sin\phi \]</span> <span class="math display">\[ \frac{\partial\phi}{\partial x}=-\frac{\sin\phi}{r\sin\theta} \]</span> <span class="math inline">\(y\)</span> で偏微分すると <span class="math display">\[ x\cos\phi\frac{\partial\phi}{\partial y}=\cos\phi+y(-\sin\phi)\frac{\partial\phi}{\partial y} \]</span> <span class="math display">\[ (r\sin\theta\cos\phi)\cos\phi+(r\sin\theta\sin\phi)\sin\phi\frac{\partial\phi}{\partial y}=\cos\phi \]</span> <span class="math display">\[r\sin\theta\frac{\partial\phi}{\partial y}=\cos\phi\]</span> <span class="math display">\[\frac{\partial\phi}{\partial y}=\frac{\cos\phi}{r\sin\theta}\]</span> <span class="math inline">\(z\)</span> で偏微分すると <span class="math display">\[x\cos\phi\frac{\partial\phi}{\partial z}=-y\sin\phi\frac{\partial\phi}{\partial z}\]</span> <span class="math display">\[\frac{\partial\phi}{\partial z}=0\]</span> となる．さらに（1）(2)より <span class="math display">\[x^2+y^2=r^2\sin^2\theta \]</span> なので、両辺を <span class="math inline">\(x\)</span> で偏微分すると <span class="math display">\[ 2x=\frac{\partial r^2}{\partial x}\sin^2\theta+r^2\frac{\partial \sin^2\theta}{\partial x}\]</span> <span class="math display">\[ x=r\frac{\partial r}{\partial x}\sin^2\theta+ r^2\sin\theta\cos\theta\frac{\partial\theta}{\partial x}\]</span> <span class="math inline">\(\partial r/\partial x=\sin\theta\cos\phi,\, x=r\sin\theta\cos\phi\)</span> を代入すると <span class="math display">\[r\sin\theta\cos\phi=r\sin\theta\cos\phi\sin^2\theta+r^2\sin\theta\cos\theta\frac{\partial\theta}{\partial x}\]</span> <span class="math display">\[ r\cos\theta\frac{\partial\theta}{\partial x}=\cos\phi(1-\sin^2\theta)\]</span> <span class="math display">\[\frac{\partial\theta}{\partial x}=\frac{\cos\theta\cos\phi}{r}\]</span></p>
+<p>両辺を <span class="math inline">\(y\)</span> で偏微分すると <span class="math display">\[ y=r\frac{\partial r}{\partial y}\sin^2\theta+r^2\sin\theta\cos\theta\frac{\partial\theta}{\partial y} \]</span> <span class="math inline">\(\partial r/\partial y=\sin\theta\sin\phi,\, y=r\sin\theta\sin\phi\)</span> を代入すると <span class="math display">\[ r\sin\theta\sin\phi=r\sin\theta\sin\phi\sin^2\theta+r^2\sin\theta\cos\theta\frac{\partial\theta}{\partial y} \]</span> <span class="math display">\[ r\cos\theta\frac{\partial\theta}{\partial y}=\sin\phi(1-\sin^2\theta) \]</span> <span class="math display">\[\frac{\partial\theta}{\partial y}=\frac{\cos\theta\sin\phi}{r}\]</span></p>
+<p>両辺を <span class="math inline">\(z\)</span> で偏微分すると <span class="math display">\[ 0=r\frac{\partial r}{\partial z}\sin^2\theta+r^2\sin\theta\cos\theta\frac{\partial\theta}{\partial z} \]</span> <span class="math inline">\(\partial r/\partial z=\cos\theta\)</span> を代入すると <span class="math display">\[\frac{\partial\theta}{\partial z}=-\frac{\sin\theta}{r}\]</span> 以上をまとめると<br>
+||<span class="math inline">\(x\)</span>|<span class="math inline">\(y\)</span>|<span class="math inline">\(z\)</span>| |:—:|:—:|:—:|:—:| |<span class="math inline">\(r\)</span> | <span class="math inline">\(\sin\theta\cos\phi\)</span> | <span class="math inline">\(\sin\theta\sin\phi\)</span> | <span class="math inline">\(\cos\theta\)</span> | |<span class="math inline">\(\theta\)</span> | <span class="math inline">\(\cos\theta\cos\phi/r\)</span> | <span class="math inline">\(\cos\theta\sin\phi/r\)</span> | <span class="math inline">\(-\sin\theta/r\)</span> |<span class="math inline">\(\phi\)</span> | <span class="math inline">\(-\sin\phi/r\sin\theta\)</span> | <span class="math inline">\(\cos\phi/r\sin\theta\)</span> | 0</p>
+<p>となる.</p>
+<p>ラプラシアンは <span class="math display">\[ \nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2} \]</span></p>
+<p><span class="math inline">\(x\)</span> について <span class="math display">\[\frac{\partial f}{\partial x}
+=\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\]</span> なので <span class="math display">\[\frac{\partial^2f}{\partial x^2}=\frac{\partial}{\partial x}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr)  \\
+=\frac{\partial r}{\partial x}\frac{\partial}{\partial r}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr)\\
++\frac{\partial\theta}{\partial x}\frac{\partial}{\partial\theta}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr)\\
++\frac{\partial\phi}{\partial x}\frac{\partial}{\partial\phi}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr)\]</span></p>
+<p>これに <span class="math inline">\(\partial r/\partial x=\sin\theta\cos\phi,\,\partial\theta/\partial x=\cos\theta\cos\phi/r,\,\partial\phi/\partial x=-\sin\phi/r\sin\theta\)</span> を代入すると</p>
+<p><span class="math display">\[\begin{align*}\frac{\partial r}{\partial x}\frac{\partial}{\partial r}\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
+&amp;=\sin\theta\cos\phi\frac{\partial}{\partial r}\Bigl(\sin\theta\cos\phi\frac{\partial f}{\partial r}\Bigr)\\
+&amp;=\sin^2\theta\cos^2\phi\frac{\partial^2 f}{\partial r^2}\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial r}{\partial x}\frac{\partial}{\partial r}\frac{\partial\theta}{\partial x}\frac{\partial f}{\partial \theta}
+&amp;=\sin\theta\cos\phi\frac{\partial}{\partial r}\Bigl(\frac{\cos\theta\cos\phi}{r}\frac{\partial f}{\partial \theta} \Bigr)\\
+&amp;=-\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}\frac{\partial f}{\partial \theta}+\frac{\sin\theta\cos\theta\cos^2\phi}{r}\frac{\partial^2 f}{\partial r\partial\theta}\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial r}{\partial x}\frac{\partial}{\partial r}\frac{\partial\phi}{\partial x}\frac{\partial f}{\partial\phi}
+&amp;=\sin\theta\cos\phi\frac{\partial}{\partial r}\Bigl(-\frac{\sin\phi}{r\sin\theta}\frac{\partial f}{\partial\phi}\Bigr)\\
+&amp;=\frac{\sin\phi\cos\phi}{r^2}\frac{\partial f}{\partial\phi}-\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial r\partial\phi}\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial\theta}{\partial x}\frac{\partial}{\partial\theta}\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}&amp;=\frac{\cos\theta\cos\phi}{r}\frac{\partial}{\partial\theta}\Bigl(\sin\theta\cos\phi\frac{\partial f}{\partial r}\Bigr)\\
+&amp;=\frac{\cos^2\theta\cos^2\phi}{r}\frac{\partial f}{\partial r}+\frac{\sin\theta\cos\theta\cos^2\phi}{r}\frac{\partial^2 f}{\partial\theta\partial r}\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial\theta}{\partial x}\frac{\partial}{\partial\theta}\frac{\partial\theta}{\partial x}\frac{\partial f}{\partial\theta}&amp;=\frac{\cos\theta\cos\phi}{r}\frac{\partial}{\partial\theta}\Bigl(\frac{\cos\theta\cos\phi}{r}\frac{\partial f}{\partial \theta}\Bigr)\\
+&amp;=-\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}\frac{\partial f}{\partial\theta}+\frac{cos^2\theta\cos^2\phi}{r^2}\frac{\partial^2 f}{\partial \theta^2}\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial\theta}{\partial x}\frac{\partial}{\partial\theta}\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial\phi}&amp;=\frac{\cos\theta\cos\phi}{r}\frac{\partial}{\partial\theta}\Bigl(-\frac{\sin\phi}{r\sin\theta}\frac{\partial f}{\partial\phi}\Bigr)\\
+&amp;=\frac{\cos^2\theta\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}-\frac{\sin\phi\cos\theta\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\theta\partial\phi}\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial \phi}{\partial x}\frac{\partial}{\partial\phi}\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}&amp;=-\frac{\sin\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(\sin\theta\cos\phi\frac{\partial f}{\partial r} \Bigr)\\
+&amp;=\frac{\sin^2\phi}{r}\frac{\partial f}{\partial r}-\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial\phi\partial r}\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial \phi}{\partial x}\frac{\partial}{\partial\phi}\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial\theta}&amp;=-\frac{\sin\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(\frac{\cos\theta\cos\phi}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
+&amp;=\frac{\cos\theta\sin^2\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}-\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial\theta}\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial \phi}{\partial x}\frac{\partial}{\partial\phi}\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial\phi}&amp;=-\frac{\sin\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(-\frac{\sin\phi}{r\sin\theta}\frac{\partial f}{\partial\phi}\Bigr)\\
+&amp;=\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}+\frac{\sin^2\phi}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\end{align*}\]</span></p>
+<p><span class="math inline">\(y\)</span> について <span class="math display">\[\frac{\partial f}{\partial y}
+=\frac{\partial r}{\partial y}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial y}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial y}\frac{\partial f}{\partial \phi}\]</span> なので <span class="math display">\[\frac{\partial^2f}{\partial y^2}=\frac{\partial}{\partial y}\Bigl(\frac{\partial r}{\partial y}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial y}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial y}\frac{\partial f}{\partial \phi}\Bigr)  \\
+=\frac{\partial r}{\partial y}\frac{\partial}{\partial r}\Bigl(\frac{\partial r}{\partial y}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial y}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial y}\frac{\partial f}{\partial \phi}\Bigr)\\
++\frac{\partial\theta}{\partial y}\frac{\partial}{\partial\theta}\Bigl(\frac{\partial r}{y}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial y}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial y}\frac{\partial f}{\partial \phi}\Bigr)\\
++\frac{\partial\phi}{\partial y}\frac{\partial}{\partial\phi}\Bigl(\frac{\partial r}{\partial y}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial y}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial y}\frac{\partial f}{\partial \phi}\Bigr)\]</span></p>
+<p>これに <span class="math inline">\(\partial r/\partial y=\sin\theta\sin\phi,\,\partial\theta/\partial y=\cos\theta\sin\phi/r,\,\partial\phi/\partial y=\cos\phi/r\sin\theta\)</span> を代入すると</p>
+<p><span class="math display">\[\begin{align*}\frac{\partial r}{\partial y}\frac{\partial}{\partial r}\frac{\partial r}{y}\frac{\partial f}{\partial r}&amp;=\sin\theta\sin\phi\frac{\partial}{\partial r}\Bigl(\sin\theta\sin\phi\frac{\partial f}{\partial r}\Bigr)\\
+&amp;=\sin^2\theta\sin^2\phi\frac{\partial^2 f}{\partial r^2}\end{align*}\]</span> <span class="math display">\[\begin{align*}\frac{\partial r}{\partial y}\frac{\partial}{\partial r}\frac{\partial\theta}{y}\frac{\partial f}{\partial\theta}&amp;=\sin\theta\sin\phi\frac{\partial}{\partial r}\Bigl(\frac{\cos\theta\sin\phi}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
+&amp;=-\frac{\sin\theta\sin^2\phi\cos\theta}{r^2}\frac{\partial f}{\partial\theta}+\frac{\sin\theta\cos\theta\sin^2\phi}{r}\frac{\partial^2 f}{\partial r\partial\theta}\end{align*}\]</span> <span class="math display">\[\begin{align*}\frac{\partial r}{\partial y}\frac{\partial}{\partial r}\frac{\partial\phi}{y}\frac{\partial f}{\partial\phi}&amp;=\sin\theta\sin\phi\frac{\partial}{\partial r}\Bigl(\frac{\cos\phi}{r\sin\theta}\frac{\partial f}{\partial\phi}\Bigr)\\
+&amp;=-\frac{\sin\phi\cos\phi}{r^2}\frac{\partial f}{\partial\phi}+\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial r\partial\phi}\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial\theta}{\partial y}\frac{\partial}{\partial\theta}\frac{\partial r}{y}\frac{\partial f}{\partial r}&amp;=\frac{\cos\theta\sin\phi}{r}\frac{\partial}{\partial\theta}\Bigl(\sin\theta\sin\phi\frac{\partial f}{\partial r}\Bigr)\\
+&amp;=\frac{\sin^2\phi\cos^2\theta}{r}\frac{\partial f}{\partial r}+\frac{\sin\theta\cos\theta\sin^2\phi}{r}\frac{\partial^2 f}{\partial\theta\partial r}\end{align*}\]</span> <span class="math display">\[\begin{align*}\frac{\partial\theta}{\partial y}\frac{\partial}{\partial\theta}\frac{\partial\theta}{y}\frac{\partial f}{\partial\theta}&amp;=\frac{\cos\theta\sin\phi}{r}\frac{\partial}{\partial\theta}\Bigl(\frac{\cos\theta\sin\phi}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
+&amp;=-\frac{\sin\theta\cos\theta\sin^2\phi}{r^2}\frac{\partial f}{\partial\theta}+\frac{\sin^2\phi\cos^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta^2}\end{align*}\]</span> <span class="math display">\[\begin{align*}\frac{\partial\theta}{\partial y}\frac{\partial}{\partial\theta}\frac{\partial\phi}{y}\frac{\partial f}{\partial\phi}&amp;=\frac{\cos\theta\sin\phi}{r}\frac{\partial}{\partial\theta}\Bigl(\frac{\cos\phi}{r\sin\theta}\frac{\partial f}{\partial\phi}\Bigr)\\
+&amp;=-\frac{\sin\phi\cos^2\theta\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\theta\partial\phi}\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial\phi}{\partial y}\frac{\partial}{\partial\phi}\frac{\partial r}{y}\frac{\partial f}{\partial r}&amp;=\frac{\cos\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(\sin\theta\sin\phi\frac{\partial f}{\partial r}\Bigr)\\
+&amp;=\frac{\cos^2\phi}{r}\frac{\partial f}{\partial r}+\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial\phi\partial r}\end{align*}\]</span> <span class="math display">\[\begin{align*}\frac{\partial\phi}{\partial y}\frac{\partial}{\partial\phi}\frac{\partial\theta}{y}\frac{\partial f}{\partial\theta}&amp;=\frac{\cos\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(\frac{\cos\theta\sin\phi}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
+&amp;=\frac{\cos\theta\cos^2\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial\theta}\end{align*}\]</span> <span class="math display">\[\begin{align*}\frac{\partial\phi}{\partial y}\frac{\partial}{\partial\phi}\frac{\partial\phi}{y}\frac{\partial f}{\partial\phi}&amp;=\frac{\cos\phi}{r\sin\theta}\frac{\partial}{\partial\phi}\Bigl(\frac{\cos\phi}{r\sin\theta}\frac{\partial f}{\partial\phi}\Bigr)\\
+&amp;=-\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}+\frac{\cos^2\phi}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\end{align*}\]</span></p>
+<p><span class="math inline">\(z\)</span> について <span class="math display">\[\frac{\partial f}{\partial z}
+=\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial \phi}\]</span> なので <span class="math display">\[\frac{\partial^2f}{\partial z^2}=\frac{\partial}{\partial z}\Bigl(\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial \phi}\Bigr)  \\
+=\frac{\partial r}{\partial z}\frac{\partial}{\partial r}\Bigl(\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial \phi}\Bigr)\\
++\frac{\partial\theta}{\partial z}\frac{\partial}{\partial\theta}\Bigl(\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial \phi}\Bigr)\\
++\frac{\partial\phi}{\partial z}\frac{\partial}{\partial\phi}\Bigl(\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}
++\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial \theta}
++\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial \phi}\Bigr)\]</span></p>
+<p>これに <span class="math inline">\(\partial r/\partial z=\cos\theta,\,\partial\theta/\partial z=-\sin\theta/r,\,\partial\phi/\partial z=0\)</span> を代入すると</p>
+<p><span class="math display">\[\begin{align*}\frac{\partial r}{\partial z}\frac{\partial}{\partial r}\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}&amp;=\cos\theta\frac{\partial}{\partial r}\Bigl(\cos\theta\frac{\partial f}{\partial r}\Bigr)\\
+&amp;=\cos^2\theta\frac{\partial^2 f}{\partial r^2}\end{align*}\]</span> <span class="math display">\[\begin{align*}\frac{\partial r}{\partial z}\frac{\partial}{\partial r}\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial\theta}&amp;=\cos\theta\frac{\partial}{\partial r}\Bigl(-\frac{\sin\theta}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
+&amp;=\frac{\sin\theta\cos\theta}{r^2}\frac{\partial f}{\partial\theta}-\frac{\sin\theta\cos\theta}{r}\frac{\partial^2 f}{\partial r\partial\theta}\end{align*}\]</span> <span class="math display">\[\frac{\partial r}{\partial z}\frac{\partial}{\partial r}\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial\phi}=0\]</span></p>
+<p><span class="math display">\[\begin{align*}\frac{\partial\theta}{\partial z}\frac{\partial}{\partial \theta}\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}&amp;=-\frac{\sin\theta}{r}\frac{\partial}{\partial \theta}\Bigl(\cos\theta\frac{\partial f}{\partial r}\Bigr)\\
+&amp;=\frac{\sin^2\theta}{r}\frac{\partial f}{\partial r}-\frac{\sin\theta\cos\theta}{r}\frac{\partial^2 f}{\partial\theta\partial r}\end{align*}\]</span> <span class="math display">\[\begin{align*}\frac{\partial \theta}{\partial z}\frac{\partial}{\partial \theta}\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial\theta}&amp;=-\frac{\sin\theta}{r}\frac{\partial}{\partial \theta}\Bigl(-\frac{\sin\theta}{r}\frac{\partial f}{\partial\theta}\Bigr)\\
+&amp;=\frac{\sin\theta\cos\theta}{r^2}\frac{\partial f}{\partial\theta}+\frac{\sin^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta^2}\end{align*}\]</span> <span class="math display">\[\frac{\partial \theta}{\partial z}\frac{\partial}{\partial \theta}\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial\phi}=0\]</span></p>
+<p><span class="math display">\[\frac{\partial\phi}{\partial z}\frac{\partial}{\partial\phi}\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}=\frac{\partial\phi}{\partial z}\frac{\partial}{\partial\phi}\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial\theta}=\frac{\partial\phi}{\partial z}\frac{\partial}{\partial r}\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial\phi}=0\]</span></p>
+<p>x $$<span class="math display">\[\begin{align*}
+\frac{\partial^2f}{x^2}+\frac{\partial^2f}{y^2}+\frac{\partial^2f}{z^2}
+&amp;\\
+=\sin^2\theta\cos^2\phi\frac{\partial^2 f}{\partial r^2}\\
+-\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}\frac{\partial f}{\partial \theta}&amp;+\frac{\sin\theta\cos\theta\cos^2\phi}{r}\frac{\partial^2 f}{\partial r\partial\theta}\\
++\frac{\sin\phi\cos\phi}{r^2}\frac{\partial f}{\partial\phi}
+&amp;-\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial r\partial\phi}\\
++\frac{\cos^2\theta\cos^2\phi}{r}\frac{\partial f}{\partial r}
+&amp;+\frac{\sin\theta\cos\theta\cos^2\phi}{r}\frac{\partial^2 f}{\partial\theta\partial r}\\
+-\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}\frac{\partial f}{\partial\theta}
+&amp;+\frac{cos^2\theta\cos^2\phi}{r^2}\frac{\partial^2 f}{\partial \theta^2}\\
++\frac{\cos^2\theta\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}
+&amp;-\frac{\sin\phi\cos\theta\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\theta\partial\phi}\\
++\frac{\sin^2\phi}{r}\frac{\partial f}{\partial r}
+&amp;-\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial\phi\partial r}\\
++\frac{\cos\theta\sin^2\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}
+&amp;-\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial\theta}\\
++\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}
+&amp;+\frac{\sin^2\phi}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\\
++\sin^2\theta\sin^2\phi\frac{\partial^2 f}{\partial r^2}\\
+-\frac{\sin\theta\sin^2\phi\cos\theta}{r^2}\frac{\partial f}{\partial\theta}
+&amp;+\frac{\sin\theta\cos\theta\sin^2\phi}{r}\frac{\partial^2 f}{\partial r\partial\theta}\\
+-\frac{\sin\phi\cos\phi}{r^2}\frac{\partial f}{\partial\phi}
+&amp;+\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial r\partial\phi}\\
++\frac{\sin^2\phi\cos^2\theta}{r}\frac{\partial f}{\partial r}
+&amp;+\frac{\sin\theta\cos\theta\sin^2\phi}{r}\frac{\partial^2 f}{\partial\theta\partial r}\\
+-\frac{\sin\theta\cos\theta\sin^2\phi}{r^2}\frac{\partial f}{\partial\theta}
+&amp;+\frac{\sin^2\phi\cos^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta^2}\\
+-\frac{\sin\phi\cos^2\theta\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}
+&amp;+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\theta\partial\phi}\\
++\frac{\cos^2\phi}{r}\frac{\partial f}{\partial r}
+&amp;+\frac{\sin\phi\cos\phi}{r}\frac{\partial^2 f}{\partial\phi\partial r}\\
++\frac{\cos\theta\cos^2\phi}{r^2\sin\theta}\frac{\partial f}{\partial\theta}
+&amp;+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial\theta}\\
+-\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}
+&amp;+\frac{\cos^2\phi}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\\
+
++\cos^2\theta\frac{\partial^2 f}{\partial r^2}\\
++\frac{\sin^2\theta}{r}\frac{\partial f}{\partial\theta}
+&amp;-\frac{\sin\theta\cos\theta}{r}\frac{\partial^2 f}{\partial r\partial\theta}\\
++\frac{\sin\theta\cos\theta}{r^2}\frac{\partial f}{\partial r}
+&amp;+\frac{\sin^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta\partial r}\\
++\frac{\sin\theta\cos\theta}{r^2}\frac{\partial f}{\partial\theta}&amp;+\frac{\sin^2\theta}{r^2}\frac{\partial^2 f}{\partial\theta^2}\end{align*}\]</span>$$</p>
+<p>$$ =(<sup>2</sup>2+<sup>2</sup>2+<sup>2)\frac{</sup>2 f}{r^2}\ +( ++ + )\ +( + )\</p>
+<p>+( + + + + ) \</p>
+<p>+( - + - +\ - + + - ) \</p>
+<p>+( + +\ - - - ) \</p>
+<p>+( + +\ + -- ) \</p>
+<p>+( - -\ + + ) \ +( -++- ) <span class="math display">\[
+\]</span><span class="math display">\[\begin{align*}
+=&amp;\frac{\partial^2f}{\partial r^2}
++\Bigl(\frac{2}{r}\Bigr)\frac{\partial f}{\partial r}
++\frac{1}{r^2}\frac{\partial^2 f}{\partial\theta^2}
++\Bigl(\frac{\cos\theta}{r^2\sin\theta}\Bigr)\frac{\partial f}{\partial\theta}
++\frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\\
+=&amp;\frac{1}{r^2}
+\Bigl(r^2\frac{\partial^2f}{\partial r^2}+2r\frac{\partial f}{\partial r}\Bigr)
++\frac{1}{r^2\sin\theta}\Bigl(\sin\theta\frac{\partial^2 f}{\partial\theta^2}+\cos\theta\frac{\partial f}{\partial\theta}\Bigr)+\frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\\
+=&amp;\frac{1}{r^2}\frac{\partial f}{\partial r}\Bigl(r^2\frac{\partial f}{\partial r}\Bigr)+\frac{1}{r^2\sin\theta}\frac{\partial f}{\partial\theta}\Bigl(\sin\theta\frac{\partial f}{\partial\theta}\Bigr)+\frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}
+\end{align*}\]</span>$$</p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

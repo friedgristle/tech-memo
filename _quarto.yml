@@ -11,9 +11,11 @@ format:
     html-math-method: mathjax
 
   pdf:
+    include-in-header:
+      - tex/preamble.tex
     pdf-engine: lualatex
     toc: true
     number-sections: true
     keep-tex: false
-    mainfont: "Times New Roman"
+    mainfont: "TeX Gyre Termes"
     CJKmainfont: "Noto Serif CJK JP"

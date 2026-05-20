@@ -233,7 +233,6 @@ $$\begin{align*}
 &+\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\frac{\partial^2 f}{\partial\phi\partial\theta}\\
 -\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\frac{\partial f}{\partial\phi}
 &+\frac{\cos^2\phi}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}\\
-
 +\cos^2\theta\frac{\partial^2 f}{\partial r^2}\\
 +\frac{\sin^2\theta}{r}\frac{\partial f}{\partial\theta}
 &-\frac{\sin\theta\cos\theta}{r}\frac{\partial^2 f}{\partial r\partial\theta}\\
@@ -250,8 +249,7 @@ $$
 +\Bigl(
 \frac{\sin^2\phi}{r^2\sin^2\theta}+\frac{\cos^2\phi}{r^2\sin^2\theta}
 \Bigr)\frac{\partial^2 f}{\partial\phi^2}\\
-
-+\Bigl(
+  +\Bigl(
 \frac{\cos^2\theta\cos^2\phi}{r}
 +\frac{\sin^2\phi}{r}
 +\frac{\sin^2\phi\cos^2\theta}{r}
@@ -259,8 +257,7 @@ $$
 +\frac{\sin^2\theta}{r}
 \Bigr)
 \frac{\partial f}{\partial r}\\
-
-+\Bigl(
+  +\Bigl(
 -\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}
 +\frac{\sin\theta\cos\theta}{r^2}
 -\frac{\sin\theta\cos\theta\cos^2\phi}{r^2}
@@ -271,8 +268,7 @@ $$
 -\frac{\sin\theta\sin^2\phi\cos\theta}{r^2}
 \Bigr)
 \frac{\partial f}{\partial \theta}\\
-
-+\Bigl(
+  +\Bigl(
 \frac{\sin\phi\cos\phi}{r^2}
 +\frac{\cos^2\theta\sin\phi\cos\phi}{r^2\sin^2\theta}
 +\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}\\
@@ -281,8 +277,7 @@ $$
 -\frac{\sin\phi\cos\phi}{r^2\sin^2\theta}
 \Bigr)
 \frac{\partial f}{\partial\phi}\\
-
-+\Bigl(
+  +\Bigl(
 \frac{\sin\theta\cos\theta\cos^2\phi}{r}
 +\frac{\sin\theta\cos\theta\cos^2\phi}{r}
 +\frac{\sin\theta\cos\theta\sin^2\phi}{r}\\
@@ -290,8 +285,7 @@ $$
 -\frac{\sin\theta\cos\phi}{r}-\frac{\sin\theta\cos\theta}{r}
 \Bigr)
 \frac{\partial^2 f}{\partial r\partial\theta}\\
-
-+\Bigl(
+  +\Bigl(
 -\frac{\sin\phi\cos\theta\cos\phi}{r^2\sin\theta}
 -\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}\\
 +\frac{\cos\theta\sin\phi\cos\phi}{r^2\sin\theta}
@@ -303,6 +297,7 @@ $$
 \Bigr)
 \frac{\partial^2 f}{\partial\phi\partial r}
 $$
+
 $$\begin{align*}
 =&\frac{\partial^2f}{\partial r^2}
 +\Bigl(\frac{2}{r}\Bigr)\frac{\partial f}{\partial r}

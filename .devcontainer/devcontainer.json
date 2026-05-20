@@ -1,9 +1,18 @@
-
 {
-  "name": "quarto-japanese",
+  "name": "techdocs-quarto-japanese",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {}
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y make git curl ca-certificates fonts-noto-cjk texlive-luatex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk && (command -v quarto >/dev/null 2>&1 || (curl -fsSL https://quarto.org/download/latest/quarto-linux-amd64.deb -o /tmp/quarto.deb && sudo dpkg -i /tmp/quarto.deb && rm /tmp/quarto.deb))"
+  "postCreateCommand": [
+    "set -eux",
+    "sudo apt-get update",
+    "sudo apt-get install -y --no-install-recommends make git curl ca-certificates fontconfig fonts-texgyre fonts-liberation fonts-noto-cjk texlive-luatex texlive-lang-japanese texlive-latex-extra latexmk",
+    "fc-cache -f -v >/dev/null",
+    "bash -lc 'if ! command -v quarto >/dev/null 2>&1; then curl -fsSL https://quarto.org/download/latest/quarto-linux-amd64.deb -o /tmp/quarto.deb; sudo dpkg -i /tmp/quarto.deb || sudo apt-get -f install -y; rm -f /tmp/quarto.deb; fi'",
+    "quarto --version",
+    "lualatex --version | head -n 1",
+    "kpsewhich luatexja-fontspec.sty >/dev/null",
+    "kpsewhich bm.sty >/dev/null"
+  ]
 }
