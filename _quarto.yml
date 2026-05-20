@@ -1,0 +1,14 @@
+project:
+  type: default
+  output-dir: build
+
+format:
+  pdf:
+    pdf-engine: lualatex
+    documentclass: ltjsarticle
+    include-in-header:
+      text: |
+        \usepackage{amsmath, amssymb, amsthm}
+        \usepackage{mathtools}
+        \usepackage{bm}
+    

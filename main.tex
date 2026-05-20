@@ -1,0 +1,39 @@
+\documentclass[dvipdfmx]{jlreq}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+
+\renewcommand{\proofname}{\textbf{証明}}
+\newtheorem*{thm*}{定理}
+\newtheorem*{dfn*}{定義}
+\newtheorem*{prp*}{命題}
+
+\title{群論}
+\author{}
+\begin{document}
+\maketitle
+
+%% 環・体の定義
+\input{Definition_of_ring_and_field.tex}
+%% 部分群と生成元
+\input{Subgroup_and_generator.tex}
+%% 元の位数
+\input{Order_of_elements.tex}
+%% 準同型と同型
+\input{Homomorphism_and_isomorphism.tex}
+%% 同値関係と剰余類
+\input{Equivalence_relation_and_residue_class.tex}
+%% 両側剰余類
+\input{Double_coset.tex}
+%% 正規部分群と剰余群
+\input{Normal_subgroup_and_quotient_group.tex}
+%% 群の直積
+\input{Direct_product_of_groups.tex}
+
+
+\end{document}

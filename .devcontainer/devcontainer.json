@@ -1,0 +1,15 @@
+{
+  "name": "quarto-japanese",
+  "image": "ghcr.io/quarto-dev/quarto-full:latest",
+
+  "postCreateCommand": "apt-get update && apt-get install -y git",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "quarto.quarto",
+        "github.vscode-github-actions"
+      ]
+    }
+  }
+}
