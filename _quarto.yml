@@ -1,11 +1,19 @@
 project:
   type: default
-  output-dir: build
 
 format:
   html:
     toc: true
+    number-sections: true
+    theme: cosmo
+    css:
+      - styles/mobile.css
+    html-math-method: mathjax
 
   pdf:
     pdf-engine: lualatex
-    documentclass: ltjsarticle
+    toc: true
+    number-sections: true
+    keep-tex: false
+    mainfont: "Times New Roman"
+    CJKmainfont: "Noto Serif CJK JP"

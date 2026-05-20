@@ -1,4 +1,9 @@
+
 {
   "name": "quarto-japanese",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu"
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y make git curl ca-certificates fonts-noto-cjk texlive-luatex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk && (command -v quarto >/dev/null 2>&1 || (curl -fsSL https://quarto.org/download/latest/quarto-linux-amd64.deb -o /tmp/quarto.deb && sudo dpkg -i /tmp/quarto.deb && rm /tmp/quarto.deb))"
 }
