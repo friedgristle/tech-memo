@@ -21,21 +21,20 @@ jobs:
     - name: Setup Quarto
       uses: quarto-dev/quarto-actions/setup@v2
 
-    - name: Install LaTeX (for PDF)
+    - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-luatex texlive-lang-japanese texlive-latex-extra
+        sudo apt-get install -y \
+        make \
+        fontconfig \
+        fonts-texgyre fonts-noto-cjk \
+        texlive-luatex texlive-lang-japanese texlive-latex-extra latexmk 
 
-    - name: Install fonts
-      run: |
-        sudo apt-get install -y fonts-texgyre fonts-noto-cjk
-        fc-cache -f -v
-
-    - name: Build documents
+    - name: Build (make)
       run: |
         make all
 
-    - name: Upload Pages Artifact
+    - name: Upload Artifact
       uses: actions/upload-pages-artifact@v3
       with:
         path: public
