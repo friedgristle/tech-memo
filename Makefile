@@ -50,23 +50,34 @@ clean:
 clobber: clean
 	rm -rf _site
 
-# ---------- ルール：md/qmd -> HTML ----------
+# ---------- ルール：md/qmd -> HTML（renderしてからpublicへ移動） ----------
 $(HTML_DIR)/%.html: $(SRC_DIR)/%.md $(QUARTO_YML)
 	@mkdir -p "$(dir $@)"
-	$(QUARTO) render "$<" --to html --output-dir "$(HTML_DIR)" --output "$(notdir $@)"
+	@src_dir="$(dir $<)"; base="$(notdir $<)"; base="$${base%.*}"; \
+	( cd "$$src_dir" && $(QUARTO) render "$(notdir $<)" --to html ); \
+	mv "$$src_dir/$${base}.html" "$@"; \
+	if [ -d "$$src_dir/$${base}_files" ]; then mv "$$src_dir/$${base}_files" "$(dir $@)"; fi
 
 $(HTML_DIR)/%.html: $(SRC_DIR)/%.qmd $(QUARTO_YML)
 	@mkdir -p "$(dir $@)"
-	$(QUARTO) render "$<" --to html --output-dir "$(HTML_DIR)" --output "$(notdir $@)"
+	@src_dir="$(dir $<)"; base="$(notdir $<)"; base="$${base%.*}"; \
+	( cd "$$src_dir" && $(QUARTO) render "$(notdir $<)" --to html ); \
+	mv "$$src_dir/$${base}.html" "$@"; \
+	if [ -d "$$src_dir/$${base}_files" ]; then mv "$$src_dir/$${base}_files" "$(dir $@)"; fi
 
-# ---------- ルール：md/qmd -> PDF ----------
+# ---------- ルール：md/qmd -> PDF（renderしてからpublicへ移動） ----------
 $(PDF_DIR)/%.pdf: $(SRC_DIR)/%.md $(QUARTO_YML)
 	@mkdir -p "$(dir $@)"
-	$(QUARTO) render "$<" --to pdf --output-dir "$(PDF_DIR)" --output "$(notdir $@)"
+	@src_dir="$(dir $<)"; base="$(notdir $<)"; base="$${base%.*}"; \
+	( cd "$$src_dir" && $(QUARTO) render "$(notdir $<)" --to pdf ); \
+	mv "$$src_dir/$${base}.pdf" "$@"
 
 $(PDF_DIR)/%.pdf: $(SRC_DIR)/%.qmd $(QUARTO_YML)
 	@mkdir -p "$(dir $@)"
-	$(QUARTO) render "$<" --to pdf --output-dir "$(PDF_DIR)" --output "$(notdir $@)"
+	@src_dir="$(dir $<)"; base="$(notdir $<)"; base="$${base%.*}"; \
+	( cd "$$src_dir" && $(QUARTO) render "$(notdir $<)" --to pdf ); \
+	mv "$$src_dir/$${base}.pdf" "$@"
+
 
 # ---------- index.md を自動生成（docs以下のファイル一覧からリンク作る） ----------
 # index.md が更新されたら index.html も作り直す
@@ -84,6 +95,6 @@ $(INDEX_MD): $(SRC_ALL)
 		echo "- **$${base}**  ([HTML](html/$${base}.html) / [PDF](pdf/$${base}.pdf))" >> "$@"; \
 	done
 
-# index.md -> index.html
+# ---------- index.md -> index.html（public内でrender） ----------
 $(INDEX_HTML): $(INDEX_MD) $(QUARTO_YML)
-	$(QUARTO) render "$(INDEX_MD)" --to html --output "$@"
+	@cd "$(PUB_DIR)" && $(QUARTO) render "index.md" --to html
