@@ -14,21 +14,15 @@ jobs:
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install pandoc, LaTeX and Japanese fonts
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            texlive-luatex \
-            texlive-lang-japanese \
-            fonts-noto-cjk
+      - name: Install build dependencies
+        run: bash scripts/install-deps.sh
 
-      - name: Render Quarto project
-        run: 
-          quarto render
+      - name: Build PDF (make)
+        run: make pdf
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: pdf-output
-          path: *.pdf
+          path: public/pdf/**/*.pdf
           if-no-files-found: error
