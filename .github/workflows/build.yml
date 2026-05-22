@@ -15,7 +15,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Install build dependencies
-        run: bash scripts/install-deps.sh
+        run: bash scripts/setup-runner.sh
 
       - name: Build PDF (make)
         run: make pdf
