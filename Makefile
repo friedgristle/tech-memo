@@ -56,14 +56,14 @@ $(HTML_DIR)/%.html: $(SRC_DIR)/%.md $(QUARTO_YML)
 	@src_dir="$(dir $<)"; base="$(notdir $<)"; base="$${base%.*}"; \
 	( cd "$$src_dir" && $(QUARTO) render "$(notdir $<)" --to html ); \
 	mv "$$src_dir/$${base}.html" "$@"; \
-	if [ -d "$$src_dir/$${base}_files" ]; then mv "$$src_dir/$${base}_files" "$(dir $@)"; fi
+	if [ -d "$$src_dir/$${base}_files" ]; then rm -rf "$(dir $@)$${base}_files"; mv "$$src_dir/$${base}_files" "$(dir $@)"; fi
 
 $(HTML_DIR)/%.html: $(SRC_DIR)/%.qmd $(QUARTO_YML)
 	@mkdir -p "$(dir $@)"
 	@src_dir="$(dir $<)"; base="$(notdir $<)"; base="$${base%.*}"; \
 	( cd "$$src_dir" && $(QUARTO) render "$(notdir $<)" --to html ); \
 	mv "$$src_dir/$${base}.html" "$@"; \
-	if [ -d "$$src_dir/$${base}_files" ]; then mv "$$src_dir/$${base}_files" "$(dir $@)"; fi
+	if [ -d "$$src_dir/$${base}_files" ]; then rm -rf "$(dir $@)$${base}_files"; mv "$$src_dir/$${base}_files" "$(dir $@)"; fi
 
 # ---------- ルール：md/qmd -> PDF（renderしてからpublicへ移動） ----------
 $(PDF_DIR)/%.pdf: $(SRC_DIR)/%.md $(QUARTO_YML)
