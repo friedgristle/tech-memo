@@ -55,6 +55,7 @@ $$ 0=r\frac{\partial r}{\partial z}\sin^2\theta+r^2\sin\theta\cos\theta\frac{\pa
 $\partial r/\partial z=\cos\theta$ を代入すると
 $$\frac{\partial\theta}{\partial z}=-\frac{\sin\theta}{r}$$
 以上をまとめると  
+
 ||$x$|$y$|$z$|
 |:---:|:---:|:---:|:---:|
 |$r$ | $\sin\theta\cos\phi$ | $\sin\theta\sin\phi$ | $\cos\theta$ |
@@ -72,18 +73,18 @@ $$\frac{\partial f}{\partial x}
 +\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial \theta}
 +\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}$$
 なので
-$$\frac{\partial^2f}{\partial x^2}=\frac{\partial}{\partial x}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
+$$\begin{align*}\frac{\partial^2f}{\partial x^2}=&\frac{\partial}{\partial x}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
 +\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial \theta}
-+\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr)  \\
-=\frac{\partial r}{\partial x}\frac{\partial}{\partial r}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
++\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr) \\
+=&\frac{\partial r}{\partial x}\frac{\partial}{\partial r}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
 +\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial \theta}
-+\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr)\\
-+\frac{\partial\theta}{\partial x}\frac{\partial}{\partial\theta}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
++\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr) \\
+&+\frac{\partial\theta}{\partial x}\frac{\partial}{\partial\theta}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
 +\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial \theta}
-+\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr)\\
-+\frac{\partial\phi}{\partial x}\frac{\partial}{\partial\phi}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
++\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr) \\
+&+\frac{\partial\phi}{\partial x}\frac{\partial}{\partial\phi}\Bigl(\frac{\partial r}{\partial x}\frac{\partial f}{\partial r}
 +\frac{\partial \theta}{\partial x}\frac{\partial f}{\partial \theta}
-+\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr)$$
++\frac{\partial \phi}{\partial x}\frac{\partial f}{\partial \phi}\Bigr)\end{align*}$$
 
 これに $\partial r/\partial x=\sin\theta\cos\phi,\,\partial\theta/\partial x=\cos\theta\cos\phi/r,\,\partial\phi/\partial x=-\sin\phi/r\sin\theta$ を代入すると
 
@@ -194,9 +195,6 @@ $$\frac{\partial \theta}{\partial z}\frac{\partial}{\partial \theta}\frac{\parti
 
 $$\frac{\partial\phi}{\partial z}\frac{\partial}{\partial\phi}\frac{\partial r}{\partial z}\frac{\partial f}{\partial r}=\frac{\partial\phi}{\partial z}\frac{\partial}{\partial\phi}\frac{\partial \theta}{\partial z}\frac{\partial f}{\partial\theta}=\frac{\partial\phi}{\partial z}\frac{\partial}{\partial r}\frac{\partial \phi}{\partial z}\frac{\partial f}{\partial\phi}=0$$
 
-
-
-x
 $$\begin{align*}
 \frac{\partial^2f}{x^2}+\frac{\partial^2f}{y^2}+\frac{\partial^2f}{z^2}
 &\\
