@@ -6,6 +6,7 @@
 
 - **complex-function/Complex_integration**  ([HTML](html/complex-function/Complex_integration.html) / [PDF](pdf/complex-function/Complex_integration.pdf))
 - **complex-function/Polar_Laplacian**  ([HTML](html/complex-function/Polar_Laplacian.html) / [PDF](pdf/complex-function/Polar_Laplacian.pdf))
+- **physics/VCSEL**  ([HTML](html/physics/VCSEL.html) / [PDF](pdf/physics/VCSEL.pdf))
 - **group-theory/Subgroup_and_generator**  ([HTML](html/group-theory/Subgroup_and_generator.html) / [PDF](pdf/group-theory/Subgroup_and_generator.pdf))
 - **group-theory/Equivalence_relation**  ([HTML](html/group-theory/Equivalence_relation.html) / [PDF](pdf/group-theory/Equivalence_relation.pdf))
 - **group-theory/Coset_of_symmetric_group**  ([HTML](html/group-theory/Coset_of_symmetric_group.html) / [PDF](pdf/group-theory/Coset_of_symmetric_group.pdf))

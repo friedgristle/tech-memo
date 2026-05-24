@@ -1,0 +1,53 @@
+{
+  "docs/complex-function/Complex_integration.md": {
+    "Complex_integration.html": "38c75d69",
+    "Complex_integration.tex": "0317dce6"
+  },
+  "docs/complex-function/Polar_Laplacian.md": {
+    "Polar_Laplacian.html": "7abc6efa",
+    "Polar_Laplacian.tex": "b3052b2d"
+  },
+  "docs/group-theory/Subgroup_and_generator.md": {
+    "Subgroup_and_generator.html": "256f2187",
+    "Subgroup_and_generator.tex": "046383b6"
+  },
+  "docs/group-theory/Equivalence_relation.md": {
+    "Equivalence_relation.html": "63dcd2e9",
+    "Equivalence_relation.tex": "d7ea575a"
+  },
+  "docs/group-theory/Coset_of_symmetric_group.md": {
+    "Coset_of_symmetric_group.html": "4d37b39f",
+    "Coset_of_symmetric_group.tex": "67205027"
+  },
+  "docs/group-theory/Homomorphism_theorem.md": {
+    "Homomorphism_theorem.html": "2caa3bf0",
+    "Homomorphism_theorem.tex": "720d6f03"
+  },
+  "docs/group-theory/Normal_subgroup_and_quotient_group.md": {
+    "Normal_subgroup_and_quotient_group.html": "c871aad1",
+    "Normal_subgroup_and_quotient_group.tex": "d471a5e7"
+  },
+  "docs/group-theory/Group_action.md": {
+    "Group_action.html": "4535ed6a",
+    "Group_action.tex": "89059dfb"
+  },
+  "docs/physics/Raman_spectroscopy.qmd": {
+    "Raman_spectroscopy.html": "1ccf2f73",
+    "Raman_spectroscopy.tex": "cea92e40"
+  },
+  "docs/physics/PhotoLuminescence.qmd": {
+    "PhotoLuminescence.html": "f0a58b42",
+    "PhotoLuminescence.tex": "4885ee38"
+  },
+  "docs/physics/Thomson_scattering.qmd": {
+    "Thomson_scattering.html": "76c403c3",
+    "Thomson_scattering.tex": "0f1f447d"
+  },
+  "public/index.md": {
+    "index.html": "9f17c2ef"
+  },
+  "docs/physics/VCSEL.md": {
+    "VCSEL.tex": "42bfa38f",
+    "VCSEL.html": "ff8a9e53"
+  }
+}

@@ -1,13 +1,43 @@
-/.quarto/
-**/*.quarto_ipynb
+# =====================================
+# OS / Editor
+# =====================================
+.DS_Store
+.vscode/
+*.swp
+*.swo
 
-build/
-.quarto/
+# =====================================
+# Build outputs
+# =====================================
+public/
+_site/
 
+# =====================================
+# HTML side outputs
+# =====================================
+*_files/
+*_cache/
+
+# =====================================
+# LaTeX / Pandoc / Quarto intermediate files
+# =====================================
 *.aux
-*.log
-*.toc
-*.out
-*.fls
+*.bbl
+*.bcf
+*.blg
 *.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
 *.synctex.gz
+*.toc
+*.tex
+
+# =====================================
+# Python / notebooks / misc cache
+# =====================================
+__pycache__/
+.ipynb_checkpoints/
