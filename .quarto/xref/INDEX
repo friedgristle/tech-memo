@@ -49,5 +49,9 @@
   "docs/physics/VCSEL.md": {
     "VCSEL.tex": "42bfa38f",
     "VCSEL.html": "ff8a9e53"
+  },
+  "docs/group-theory/Order_of_elements.md": {
+    "Order_of_elements.html": "ad69e101",
+    "Order_of_elements.tex": "573c8aac"
   }
 }

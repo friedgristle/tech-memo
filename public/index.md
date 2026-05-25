@@ -12,6 +12,7 @@
 - **group-theory/Coset_of_symmetric_group**  ([HTML](html/group-theory/Coset_of_symmetric_group.html) / [PDF](pdf/group-theory/Coset_of_symmetric_group.pdf))
 - **group-theory/Homomorphism_theorem**  ([HTML](html/group-theory/Homomorphism_theorem.html) / [PDF](pdf/group-theory/Homomorphism_theorem.pdf))
 - **group-theory/Normal_subgroup_and_quotient_group**  ([HTML](html/group-theory/Normal_subgroup_and_quotient_group.html) / [PDF](pdf/group-theory/Normal_subgroup_and_quotient_group.pdf))
+- **group-theory/Order_of_elements**  ([HTML](html/group-theory/Order_of_elements.html) / [PDF](pdf/group-theory/Order_of_elements.pdf))
 - **group-theory/Group_action**  ([HTML](html/group-theory/Group_action.html) / [PDF](pdf/group-theory/Group_action.pdf))
 - **physics/Raman_spectroscopy**  ([HTML](html/physics/Raman_spectroscopy.html) / [PDF](pdf/physics/Raman_spectroscopy.pdf))
 - **physics/PhotoLuminescence**  ([HTML](html/physics/PhotoLuminescence.html) / [PDF](pdf/physics/PhotoLuminescence.pdf))
