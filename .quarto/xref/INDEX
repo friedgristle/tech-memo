@@ -53,5 +53,9 @@
   "docs/group-theory/Order_of_elements.md": {
     "Order_of_elements.html": "ad69e101",
     "Order_of_elements.tex": "573c8aac"
+  },
+  "docs/group-theory/Double_coset.md": {
+    "Double_coset.html": "6331b793",
+    "Double_coset.tex": "fc452c76"
   }
 }
