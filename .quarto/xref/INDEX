@@ -57,5 +57,9 @@
   "docs/group-theory/Double_coset.md": {
     "Double_coset.html": "6331b793",
     "Double_coset.tex": "fc452c76"
+  },
+  "docs/group-theory/Direct_product_of_groups.md": {
+    "Direct_product_of_groups.html": "cb0e905a",
+    "Direct_product_of_groups.tex": "e8f085c4"
   }
 }

@@ -9,6 +9,7 @@
 - **physics/VCSEL**  ([HTML](html/physics/VCSEL.html) / [PDF](pdf/physics/VCSEL.pdf))
 - **group-theory/Subgroup_and_generator**  ([HTML](html/group-theory/Subgroup_and_generator.html) / [PDF](pdf/group-theory/Subgroup_and_generator.pdf))
 - **group-theory/Equivalence_relation**  ([HTML](html/group-theory/Equivalence_relation.html) / [PDF](pdf/group-theory/Equivalence_relation.pdf))
+- **group-theory/Direct_product_of_groups**  ([HTML](html/group-theory/Direct_product_of_groups.html) / [PDF](pdf/group-theory/Direct_product_of_groups.pdf))
 - **group-theory/Coset_of_symmetric_group**  ([HTML](html/group-theory/Coset_of_symmetric_group.html) / [PDF](pdf/group-theory/Coset_of_symmetric_group.pdf))
 - **group-theory/Homomorphism_theorem**  ([HTML](html/group-theory/Homomorphism_theorem.html) / [PDF](pdf/group-theory/Homomorphism_theorem.pdf))
 - **group-theory/Normal_subgroup_and_quotient_group**  ([HTML](html/group-theory/Normal_subgroup_and_quotient_group.html) / [PDF](pdf/group-theory/Normal_subgroup_and_quotient_group.pdf))
