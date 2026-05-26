@@ -11,6 +11,7 @@
 - **group-theory/Equivalence_relation**  ([HTML](html/group-theory/Equivalence_relation.html) / [PDF](pdf/group-theory/Equivalence_relation.pdf))
 - **group-theory/Direct_product_of_groups**  ([HTML](html/group-theory/Direct_product_of_groups.html) / [PDF](pdf/group-theory/Direct_product_of_groups.pdf))
 - **group-theory/Coset_of_symmetric_group**  ([HTML](html/group-theory/Coset_of_symmetric_group.html) / [PDF](pdf/group-theory/Coset_of_symmetric_group.pdf))
+- **group-theory/Definition_of_ring_and_field**  ([HTML](html/group-theory/Definition_of_ring_and_field.html) / [PDF](pdf/group-theory/Definition_of_ring_and_field.pdf))
 - **group-theory/Homomorphism_theorem**  ([HTML](html/group-theory/Homomorphism_theorem.html) / [PDF](pdf/group-theory/Homomorphism_theorem.pdf))
 - **group-theory/Normal_subgroup_and_quotient_group**  ([HTML](html/group-theory/Normal_subgroup_and_quotient_group.html) / [PDF](pdf/group-theory/Normal_subgroup_and_quotient_group.pdf))
 - **group-theory/Order_of_elements**  ([HTML](html/group-theory/Order_of_elements.html) / [PDF](pdf/group-theory/Order_of_elements.pdf))

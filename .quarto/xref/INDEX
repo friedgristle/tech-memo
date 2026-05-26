@@ -61,5 +61,9 @@
   "docs/group-theory/Direct_product_of_groups.md": {
     "Direct_product_of_groups.html": "cb0e905a",
     "Direct_product_of_groups.tex": "e8f085c4"
+  },
+  "docs/group-theory/Definition_of_ring_and_field.md": {
+    "Definition_of_ring_and_field.html": "9e9b5265",
+    "Definition_of_ring_and_field.tex": "baae7f3d"
   }
 }
