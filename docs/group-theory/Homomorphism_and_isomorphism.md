@@ -29,26 +29,26 @@ $\phi(\psi(x)\psi(y))=\phi(\psi(x))\phi(\psi(y))=xy=\phi(\psi(xy))$
 2. $\phi(x)\phi(x^{-1})=\phi(x\cdot x^{-1})=\phi(1_{G_1})=1_{G_2}$ で,両辺左から $\phi(x)^{-1}$ をかけると,
 $$\phi(x)^{-1}\phi(x)\phi(x^{-1}) = \phi(x)^{-1} 1_{G_2}$$
 $$\phi(x^{-1}) = \phi(x)^{-1}$$
-3. $H$は部分群なので $1_{G_2} \in H$ で, 
+3. $H$ は部分群なので $1_{G_2} \in H$ で, 
 また $\phi(1_{G_1})=1_{G_2}$ であるから $\phi^{-1}(1_{G_2})=1_{G_1}$. したがって $1_{G_1} \in \phi^{-1}(H)$ である.（単位元の存在）  
 任意の $a_2 \in H$に対して逆元$a_2^{-1} \in H$ が存在する. 
-$\phi^{-1}(a_2)=a_1 $ とすると, (2)より 
+$\phi^{-1}(a_2)=a_1$ とすると, (2)より 
 $\phi(a_1^{-1}) = \phi(a_1)^{-1} = a_2^{-1}$ なので, 
 $a_1^{-1}=\phi^{-1}(a_2^{-1}) \in \phi^{-1}(H)$ （逆元の存在）.  
 また任意の $b_2 \in H$ に対して $\phi^{-1}(b_2) = b_1$ とすると, 
 $a_2 b_2 \in H$ で, $a_1 b_1 = \phi^{-1}(a_2 b_2) \in \phi^{-1}(H)$ （閉性）  
 以上より, $\phi^{-1}(H)$ は $G_2$ の部分群となる.
 4. $1_{G_1} \in G_1$ に対して, (1)より $\phi(1_{G_1})=1_{G_2}$ 
-であるから, $ 1_{G_1} \in \mathrm{Ker}(\phi) $.  
-$ a \in \mathrm{Ker}(\phi) $ の逆元 $a^{-1}$ に対して 
+であるから, $1_{G_1} \in \mathrm{Ker}(\phi)$.  
+$a \in \mathrm{Ker}(\phi)$ の逆元 $a^{-1}$ に対して 
 $\phi(a^{-1})=\phi(a)^{-1}=1_{G_2}^{-1} = 1_{G_2}$.  
-したがって $ a^{-1} \in \mathrm{Ker}(\phi) $ である.  
+したがって $a^{-1} \in \mathrm{Ker}(\phi)$ である.  
 また $a,b \in \mathrm{Ker}(\phi)$ について 
 $\phi(ab) = \phi(a)\phi(b) = 1_{G_2}1_{G_2}=1_{G_2}$ なので	
 $ab \in \mathrm{Ker}(\phi)$ であり, 積について閉じている.  
 以上より, $\mathrm{Ker}(\phi)$ は $G_1$ の部分群.  
 $\phi(1_{G_1})=1_{G_2}$ であるから, $1_{G_2} \in \mathrm{Im}(\phi)$.  
-$a \in G_1 $ に対して逆元 $a^{-1} \in G_1$ で, 
+$a \in G_1$ に対して逆元 $a^{-1} \in G_1$ で, 
 $\phi(a^{-1}) = \phi(a)^{-1} \in \mathrm{Im}(\phi)$ である. 
 $a,b \in G_1$ は, $G_1$ が積について閉じているので $ab \in G_1$ であり, それぞれの写像の積 $\phi(a)\phi(b) = \phi(ab) \in \mathrm{Im}(\phi)$ となり, 積について閉じている.  
 以上より, $\mathrm{Im}(\phi)$ は $G_2$ の部分群である.  
@@ -121,7 +121,7 @@ $E_{ij}$ のことを**行列単位**という.
 （$\delta_{jk}$ はクロネッカーのデルタ）.
 
 $P_\sigma = \sum_{i=1}^n E_{\sigma(i)i}$ であり, 
-$\sigma,\tau \in \mathfrak{S}_n $ なら
+$\sigma,\tau \in \mathfrak{S}_n$ なら
 $$
 P_\sigma P_\tau = \sum_{i=1}^n E_{\sigma(i)i} \sum_{j=1}^n E_{\tau(j)j} 
  = \sum_{i,j = 1}^n E_{\sigma(i)i} E_{\tau(j)j} 
@@ -179,7 +179,7 @@ $f_1 f_2(ab) = f_1(f_2(ab)) = f_1(f_2(a) f_2(b))= f_1 f_2(a) f_1 f_2(b)$
 
 $G_1, G_2$ が群で $\phi: G_1 \to G_2 $ が同型写像なら, 
 $G_1$ に関する群論的な性質は $G_2$ でも成り立つ. 
-たとえば, $ x \in G_1$ の位数と $\phi(x) \in G_2$ の位数は等しい. 
+たとえば, $x \in G_1$ の位数と $\phi(x) \in G_2$ の位数は等しい. 
 また $|G_1| = |G_2|$ である. 
 $G_1$ が自明でない部分群を持たなければ $G_2$ も自明でない部分群を持たない.
 
@@ -206,17 +206,17 @@ $$\begin{align*}
 
 \begin{tcolorbox}
   \begin{prp*}
->**命題**　$\phi:G_1 \to G_2 $ が準同型なら, 次の(1)、(2)は同値である.
+>**命題**　$\phi:G_1 \to G_2$ が準同型なら, 次の(1)、(2)は同値である.
 >1. $\phi$は単射である.
 >2. $\mathrm{Ker}(\phi) = \{ 1_{G_1} \}$.
 
 **証明**  
 (1)$\implies$(2)  
-$\phi:G_1 \to G_2 $ が準同型なので $\phi(1_{G_1})=1_{G_2}$ である. 
+$\phi:G_1 \to G_2$ が準同型なので $\phi(1_{G_1})=1_{G_2}$ である. 
 $\phi$ が単射であれば、$G_2$ のある元に移る $G_1$ の元は1個しかないので, $\mathrm{Ker}(\phi) = \{ 1_{G_1} \}$ となる.  
 (2)$\implies$(1)  
 $a,b \in G_1$ に対して, $\phi(a) = \phi(b)$ とする.
-$\phi:G_1 \to G_2 $ が準同型なので
+$\phi:G_1 \to G_2$ が準同型なので
 $$  \phi(ab^{-1}) = \phi(a)\phi(b^{-1}) = \phi(a)\phi(b)^{-1}
    = \phi(a)\phi(a)^{-1} = 1_{G_2}.
 $$
@@ -324,7 +324,7 @@ $\phi$ は準同型なので $1_B=\phi(1_A)=\phi(xy)=\phi(x)\phi(y), 1_B = \phi(
 また任意の $x \in A^\times$ の写像 $\phi(x) \in B$ に対して
 逆元 $\phi(y) \in B$ が存在するので, 
 $\phi(A^\times)$ は $B$ の部分集合による乗法群となる.  
-したがって, $\phi(A^\times)\subset B^\times $ である.
+したがって, $\phi(A^\times)\subset B^\times$ である.
 $x,y \in A^\times$ なら $\phi(xy)=\phi(x)\phi(y)$ なので, 
 $\phi$ の $A^\times$ への制限は $A^\times$ から $B^\times$への群準同型である.　□
 

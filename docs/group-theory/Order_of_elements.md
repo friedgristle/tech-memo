@@ -33,8 +33,8 @@ $\tau \neq 1_G, \; \tau^2=1_G$ なので, $\tau$ の位数は2である.
 > $H \subset \mathbb{Z}$ は部分群である.
 
 **証明**　$x^0 = 1_G$ なので, 加法群 $\mathbb{Z}$ の単位元 $0 \subset H$ である. 
-$ m, n \in H$ について, $x^{m+n} = x^m\cdot x^n = 1_G\cdot 1_G =1_G $ 
-であるから, $m+n \in H $. 
+$m, n \in H$ について, $x^{m+n} = x^m\cdot x^n = 1_G\cdot 1_G =1_G$ 
+であるから, $m+n \in H$. 
 また $m$ の逆元 $-m$ について, 
 $x^{-m} = 1_G\cdot x^{-m} = x^m\cdot x^{-m} = x^{m-m} = 1_G$ なので $-m \in H$ となる.    
 以上より, $H$ は $\mathbb{Z}$ の部分群となる.　□
@@ -90,7 +90,7 @@ $ax+by=d$ となる $x = x_0, y = y_0$とすると,
  $n \in \mathbb{Z}$ に対して $nd = n(ax_0 + by_0)=a(nx_0)+b(ny_0)$ となり,
  $nx_0,ny_0 \in \mathbb{Z}$ なので
  $d\mathbb{Z} \subset \{ax+by \mid x,y \in \mathbb{Z} \}$ である.  
-次に, $d \mid a,b $ であるから $d$ は任意の $x, y \in \mathbb{Z}$ に対して
+次に, $d \mid a,b$ であるから $d$ は任意の $x, y \in \mathbb{Z}$ に対して
  $ax+by$ の約数となる（つまり $ax+by$ は $d$ の整数倍）.  
 したがって $\{ax+by \mid x,y \in \mathbb{Z} \} \subset d\mathbb{Z}$ である.  
 以上より, $\{ax+by \mid x,y \in \mathbb{Z} \} = d\mathbb{Z}$ となる.　□
@@ -105,7 +105,7 @@ $(\mathbb{Z}/n\mathbb{Z})^\times= \{\overline{m} \mid 0 \leq m < n, \text{mとn�
 $0\leq m < n$ が互いに素であれば, $0<m$ で,
  $mx + ny = 1$ となる $x,y \in \mathbb{Z}$ が存在する.  
 $x=qn+r \; (q,r \in \mathbb{Z}, 0\leq r < n)$ とおくと,
- $ mx + ny = m(qn+r) + ny = 1$ であり, $mr = 1 - n(mq+y)$ なので,
+ $mx + ny = m(qn+r) + ny = 1$ であり, $mr = 1 - n(mq+y)$ なので,
   $\bar{m}\bar{r} = \bar{1}$ である.  
   すなわち, $\bar{m}$ に対して逆元 $\bar{r}$ が存在し,
   $\bar{m} \in (\mathbb{Z}/n\mathbb{Z})^\times$ である.  
@@ -135,7 +135,7 @@ $d\in H$ かつ $H$ は部分群なので任意の整数 $k$ に対して $kd \i
 よって $d\mathbb{Z} \subseteq  H$.  
 任意に $h \in H$ を取ると, 整数 $q, r$ が存在して
   $h = qd + r, \quad 0\leq r < d$ と表せ, 
-  $ qd \in dZ \subseteq H$ だから
+  $qd \in dZ \subseteq H$ だから
   $r = h - qd \in H$（部分群だから差が元に残る）.
   ここで $r$ は $0 \leq r < d$ の整数であるが, $d$ は $H$ の正の最小元だったので,
   もし $r>0$ ならば $r \geq d$ でなければならず, 矛盾する. したがって $r=0$ である.
@@ -144,7 +144,7 @@ $d\in H$ かつ $H$ は部分群なので任意の整数 $k$ に対して $kd \i
 
 >**命題**　$G$ を群, $x \in G$ とし, $x$ の位数は有限で $d < \infty$ とする. 
 このとき, $n \in \mathbb{Z}$ に対し次の(1), (2)は同値である. さらに, $\{ m \in \mathbb{Z} \mid x^m = 1_G \} = d\mathbb{Z}$ である.  
-(1) $ x^n = 1_G $.  
+(1) $x^n = 1_G$.  
 (2) $n$は$d$の倍数である.
 
 **証明**  
@@ -171,7 +171,7 @@ $H=\langle x \rangle$ を $x$ で生成された巡回部分群とする.
  このとき, $|H|=d$ である.
 
 **証明**　$H = \{ x^n \mid n \in \mathbb{Z} \} = \{x, x^2, \cdots, x^{d-1}, x^d=1_G \}$ である. 
-$ 0 < i < j \leq d $ なる整数 $i,j$ に対して, $x^i = x^j$ であったとする.  
+$0 < i < j \leq d$ なる整数 $i,j$ に対して, $x^i = x^j$ であったとする.  
 両辺に $x^{d-i}$ をかけると
 $$x^{d-i}x^i = x^{d-i}x^j$$
 $$x^d = x^d x^{j-i}$$
@@ -194,7 +194,7 @@ $$x^{j-i} = 1_G$$
 (2) $395x+265y=d$となる整数$x,y$の組を一つ見つけよ.
 
 (1) $395 = 265+130,\; 265=2\times 130+5,\; 130=26\times 5$ より, $d=5$.  
-(2) $ 5=265-2\times 130=265 - 2\times(395-265)=-2\times 395 +3\times 265$, 
+(2) $5=265-2\times 130=265 - 2\times(395-265)=-2\times 395 +3\times 265$, 
 したがって $x=-2,y=3$.
 
 **2.4.3**　(1) $\mathbb{Z}/7\mathbb{Z}$ において,

@@ -29,7 +29,7 @@ $G$ が $\mathrm{GL}_n(\mathbb{R})$ の部分群なら, 包含写像 $G\to \math
 同様に準同型 $G\to \mathrm{GL}_n(\mathbb{C})$ があれば, $G$ は $\mathbb{C}^n$ に左から作用する. これも線形作用という.
 
 特に, 直交群 $\mathrm{O}(2)$ について考察する. $\theta \in \mathbb{R}$ に対し,
-$$ R_\theta= \begin{pmatrix}\cos{\theta}& -\sin{\theta}\\ \sin{\theta} & \cos{\theta}\end{pmatrix}$$
+$$R_\theta= \begin{pmatrix}\cos{\theta}& -\sin{\theta}\\ \sin{\theta} & \cos{\theta}\end{pmatrix}$$
 とおく. 
 $${}^tR_\theta R_\theta 
 =\begin{pmatrix}\cos\theta & \sin\theta\\-\sin\theta & \cos\theta\end{pmatrix}
@@ -87,7 +87,7 @@ $1_G\in G$ に対して $1_Gx=x$ であり, また $g,h\in G$ なら $g(hx)=ghx=
 > **命題** $\rho:G\to\mathfrak{S}_n$ は群の準同型である.  
 
 **証明**　$g,h\in G$ なら, $i=1,\cdots,n$ に対し, $x_{\rho(gh)(i)}=(gh)\cdot x_i$ である. $G$ は $X$ に左から作用するので 
-$$ (gh)\cdot x_i=g\cdot (h\cdot x_i)=g\cdot x_{\rho(h)(i)}=x_{\rho(g)\circ\rho(h)(i)}$$
+$$(gh)\cdot x_i=g\cdot (h\cdot x_i)=g\cdot x_{\rho(h)(i)}=x_{\rho(g)\circ\rho(h)(i)}$$
 であり, $x_{\rho(gh)(i)}=x_{\rho(g)\circ\rho(h)(i)}$.  
 したがって, $\rho(gh)=\rho(g)\circ\rho(h)$ である.  
 上の $\rho$ を $X$ への作用により定まる**置換表現**という.
@@ -105,8 +105,8 @@ $$\mathrm{Ad}(g_1g_2)(h)=(g_1g_2)h(g_1g_2)^{-1}=g_1(g_2hg_2^{-1})g_1^{-1}=\mathr
 である. $G\times X$ から $X$ への写像を $(g,x)\mapsto\mathrm{Ad}(g)(x)$ と定義すると, 上の考察よりこれは左作用になる. この作用のことを**共役による作用**という.  
 $G$ がアーベル群なら, 共役による作用は自明である.  
 $G=\mathfrak{S}_3$ とすると, $\sigma=(12)$ なら,  
-$$ \mathrm{Ad}(\sigma)(1)=1,\;\mathrm{Ad}(\sigma)((12))=(12),\;\mathrm{Ad}((13))=(23),$$
-$$ \mathrm{Ad}(\sigma)((23))=(13)),\;\mathrm{Ad}(\sigma)((123))=(132),\;\mathrm{Ad}((132))=(123)$$
+$$\mathrm{Ad}(\sigma)(1)=1,\;\mathrm{Ad}(\sigma)((12))=(12),\;\mathrm{Ad}((13))=(23),$$
+$$\mathrm{Ad}(\sigma)((23))=(13)),\;\mathrm{Ad}(\sigma)((123))=(132),\;\mathrm{Ad}((132))=(123)$$
 なので, $1,(12),(13),(23),(123),(132)$ の順番に番号をつけると, 置換表現 $\rho$ により, $\rho(\sigma)=(34)(56)$となる.
 
 **群の作用7**　$G$ を群, $X$ を $G$ から $\mathbb{C}$ への関数全体の集合とする. $g\in G,f\in X$ とするとき, $gf\in X$ を $(gf)(h)=f(hg)$ と定義する. $g_2,g_2\in G$ なら

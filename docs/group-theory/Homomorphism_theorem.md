@@ -61,7 +61,7 @@ $H\in \mathbb{X}$ なら, $\pi(\pi^{-1}(H))\subset H$ であることは明ら�
 $$(h_1 n_1)(h_2n_2)\in h_1Nh_2N=h_1h_2NN\subset HN$$
 となるので, $HN$ は積について閉じている.  
 $h\in H, n\in N$ なら,
-$$ (hn)^{-1}=n^{-1}h^{-1}\in Nh^{-1}=h^{-1}N\subset HN$$
+$$(hn)^{-1}=n^{-1}h^{-1}\in Nh^{-1}=h^{-1}N\subset HN$$
 となるので, $HN$ は逆元についても閉じている. したがって, $HN$ は $G$ の部分群である.  
 $N$ は正規部分群なので $n'=hnh^{-1}$ とおくと $n' \in N$ であり, $hn=n'h\in Nh$ となる. これがすべての $n$ について成り立つので $hN\subset Nhである. $  
 同様に $n'h=hn\in hN$ がすべての $n$ に対して成り立つので $Nh\subset hN$ である. $hN\subset Nh$ かつ $Nh\subset hN$ であることから $hN=Nh$ となり, $HN=NH$ である.  
