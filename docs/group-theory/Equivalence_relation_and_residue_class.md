@@ -20,7 +20,7 @@ $f(x)=f(y), f(y)=f(z) \implies f(x)=f(z)$.
 **合同関係**　正の整数 $n$ を固定する. $x,y \in \mathbb{Z}$ に対し,
 $x-y$ が $n$ で割り切れるとき $x\equiv y \; \mathrm{mod} \, n$ と定義する.  
 任意の $x \in \mathbb{Z}$ に対し, 
-$x\equiv x\; \mathrm{mod} \, n $ であることは明らかである.（反射律）  
+$x\equiv x\; \mathrm{mod} \, n$ であることは明らかである.（反射律）  
 $x,y \in \mathbb{Z}$ とする. $x-y$ が $n$ で割りきれれば $y-x$ も $n$ で割り切れるので, 
 $x \equiv y\; \mathrm{mod}\, n$ なら $y\equiv x \; \mathrm{mod}\, n$ となる.（対称律）  
 $x,y,z \in \mathbb{Z}$ で $x \equiv y, y\equiv z\; \mod \, n$ なら, 
