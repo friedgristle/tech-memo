@@ -247,8 +247,8 @@ $x^{p-1}$ を $p$ で割った余りと $i^{p-1}$ を $p$ で割った余りは�
 $x^{p-1} \equiv 1 \; \mathrm{mod}\, p$ である.　□
 
 > $p$ が素数なら, すべての $x \in \mathbb{Z}$ に対し, 
-$x^p \equiv \; \mathrm{mod} \, p$.
-
+$x^p \equiv \; \mathrm{mod} \, p$
+.
 **証明**　$x$ が $p$ で割り切れれば, $x^p,x \equiv 0 \; \mathrm{mod} \, p$ である.  
 $x$ が $p$ で割り切れなければ, $x^{p-1}-1$ は $p$ で割り切れる.  
 よって, $x(x^{p-1}-1)=x^p -x$ も $p$ で割り切れる.　□
