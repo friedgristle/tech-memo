@@ -259,7 +259,7 @@ $x$ が $p$ で割り切れなければ, $x^{p-1}-1$ は $p$ で割り切れる.
 $R=\{ (x,x) \mid x \in \mathbb{R} \} 
 \cup \{ (x,2x) \mid x \in \mathbb{R} \} 
 \cup \{ (2x,x) \mid x \in \mathbb{R} \} 
-\subset \mathbb{R} \times \mathbb{R} $　とすると, 
+\subset \mathbb{R} \times \mathbb{R}$　とすると, 
 $R$ は $\mathbb{R}$ 上の同値関係になるか？
 
 $x,y \in \mathbb{R}$ に対して, $(x,x) \in R$ である. 
