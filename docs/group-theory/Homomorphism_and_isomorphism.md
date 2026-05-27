@@ -5,7 +5,7 @@
 >1. $\phi$ が逆写像を持ち, 逆写像も準同型であるとき, $\phi$ は同型であるという. このとき, $G_1,G_2$ は同型であるといい, $G_1 \cong G_2$ と書く.
 >1. $\mathrm{Ker}(\phi)=\{ x \in G_1 \mid \phi(x)=1_{G_2}\}$ 
 を $\phi$ の核という.
->1. $\mathrm{Im}(\phi) = \{ \phi(x) \mid x \in G_1 \} $ を$\phi$ の像という.
+>1. $\mathrm{Im}(\phi) = \{ \phi(x) \mid x \in G_1 \}$ を $\phi$ の像という.
 
 $\phi:G\rightarrow H$ が群準同型というとき, 
 $G,H$ は群で $\phi$ は群準同型であるということを意味するものとする.
