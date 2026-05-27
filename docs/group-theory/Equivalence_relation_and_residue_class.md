@@ -27,7 +27,7 @@ $x,y,z \in \mathbb{Z}$ で $x \equiv y, y\equiv z\; \mod \, n$ なら,
 $x-y=an,\: y-z=bn$ となる $a,b \in \mathbb{Z}$ があるので, 
 $x-z=(x-y)+(y-z)=(a+b)n$ も $n$ で割り切れる.
 よって, $x \equiv z\;\mathrm{mod} \, n$ である.（推移律）  
-したがって, $ x\equiv y \; \mathrm{mod}\, n$ は同値関係である.
+したがって, $x\equiv y \; \mathrm{mod}\, n$ は同値関係である.
 
 **部分群による同値関係**　
 $G$ を群, $H \subset G$ を部分群とする. 
@@ -130,7 +130,7 @@ $f(x,y)=x=c$ となる $(x,y)$ の集合である.
 $S_1 S_2 = \{ xy \mid x \in S_1, y \in S_2 \}$ と定義する.  
 $S_1=\{x\}$ と一つの元よりなるときには, $\{x\}S_2$ の代わりに, $xS_2$ と書く. 
 $S_2=\{x\}$ の場合も同様である.  
-$S_1 S_2 S_3 $ など三つ以上の部分集合についても同様に定義する. 
+$S_1 S_2 S_3$ など三つ以上の部分集合についても同様に定義する. 
 群の演算を $+$ と書く場合には, $S_1+S_2$ などと書く. 
 その場合も, $S_1=\{x\}$ と一つの元よりなるときには, $x+S_2$ などと書く.
 
@@ -182,7 +182,7 @@ $\left| gH \right| = \left| Hg \right| =|H|$.
 1. $G/H$ から $H\backslash G$ への写像 $\alpha$ を
 $\alpha(gH)=Hg^{-1}$ と定義する. 
 まず$\alpha$がwell-definedであること, 
-すなわち$ g_1H=g_2H$ となる $g_1,g_2 \in G$ に対して 
+すなわち$g_1H=g_2H$ となる $g_1,g_2 \in G$ に対して 
 $Hg_1^{-1}=Hg_2^{-1}$ が成り立つことを示す.  
 $h \in H$ なら, 群の閉性により $hH=H$ であり, $g_1hH=g_1H$ となる.
 ここで $g_1h=g_2$ とおくと, $g_1H=g_2H$ である.
@@ -191,7 +191,7 @@ $Hg_1^{-1}=(Hh^{-1})g_1^{-1}=H(h^{-1}g_1^{-1})$ である.
 $h^{-1}g_1^{-1}=(g_1h)^{-1}=g_2^{-1}$ なので,
 $Hg_1^{-1}=Hg_2^{-1}$ となり, $\alpha$ はwell-definedである.  
 同様にして $\beta(Hg)=g^{-1}H$ という写像 $H\backslash G \to G/H$ についても, 
-$Hg=Hhg,g^{-1}H=(hg)^{-1}H $ が成り立つのでwell-definedである. 
+$Hg=Hhg,g^{-1}H=(hg)^{-1}H$ が成り立つのでwell-definedである. 
 $\alpha, \beta$ は互いの逆写像になるので, 両方とも全単射である.  
 したがって, $\left| G/H \right|=\left| H \backslash G \right|$ である.
 2. $H$ から $gH$ への写像 $\phi$ を $H \ni h \mapsto gh \in gH $ と定義する.  
@@ -239,7 +239,7 @@ $H \subset G$ は元の個数が等しいので, $H=G$ である.
 $x^{p-1}\equiv 1\; \mathrm{mod}\, p$.
 
 **証明**　
-$(\mathbb{Z}/p\mathbb{Z})^\times $ は元の個数が $p-1$ の群なので, 
+$(\mathbb{Z}/p\mathbb{Z})^\times$ は元の個数が $p-1$ の群なので, 
 $x=1,\cdots, p-1$ に対し, $\overline{x}^{p-1}=\overline{1}$ である.
 これは $x^{p-1}$ が $p$ で割り切れることを意味する.
 $x \in \mathbb{Z}$ を $p$ で割った余りが $i$ なら,
