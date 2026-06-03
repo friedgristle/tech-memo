@@ -1,5 +1,6 @@
 # 群の直積
 $G_1, G_2$ を群とする. これらは直積 $G_1\times G_2$ の部分群とみなせる.
+
 >**命題**　(1) $G_1\times G_2$ の中で $G_1$ の元と $G_2$ の元は可換である.  
 (2) $G_1, G_2$  $G_1\times G_2$ の正規部分群である.
 
@@ -31,8 +32,6 @@ $h=k^{-1}\in H\cap K$ である. $H\cap K=\{1_G\}$ であるから,
 $\mathrm{Ker}\phi = \{1_G\}$. したがって $\phi: H\times K\to G$ は単射である.  
 以上より, $G\cong H\times K$ である.　□
 
-\begin{tcolorbox}
-	\begin{thm*}
 >**定理（中国式剰余定理）**　$m,n \neq 0$が互いに素な整数なら, $\mathbb{Z}/mn\mathbb{Z}$ は 
 $\mathbb{Z}/m\mathbb{Z}\times \mathbb{Z}/n\mathbb{Z}$ 
 と同型である.
