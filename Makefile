@@ -83,7 +83,7 @@ $(PDF_DIR)/%.pdf: $(SRC_DIR)/%.qmd $(QUARTO_YML)
 # index.md が更新されたら index.html も作り直す
 $(INDEX_MD): $(SRC_ALL)
 	@mkdir -p "$(PUB_DIR)"
-	@echo "# TechDocs" > "$@"
+	@echo "# tech-memo" > "$@"
 	@echo "" >> "$@"
 	@echo "モバイル閲覧はHTML、配布・印刷はPDFが便利です。" >> "$@"
 	@echo "" >> "$@"
