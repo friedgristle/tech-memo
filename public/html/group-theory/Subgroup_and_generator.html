@@ -93,7 +93,7 @@ window.Quarto = {
 <p><strong>定義</strong>（部分群） <span class="math inline">\(G\)</span> を群, <span class="math inline">\(H\subset G\)</span> を部分集合とする. <span class="math inline">\(H\)</span> が <span class="math inline">\(G\)</span> の演算によって群になるとき, <span class="math inline">\(H\)</span> を <span class="math inline">\(G\)</span> の<strong>部分群</strong>という.</p>
 <blockquote class="blockquote">
 <p><strong>命題</strong> <span class="math inline">\(\quad\)</span> 群 <span class="math inline">\(G\)</span> の部分集合 <span class="math inline">\(H\)</span> が <span class="math inline">\(G\)</span> の部分群になるための必要十分条件：<br>
-1) $1_G H $ 2) <span class="math inline">\(x,y \in H\)</span>なら<span class="math inline">\(xy \in H\)</span> 3) <span class="math inline">\(x\in H\)</span>なら<span class="math inline">\(x^{-1}\in H\)</span></p>
+1) <span class="math inline">\(1_G \in H\)</span> 2) <span class="math inline">\(x,y \in H\)</span>なら<span class="math inline">\(xy \in H\)</span> 3) <span class="math inline">\(x\in H\)</span>なら<span class="math inline">\(x^{-1}\in H\)</span></p>
 </blockquote>
 <p>＜証明＞ <span class="math inline">\(H\)</span> が部分群であると仮定する. <span class="math inline">\(H\)</span> の演算は<span class="math inline">\(G\)</span> の演算と一致するので, <span class="math inline">\(1_H1_H=1_H\)</span> が <span class="math inline">\(G\)</span>の演算により成り立つ. <span class="math inline">\(1_H^{-1}\)</span> を左からかけて, <span class="math inline">\(1_H=1_G\)</span>となる. よって, <span class="math inline">\(1_G \in H\)</span> となり, (1)が成り立つ.<br>
 　<span class="math inline">\(G\)</span> の演算により <span class="math inline">\(H\)</span> が群になるので, そもそも演算が定義できる. したがって, <span class="math inline">\(x,y \in H\)</span> に対し <span class="math inline">\(xy\in H\)</span> となるのは当たり前であり, (2)が成り立つ.<br>
@@ -114,9 +114,9 @@ window.Quarto = {
 <p><strong>命題</strong> <span class="math inline">\(H_1,H_2\)</span> が群 <span class="math inline">\(G\)</span> の部分群なら, <span class="math inline">\(H_1 \cap H_2\)</span> も <span class="math inline">\(G\)</span> の部分群である.</p>
 </blockquote>
 <p>＜証明＞　<span class="math inline">\(1_G \in H_1, 1_G \in H_2\)</span> であり, $1_G H_1 H_2 $.<br>
-$ x,y H_1 H_2 $ に対して, $ x,y H_1 $ なので $ xy H_1 $.<br>
-同様に $xy H_2 $ が言える.<br>
-$ xy H_1 $ かつ $xy H_2 $ であるから $xy H_1 H_2 $.<br>
+<span class="math inline">\(x,y \in H_1 \cap H_2\)</span> に対して, <span class="math inline">\(x,y \in H_1\)</span> なので <span class="math inline">\(xy \in H_1\)</span>.<br>
+同様に <span class="math inline">\(xy \in H_2\)</span> が言える.<br>
+<span class="math inline">\(xy \in H_1\)</span> かつ <span class="math inline">\(xy \in H_2\)</span> であるから <span class="math inline">\(xy \in H_1 \cap H_2\)</span>.<br>
 さらに, <span class="math inline">\(x \in H_1 \cap H_2\)</span> なら <span class="math inline">\(x^{-1}\in H_1\)</span> かつ <span class="math inline">\(x^{-1} \in H_2\)</span> なので <span class="math inline">\(x^{-1} \in H_1 \cap H_2\)</span>.<br>
 以上より, <span class="math inline">\(H_1 \cap H_2\)</span> は <span class="math inline">\(G\)</span> の部分群となる.</p>
 <p><strong>部分群1</strong>　　<span class="math inline">\(G\)</span> が群なら, <span class="math inline">\(\{1\},G\)</span> は明らかに <span class="math inline">\(G\)</span> の部分群であり, これらを <span class="math inline">\(G\)</span> の<strong>自明な部分群</strong>という. <span class="math inline">\(G\)</span>以外の部分群は<strong>真部分群</strong>という.</p>

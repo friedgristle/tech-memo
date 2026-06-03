@@ -65,5 +65,13 @@
   "docs/group-theory/Definition_of_ring_and_field.md": {
     "Definition_of_ring_and_field.html": "9e9b5265",
     "Definition_of_ring_and_field.tex": "baae7f3d"
+  },
+  "docs/group-theory/Equivalence_relation_and_residue_class.md": {
+    "Equivalence_relation_and_residue_class.html": "e4fec37f",
+    "Equivalence_relation_and_residue_class.tex": "98b1ffc3"
+  },
+  "docs/group-theory/Homomorphism_and_isomorphism.md": {
+    "Homomorphism_and_isomorphism.html": "f03f0f0c",
+    "Homomorphism_and_isomorphism.tex": "1ced86d1"
   }
 }
