@@ -97,7 +97,10 @@ $$(gh)\cdot x_i=g\cdot (h\cdot x_i)=g\cdot x_{\rho(h)(i)}=x_{\rho(g)\circ\rho(h)
 **証明**　$G$ の $G$ への左からの積による作用は、それにより定まる置換表現があり, $\rho:G\to\mathfrak{S}_n$ である.  
 $\rho(g)=1$ なら, すべての $h\in G$ に対して $gh=h$ である. 例えば $h=1_G$ とすれば, $g=1_G$ である. したがって, $\ker(\rho)=\{1_G\}$ であり, $\rho$ は単射である.　□
 
-**群の作用5**　$H$ を群 $G$ の部分群, $X=G/H$ とする. $g\in G, xH\in G/H$ に対して, $g\cdot(xH)=(gx)H$ と定義すると, これはwell-definedになり,　$G$ の $G/H$ への**自然な作用**という. 同様に $G$ の $H\backslash G$ への右作用も定まる. これも自然な作用という.  
+**群の作用5**　$H$ を群 $G$ の部分群, $X=G/H$ とする. $g\in G, xH\in G/H$ に対して, $g\cdot(xH)=(gx)H$ と定義すると, これはwell-definedになり, $G$ の $G/H$ への**自然な作用**という. 
+同様に $G$ の $H\backslash G$ への右作用も定まる. これも自然な作用という.  
+>  $x,y\in G$ に対して $xH=yH$ ならば,　$x=yh$ となる $h\in H$ が存在し, $gx=gyh$ である. よって $(gx)H=(gyh)H=(gy)hH=(gy)H$ であり, $g\cdot(xH)=(gx)H$ はwell-defined. 
+
 例えば, $G=\mathfrak{S}_3, H=\langle (12) \rangle$ なら, $G/H$ の完全代表系として $\{x_1=1,x_2=(123),x_3=(132)\}$ をとれる. $\rho:G\to\mathfrak{S}_3$ をこの場合の置換表現とする.
 
 **群の作用6**　$G$ を群, $X=G$ とする. $g\in G, h\in X$ とするとき, $\mathrm{Ad}(g)(h)=ghg^{-1}$ と定義する. $g_1,g_2,h\in G$ なら
