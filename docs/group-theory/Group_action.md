@@ -127,7 +127,7 @@ $m$ が十分大きくて $l!<n$ なら, $\rho$ は単射ではない. 一方, $
 
 **軌道・安定化群1**
 $$G=\mathrm{SO}(2)=\Bigl\{R_\theta=\begin{pmatrix}\cos\theta&-\sin\theta\ \\ \sin\theta&\cos\theta \end{pmatrix}\Big|\, \theta\in \mathbb{R}\Bigr\},\quad X=\mathbb{R}^2$$
-とおくと, $G$ は行列としての積により $X$ に作用する. $\mathbb{R}^2$ の元は $[x,y]$ と表す. 正の実数 $a$ に対し, $R_\theta [a,0]=[a\cos\theta,a\sin\theta]$ である. よって, 点 $[a,0]$ の軌道は半径 $a$ の円である. $R_theta[a,0]=[a,0]$ なら, $\cos\theta=1,\:\sin\theta=0$ なので, $\theta$ は $2\phi$ の整数倍である. よって, $R_\theta=I_2$ となり, $[a,0]$ の安定化群は自明である. また, $a>0$ を固定すれば, $G$ は $C_a=\{[x,y]\in\mathbb{R}^2\mid x^2+y^2=a^2\}$ に作用し, $C_a$ は等質空間である.
+とおくと, $G$ は行列としての積により $X$ に作用する. $\mathbb{R}^2$ の元は $[x,y]$ と表す. 正の実数 $a$ に対し, $R_\theta [a,0]=[a\cos\theta,a\sin\theta]$ である. よって, 点 $[a,0]$ の軌道は半径 $a$ の円である. $R_\theta[a,0]=[a,0]$ なら, $\cos\theta=1,\:\sin\theta=0$ なので, $\theta$ は $2\pi$ の整数倍である. よって, $R_\theta=I_2$ となり, $[a,0]$ の安定化群は自明である. また, $a>0$ を固定すれば, $G$ は $C_a=\{[x,y]\in\mathbb{R}^2\mid x^2+y^2=a^2\}$ に作用し, $C_a$ は等質空間である.
 
 > **命題**　$G$ が集合 $X$ に作用し, $x,y\in X,g\in G$ で $gx=y$ なら, $G\cdot y=G\cdot x, G_y=gG_x g^{-1}$ である.  
 
